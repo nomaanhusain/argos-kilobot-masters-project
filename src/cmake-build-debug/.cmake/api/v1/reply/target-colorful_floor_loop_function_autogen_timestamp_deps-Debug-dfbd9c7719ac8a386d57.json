@@ -1,0 +1,67 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"examples/loop_functions/colorful_floor_loop_function/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "argos3plugin_simulator_kilobot::@d27ee349f6bb19ae79a9"
+		},
+		{
+			"id" : "my_kilobot_movement::@9a4b4985b71dc2e5dbfb"
+		}
+	],
+	"id" : "colorful_floor_loop_function_autogen_timestamp_deps::@21dd35587e2ea686746e",
+	"isGeneratorProvided" : true,
+	"name" : "colorful_floor_loop_function_autogen_timestamp_deps",
+	"paths" : 
+	{
+		"build" : "examples/loop_functions/colorful_floor_loop_function",
+		"source" : "examples/loop_functions/colorful_floor_loop_function"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				1
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/examples/loop_functions/colorful_floor_loop_function/CMakeFiles/colorful_floor_loop_function_autogen_timestamp_deps",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/examples/loop_functions/colorful_floor_loop_function/CMakeFiles/colorful_floor_loop_function_autogen_timestamp_deps.rule",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "UTILITY"
+}

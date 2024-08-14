@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "examples/loop_functions/colorful_floor_loop_function",
+		"source" : "examples/loop_functions/colorful_floor_loop_function"
+	}
+}

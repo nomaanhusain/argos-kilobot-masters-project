@@ -31,8 +31,6 @@
   <!-- ****************** -->
   <!-- * Loop functions * -->
   <!-- ****************** -->
-  <loop_functions library="build/examples/loop_functions/trajectory_loop_functions/libtrajectory_loop_functions"
-                  label="trajectory_loop_functions" />
 
   <!-- *********************** -->
   <!-- * Arena configuration * -->

@@ -35,6 +35,10 @@
       <body position="0,0,0" orientation="0,0,0" />
       <controller config="kbc" />>
     </kilobot>
+    <kilobot id="kb2">
+        <body position="0,0.5,0" orientation="0,0,0" />
+        <controller config="kbc" />>
+    </kilobot>
   </arena>
 
   <!-- ******************* -->

@@ -1,0 +1,84 @@
+<?xml version="1.0" ?>
+<argos-configuration>
+
+  <!-- ************************* -->
+  <!-- * General configuration * -->
+  <!-- ************************* -->
+  <framework>
+    <system threads="0" />
+    <experiment length="0"
+                ticks_per_second="31"
+                random_seed="124" />
+  </framework>
+
+  <!-- *************** -->
+  <!-- * Controllers * -->
+  <!-- *************** -->
+  <controllers>
+
+    <my_kilobot_movement id="mkbc" library="build/examples/controllers/my_kilobot_movement/libmy_kilobot_movement">
+      <actuators>
+        <differential_steering implementation="default" />
+        <kilobot_led implementation="default" />
+        <kilobot_communication implementation="default" />
+      </actuators>
+      <sensors>
+        <kilobot_communication implementation="default" medium="kilocomm" show_rays="true" />
+      </sensors>
+      <params behavior="build/examples/behaviors/move_and_talk" />
+    </my_kilobot_movement>
+
+  </controllers>
+
+  <loop_functions library="build/examples/loop_functions/colorful_floor_loop_function/libcolorful_floor_loop_function"
+                  label="colorful_floor_loop_function" />
+
+
+  <!-- *********************** -->
+  <!-- * Arena configuration * -->
+  <!-- *********************** -->
+  <arena size="2, 2, 1" center="0,0,0.5">
+     <floor id="floor"
+       source="loop_functions"
+       pixels_per_meter="50" />
+    <kilobot id="1">
+      <body position="0,0,0" orientation="0,0,0" />
+      <controller config="mkbc" />
+    </kilobot>
+    <kilobot id="2">
+        <body position="0,0.1,0" orientation="0,0,0" />
+        <controller config="mkbc" />
+    </kilobot>
+    <kilobot id="3">
+        <body position="0.1,0,0" orientation="0,0,0" />
+        <controller config="mkbc" />
+    </kilobot>
+  </arena>
+
+  <!-- ******************* -->
+  <!-- * Physics engines * -->
+  <!-- ******************* -->
+  <physics_engines>
+    <dynamics2d id="dyn2d" />
+  </physics_engines>
+
+  <!-- ********* -->
+  <!-- * Media * -->
+  <!-- ********* -->
+  <media>
+    <kilobot_communication id="kilocomm" />
+    <range_and_bearing id="rab" />
+  </media>
+
+  <!-- ****************** -->
+  <!-- * Visualization * -->
+  <!-- ****************** -->
+  <visualization>
+    <qt-opengl>
+      <camera>
+        <placement idx="0" position="-0.0718156,0,0.109999" look_at="0.642327,0,-0.590002" lens_focal_length="20" />
+      </camera>
+    </qt-opengl>
+  </visualization>
+
+</argos-configuration>

@@ -1,0 +1,71 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"examples/controllers/my_kilobot_movement/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "my_kilobot_movement_autogen_timestamp_deps::@9a4b4985b71dc2e5dbfb"
+		}
+	],
+	"id" : "my_kilobot_movement_autogen::@9a4b4985b71dc2e5dbfb",
+	"isGeneratorProvided" : true,
+	"name" : "my_kilobot_movement_autogen",
+	"paths" : 
+	{
+		"build" : "examples/controllers/my_kilobot_movement",
+		"source" : "examples/controllers/my_kilobot_movement"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				1,
+				2
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/examples/controllers/my_kilobot_movement/CMakeFiles/my_kilobot_movement_autogen",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/examples/controllers/my_kilobot_movement/CMakeFiles/my_kilobot_movement_autogen.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/examples/controllers/my_kilobot_movement/my_kilobot_movement_autogen/timestamp.rule",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "UTILITY"
+}

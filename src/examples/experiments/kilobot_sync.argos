@@ -23,7 +23,7 @@
         <kilobot_communication implementation="default" />
       </actuators>
       <sensors>
-        <kilobot_communication implementation="default" medium="kilocomm" />
+        <kilobot_communication implementation="default" medium="kilocomm" show_rays="true"/>
       </sensors>
       <params behavior="build/examples/behaviors/sync" />
     </kilobot_controller>
