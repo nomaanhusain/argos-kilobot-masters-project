@@ -110,23 +110,20 @@ void CColorfulFloorLoopFunction::UpdateColorSeenCounts() {
         tMessage.data[2] = 43;  // Set to 1 if red, else 0
         // tMessage.crc = message_crc(&tMessage);
 
-        // Store the message in the Kilobot
+        // Store the message in the Kilobot for sending
         // std::cout << "Rob_id: "<< rob_id << " LOOP FUNC: Calling StoreMessage()"<<"\n";
         cController.StoreMessage(tMessage);
-        // // Send the message
-        // std::cout << "Rob_id: "<< rob_id << " LOOP FUNC: Calling MessageTx()"<<"\n";
-        // cController.MessageTx();
 
         // argos::LOG << "ID = " << int_id << "Color = " << fl_color << std::endl;
         // Display the results
-        // for (const auto& robotEntry : robotColorCounts) {
-        //     int robotId = robotEntry.first;
-        //     const auto& colorCounts = robotEntry.second;
-        //     std::cout << "Robot ID: " << robotId << "\n";
-        //     for (const auto& colorEntry : colorCounts) {
-        //         std::cout << "  Color: " << colorEntry.first << ", Count: " << colorEntry.second << "\n";
-        //     }
-        // }
+        for (const auto& robotEntry : robotColorCounts) {
+            int robotId = robotEntry.first;
+            const auto& colorCounts = robotEntry.second;
+            std::cout << "Robot ID: " << robotId << "\n";
+            for (const auto& colorEntry : colorCounts) {
+                std::cout << "  Color: " << colorEntry.first << ", Count: " << colorEntry.second << "\n";
+            }
+        }
     }
     //argos::LOG << "Seen Count" << m_mapColorSeenCounts << std::endl;
 }

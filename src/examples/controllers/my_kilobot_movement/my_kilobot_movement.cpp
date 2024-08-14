@@ -11,6 +11,7 @@
 #include <vector>
 #include <algorithm>
 #include <argos3/core/utility/datatypes/color.h>
+#include <bits/random.h>
 
 #include "plugins/robots/kilobot/control_interface/kilolib.h"
 
@@ -132,8 +133,8 @@ void CKilobotMovement::HandleReceivedMessage(const message_t& t_message) {
    int sender_id = t_message.data[1]; // Assuming you stored your int value at data[1]
    int received_color = t_message.data[2];
 
-   std::cout << "CONTOLLER-RD: val= " << received_value << "sender_id= " << sender_id << "rec_col= " << received_color
-         << "\n";
+   // std::cout << "CONTOLLER-RD: val= " << received_value << "sender_id= " << sender_id << "rec_col= " << received_color
+         // << "\n";
    if(received_value > 0) {
       // Set LED to green
       m_pcLEDActuator->SetColor(CColor::GREEN);
@@ -147,9 +148,9 @@ void CKilobotMovement::ControlStep() {
 
    ++m_timestepCounter;
 
-   // Send the message
-   if (m_timestepCounter % 30 == 0) {
-      std::cout << "CONTOLLER: Sending message. id= "<< GetId() <<"Timestep= "<< m_timestepCounter << "\n";
+   // Send the message, the timing is slightly radomized
+   if (m_timestepCounter % (30 + (std::rand()%(20-5+1))) == 0) {
+      // std::cout << "CONTOLLER: Sending message. id= "<< GetId() <<"Timestep= "<< m_timestepCounter << "\n";
       m_pcCommunicationActuator->SetMessage(&m_tMessage);
    }
    // // Handle received messages
@@ -164,10 +165,11 @@ void CKilobotMovement::ControlStep() {
       // Check if the message pointer is not null
       if(packet.Message != nullptr) {
          // Safely access the message data
+         HandleReceivedMessage(*packet.Message);
          // std::cout << "CONTROLLER-RD: val= " << static_cast<int>(packet.Message->data[0]) << "\n";
          // std::cout << "CONTOLLER-RD: val= " << static_cast<int>(packet.Message->data[0]) << "sender_id= " <<
          //    static_cast<int>(packet.Message->data[1]) << "rec_col= " << static_cast<int>(packet.Message->data[2])<<"\n";
-         std::cout << "CONTOLLER-RD: val= " << packet.Message->data[0] << "sender_id= " << packet.Message->data[1] << "rec_col= " << packet.Message->data[2]<<"\n";
+         // std::cout << "CONTOLLER-RD: val= " << packet.Message->data[0] << "sender_id= " << packet.Message->data[1] << "rec_col= " << packet.Message->data[2]<<"\n";
          // Example: Change LED color based on the received value
          if(packet.Message->data[0] > 0) {
             m_pcLEDActuator->SetColor(CColor::GREEN);
