@@ -66,6 +66,7 @@ public:
    // virtual void MessageTxSuccess();
    virtual void StoreMessage(message_t pt_message);
    virtual void HandleReceivedMessage(const message_t& t_message);
+   virtual void StoreColorCounts(std::map<std::string, int> color_counts);
    /*
     * This function resets the controller to its state right after the
     * Init().
@@ -117,6 +118,7 @@ private:
    UInt32 m_unCountTurningSteps;
    UInt32 m_timestepCounter;
    UInt32 m_firstMessageTimestep;
+   std::map<std::string, int> currColorCounts;
 
  // Message structure
    message_t m_tMessage;

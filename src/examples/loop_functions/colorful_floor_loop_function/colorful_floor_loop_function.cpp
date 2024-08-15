@@ -56,13 +56,12 @@ void CColorfulFloorLoopFunction::Destroy() {
     }
 }
 
-CColor CColorfulFloorLoopFunction::GetFloorColor(const CVector2& floor_plane) {
+CColor CColorfulFloorLoopFunction::GetFloorColor(const CVector2& robot_coordinate) {
     // Convert floor coordinates to indices
-    int x = static_cast<int>(floor_plane.GetX() * 20); // Adjust scaling factor as needed
-    int y = static_cast<int>(floor_plane.GetY() * 20); // Adjust scaling factor as needed
-
-
+    int x = static_cast<int>(robot_coordinate.GetX() * 20); // Adjust scaling factor as needed
+    int y = static_cast<int>(robot_coordinate.GetY() * 20); // Adjust scaling factor as needed
     // Return the stored color for this tile
+    //TODO: You can pass this m_mapFLoorColors to the controller after each update color and there you can get the color from the coordinates of the robot istead of doing it here
     return m_mapFloorColors[std::make_pair(x, y)];
 }
 void CColorfulFloorLoopFunction::PreStep() {
@@ -92,27 +91,41 @@ void CColorfulFloorLoopFunction::UpdateColorSeenCounts() {
                                        pcKB->GetEmbodiedEntity().GetOriginAnchor().Position.GetY());
 
         CColor fl_color  = GetFloorColor(cFBPos);
-        // CColor fl_color = CColor::RED;
         std::string color_name = std::to_string(fl_color);
         int rob_id = std::stoi(strRobotID);
         //
         // // Increment the count of the color seen by the robot
         robotColorCounts[rob_id][color_name]++;
 
-        // Get the Kilobot controller
+        //Find the max color for the current robot
+        // std::string max_color_name;
+        // int max_color_count = 0;
+        std::map<std::string, int> color_counts = robotColorCounts[rob_id];
+        // for (const auto& colorEntry : color_counts) {
+        //     if(max_color_count < colorEntry.second) {
+        //         max_color_count = colorEntry.second;
+        //         max_color_name = colorEntry.first;
+        //     }
+        // }
+        //
+        // std::cout << "MAX: color_name= " << max_color_name << " count= " <<max_color_count<< "\n";
 
+
+
+        // Get the Kilobot controller
         CKilobotMovement& cController = dynamic_cast<CKilobotMovement&>(pcKB->GetControllableEntity().GetController());
         // // Prepare a message
         message_t tMessage;
         tMessage.type = NORMAL;
-        tMessage.data[0] = 1;
-        tMessage.data[1] = rob_id; // Upper 8 bits of ID
+        tMessage.data[0] = rob_id;
+        tMessage.data[1] = 1;
         tMessage.data[2] = 43;  // Set to 1 if red, else 0
         // tMessage.crc = message_crc(&tMessage);
 
         // Store the message in the Kilobot for sending
         // std::cout << "Rob_id: "<< rob_id << " LOOP FUNC: Calling StoreMessage()"<<"\n";
         cController.StoreMessage(tMessage);
+        cController.StoreColorCounts(color_counts);
 
         // argos::LOG << "ID = " << int_id << "Color = " << fl_color << std::endl;
         // Display the results

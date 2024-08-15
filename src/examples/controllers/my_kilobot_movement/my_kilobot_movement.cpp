@@ -8,6 +8,7 @@
 #include <argos3/core/utility/configuration/argos_configuration.h>
 /* 2D vector definition */
 #include <argos3/core/utility/math/vector2.h>
+#include <utility>
 #include <vector>
 #include <algorithm>
 #include <argos3/core/utility/datatypes/color.h>
@@ -102,18 +103,26 @@ void CKilobotMovement::StoreMessage(message_t pt_message) {
    // Store the message pointer to be sent in the next transmission cycle
    m_tMessage = pt_message;
 }
+void CKilobotMovement::StoreColorCounts(std::map<std::string, int> color_counts) {
+   currColorCounts = std::move(color_counts);
+}
 
 void CKilobotMovement::HandleReceivedMessage(const message_t& t_message) {
 
-   int received_value = t_message.data[0];
-   int sender_id = t_message.data[1]; // Assuming you stored your int value at data[1]
+   int sender_id = t_message.data[0];
+   int color_name = t_message.data[1]; // Assuming you stored your int value at data[1]
    int received_color = t_message.data[2];
-
+   Real probability = 0.2f;
+   // Generate a random number between 0 and 1
+   Real random_number = m_pcRNG->Uniform(CRange<Real>(0.0f, 1.0f));
+   if (random_number < probability) {
+      color_name = 0; // Set to 0 with the specified probability
+   }
    if(uniqueRobotIds.empty()) m_firstMessageTimestep = m_timestepCounter;
    uniqueRobotIds.insert(sender_id);
    if(uniqueRobotIds.size() == 8) {
       UInt32 timeTaken = m_timestepCounter-m_firstMessageTimestep;
-      std::cout << "Received messages from 8 unique robots, time req= " << timeTaken << std::endl;
+      // std::cout << "Received messages from 8 unique robots, time req= " << timeTaken << std::endl;
       //Write time to file
       m_cOutputFile << timeTaken << std::endl;
 
@@ -121,9 +130,8 @@ void CKilobotMovement::HandleReceivedMessage(const message_t& t_message) {
       uniqueRobotIds.clear();
    }
 
-   // std::cout << "CONTOLLER-RD: val= " << received_value << "sender_id= " << sender_id << "rec_col= " << received_color
-         // << "\n";
-   if(received_value > 0) {
+   std::cout << "CONTOLLER-RD: sender_id= " << sender_id << "color_name= " << color_name << "rec_col= " << received_color << "\n";
+   if(received_color > 0) {
       // Set LED to green
       m_pcLEDActuator->SetColor(CColor::GREEN);
    } else {
@@ -134,6 +142,10 @@ void CKilobotMovement::HandleReceivedMessage(const message_t& t_message) {
 
 void CKilobotMovement::ControlStep() {
 
+   // for (const auto& colorEntry : currColorCounts) {
+   //     std::cout << "  Color: " << colorEntry.first << ", Count: " << colorEntry.second << "\n";
+   // }
+
    ++m_timestepCounter;
 
    // Send the message, the timing is slightly radomized
@@ -141,22 +153,15 @@ void CKilobotMovement::ControlStep() {
       // std::cout << "CONTOLLER: Sending message. id= "<< GetId() <<"Timestep= "<< m_timestepCounter << "\n";
       m_pcCommunicationActuator->SetMessage(&m_tMessage);
    }
+
    // // Handle received messages
-   // std::cout << "CONTOLLER: Receiving message" << "\n";
    const CCI_KilobotCommunicationSensor::TPackets& packets = m_pcCommunicationSensor->GetPackets();
    for(const auto& packet : packets) {
-
-      // std::cout << "CONTOLLER-RD: val= " << packet.Message->data[0] << "sender_id= " << packet.Message->data[1] << "rec_col= " << packet.Message->data[2]<<"\n";
-      // std::cout << "CONTOLLER-RD: val= " << packet.Message->data[0] <<"\n";
-      // HandleReceivedMessage(*packet.Message);
 
       // Check if the message pointer is not null
       if(packet.Message != nullptr) {
          // Safely access the message data
          HandleReceivedMessage(*packet.Message);
-         if(packet.Message->data[0] > 0) {
-            m_pcLEDActuator->SetColor(CColor::GREEN);
-         }
       } else {
          std::cout << "CONTROLLER-RD: No message received or message is null.\n";
       }

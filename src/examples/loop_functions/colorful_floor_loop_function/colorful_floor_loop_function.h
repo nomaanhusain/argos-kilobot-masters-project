@@ -21,7 +21,7 @@ public:
     virtual void Destroy();
     virtual void PostStep();
     virtual void PreStep();
-    virtual CColor GetFloorColor(const CVector2& floor_plane);
+    virtual CColor GetFloorColor(const CVector2& robot_coordinate);
     virtual void UpdateFloorColors(const std::vector<CColor>& vecColors, UInt32 majority_color_index);
     virtual void UpdateColorSeenCounts();
 
