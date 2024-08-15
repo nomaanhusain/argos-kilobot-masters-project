@@ -69,7 +69,7 @@ void CColorfulFloorLoopFunction::PreStep() {
     UInt32 time = GetSpace().GetSimulationClock();
     std::vector<CColor> vecColors = {CColor::RED, CColor::BLUE, CColor::YELLOW, CColor::GREEN};
     // Change floor color at a defined timestep
-    if (time%50 == 0) {
+    if (time%220 == 0) {
         UpdateFloorColors(vecColors, majority_color_index);
         majority_color_index = majority_color_index + 1;
         if( majority_color_index == vecColors.size()) majority_color_index = 0;
@@ -116,14 +116,14 @@ void CColorfulFloorLoopFunction::UpdateColorSeenCounts() {
 
         // argos::LOG << "ID = " << int_id << "Color = " << fl_color << std::endl;
         // Display the results
-        for (const auto& robotEntry : robotColorCounts) {
-            int robotId = robotEntry.first;
-            const auto& colorCounts = robotEntry.second;
-            std::cout << "Robot ID: " << robotId << "\n";
-            for (const auto& colorEntry : colorCounts) {
-                std::cout << "  Color: " << colorEntry.first << ", Count: " << colorEntry.second << "\n";
-            }
-        }
+        // for (const auto& robotEntry : robotColorCounts) {
+        //     int robotId = robotEntry.first;
+        //     const auto& colorCounts = robotEntry.second;
+        //     std::cout << "Robot ID: " << robotId << "\n";
+        //     for (const auto& colorEntry : colorCounts) {
+        //         std::cout << "  Color: " << colorEntry.first << ", Count: " << colorEntry.second << "\n";
+        //     }
+        // }
     }
     //argos::LOG << "Seen Count" << m_mapColorSeenCounts << std::endl;
 }

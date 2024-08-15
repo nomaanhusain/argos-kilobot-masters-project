@@ -25,20 +25,14 @@ CKilobotMovement::CKilobotMovement():
     m_pcCommunicationSensor(NULL),
     m_pcCommunicationActuator(NULL),
     m_pcLEDActuator(NULL),
-    // m_pcLightSensor(NULL),
     m_tCurrentState(KILOBOT_STATE_STOP),
     m_tPreviousState(KILOBOT_STATE_STOP),
     m_unMaxMotionSteps(50),
     m_unCountMotionSteps(0),
     m_unMaxTurningSteps(50), // = pi/(omega delta_t) = pi/(v*delta_t/l) = (pi*l)/(v*delta_t)
     m_unCountTurningSteps(100),
-    newMessage(1),
-    distance(0),
-    // senderId(-1),
-    // receivedColor(0),
-    // receivedMessageData(-1),
     m_tMessage(),
-    messageSent(0),
+    m_firstMessageTimestep(0),
     m_timestepCounter(0),
     m_fMotorL(0.0f),
     m_fMotorR(0.0f)
@@ -75,7 +69,9 @@ void CKilobotMovement::Init(TConfigurationNode& t_node) {
    m_pcCommunicationActuator = GetActuator<CCI_KilobotCommunicationActuator>("kilobot_communication");
    m_pcLEDActuator = GetActuator<CCI_KilobotLEDActuator>("kilobot_led");
 
-   // m_pcLightSensor = GetSensor<CCI_KilobotLightSensor>("kilobot_light");
+   // Generate the filename based on this robot's ID
+   std::string filename = "time_output/robot_" + GetId() + "_times.txt";
+   m_cOutputFile.open(filename, std::ios_base::trunc | std::ios_base::out);
 
    // Parse the configuration file
    GetNodeAttributeOrDefault(t_node, "max_motion_steps", m_unMaxMotionSteps, m_unMaxMotionSteps );
@@ -101,37 +97,29 @@ void CKilobotMovement::Reset() {
 
 /****************************************/
 /****************************************/
-// void CKilobotMovement::MessageRX(message_t *message, distance_measurement_t *distance_measurement) {
-//    std::cout << "Controller: Message Received " << "\n";
-//    // Set flag on message reception.
-//    newMessage = 1;
-//
-//    distance = estimate_distance(distance_measurement);
-//    receivedMessageData = message->data[0];
-//    senderId = message->data[1];
-//    // receivedColor = message->data[2];
-// }
-//
+
 void CKilobotMovement::StoreMessage(message_t pt_message) {
    // Store the message pointer to be sent in the next transmission cycle
    m_tMessage = pt_message;
 }
-//
-//
-// message_t *CKilobotMovement::MessageTx() {
-//    std::cout << "Controller: MessageTx called" << "\n";
-//    return message;
-// }
-//
-// void CKilobotMovement::MessageTxSuccess() {
-//    messageSent = 1;
-// }
 
 void CKilobotMovement::HandleReceivedMessage(const message_t& t_message) {
 
    int received_value = t_message.data[0];
    int sender_id = t_message.data[1]; // Assuming you stored your int value at data[1]
    int received_color = t_message.data[2];
+
+   if(uniqueRobotIds.empty()) m_firstMessageTimestep = m_timestepCounter;
+   uniqueRobotIds.insert(sender_id);
+   if(uniqueRobotIds.size() == 8) {
+      UInt32 timeTaken = m_timestepCounter-m_firstMessageTimestep;
+      std::cout << "Received messages from 8 unique robots, time req= " << timeTaken << std::endl;
+      //Write time to file
+      m_cOutputFile << timeTaken << std::endl;
+
+      // Clear the set to start counting again for the next set of unique robots
+      uniqueRobotIds.clear();
+   }
 
    // std::cout << "CONTOLLER-RD: val= " << received_value << "sender_id= " << sender_id << "rec_col= " << received_color
          // << "\n";
@@ -166,11 +154,6 @@ void CKilobotMovement::ControlStep() {
       if(packet.Message != nullptr) {
          // Safely access the message data
          HandleReceivedMessage(*packet.Message);
-         // std::cout << "CONTROLLER-RD: val= " << static_cast<int>(packet.Message->data[0]) << "\n";
-         // std::cout << "CONTOLLER-RD: val= " << static_cast<int>(packet.Message->data[0]) << "sender_id= " <<
-         //    static_cast<int>(packet.Message->data[1]) << "rec_col= " << static_cast<int>(packet.Message->data[2])<<"\n";
-         // std::cout << "CONTOLLER-RD: val= " << packet.Message->data[0] << "sender_id= " << packet.Message->data[1] << "rec_col= " << packet.Message->data[2]<<"\n";
-         // Example: Change LED color based on the received value
          if(packet.Message->data[0] > 0) {
             m_pcLEDActuator->SetColor(CColor::GREEN);
          }

@@ -20,6 +20,7 @@
 #include "plugins/robots/kilobot/control_interface/kilolib.h"
 #include "plugins/robots/kilobot/control_interface/message.h"
 /* Definition of the kilobot light sensor */
+#include <set>
 #include <argos3/plugins/robots/kilobot/control_interface/ci_kilobot_light_sensor.h>
 
 #include "plugins/robots/kilobot/control_interface/ci_kilobot_communication_actuator.h"
@@ -115,23 +116,13 @@ private:
    UInt32 m_unMaxTurningSteps;
    UInt32 m_unCountTurningSteps;
    UInt32 m_timestepCounter;
-   int newMessage;
-   int distance;
-   // UInt16 senderId;
-   // UInt8 receivedColor;
-   // int receivedMessageData;
+   UInt32 m_firstMessageTimestep;
+
  // Message structure
    message_t m_tMessage;
-   int messageSent;
+   std::set<int> uniqueRobotIds;
+   std::ofstream m_cOutputFile;
 
-   // /* Pointer to the loght sensor actuator */
-   // CCI_KilobotLightSensor* m_pcLightSensor;
-
-   struct Message {
-    int receivedMessageData; // Custom type to identify the message
-    int senderId;
-    int receivedColor; // The integer value you want to send
-   };
 
 
    /* actual motor speed */
