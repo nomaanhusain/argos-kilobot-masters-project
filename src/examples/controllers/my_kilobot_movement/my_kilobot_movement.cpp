@@ -15,6 +15,7 @@
 #include <bits/random.h>
 
 #include "plugins/robots/kilobot/control_interface/kilolib.h"
+#include "plugins/robots/kilobot/simulator/kilobot_entity.h"
 
 
 #define PIN_FORWARD 1.0f;
@@ -107,16 +108,29 @@ void CKilobotMovement::StoreColorCounts(std::map<std::string, int> color_counts)
    currColorCounts = std::move(color_counts);
 }
 
+void CKilobotMovement::StoreFloorMap(std::map<std::pair<int, int>, CColor> floorColorMap) {
+   m_mapFloorColors = std::move(floorColorMap);
+}
+
+CColor CKilobotMovement::GetFloorColor(const CVector2& robot_coordinate) {
+   // Convert floor coordinates to indices
+   int x = static_cast<int>(robot_coordinate.GetX() * 20); // Adjust scaling factor as needed
+   int y = static_cast<int>(robot_coordinate.GetY() * 20); // Adjust scaling factor as needed
+   // Return the stored color for this tile
+   return m_mapFloorColors[std::make_pair(x, y)];
+}
+
+
 void CKilobotMovement::HandleReceivedMessage(const message_t& t_message) {
 
    int sender_id = t_message.data[0];
-   int color_name = t_message.data[1]; // Assuming you stored your int value at data[1]
+   int color_val = t_message.data[1]; // Assuming you stored your int value at data[1]
    int received_color = t_message.data[2];
    Real probability = 0.2f;
    // Generate a random number between 0 and 1
    Real random_number = m_pcRNG->Uniform(CRange<Real>(0.0f, 1.0f));
    if (random_number < probability) {
-      color_name = 0; // Set to 0 with the specified probability
+      color_val = 0; // Set to 0 with the specified probability
    }
    if(uniqueRobotIds.empty()) m_firstMessageTimestep = m_timestepCounter;
    uniqueRobotIds.insert(sender_id);
@@ -130,7 +144,7 @@ void CKilobotMovement::HandleReceivedMessage(const message_t& t_message) {
       uniqueRobotIds.clear();
    }
 
-   std::cout << "CONTOLLER-RD: sender_id= " << sender_id << "color_name= " << color_name << "rec_col= " << received_color << "\n";
+   std::cout << "CONTOLLER-RD: sender_id= " << sender_id << "color_val= " << color_val << "\n";
    if(received_color > 0) {
       // Set LED to green
       m_pcLEDActuator->SetColor(CColor::GREEN);

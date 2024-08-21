@@ -85,10 +85,11 @@ void CColorfulFloorLoopFunction::UpdateColorSeenCounts() {
     CSpace::TMapPerType& tFBMap = GetSpace().GetEntitiesByType("kilobot");
     for (CSpace::TMapPerType::iterator it = tFBMap.begin(); it != tFBMap.end(); ++it) {
         CKilobotEntity* pcKB = any_cast<CKilobotEntity*>(it->second);
-        // CKilobotEntity& pcKB = *any_cast<CKilobotEntity*>(it->second);
+        // std::cout << "Robot ID: " << pcKB->GetId() <<"\n";
+        // // CKilobotEntity& pcKB = *any_cast<CKilobotEntity*>(it->second);
         std::string strRobotID = pcKB->GetId();
         CVector2 cFBPos = CVector2(pcKB->GetEmbodiedEntity().GetOriginAnchor().Position.GetX(),
-                                       pcKB->GetEmbodiedEntity().GetOriginAnchor().Position.GetY());
+                            pcKB->GetEmbodiedEntity().GetOriginAnchor().Position.GetY());
 
         CColor fl_color  = GetFloorColor(cFBPos);
         std::string color_name = std::to_string(fl_color);
@@ -100,7 +101,7 @@ void CColorfulFloorLoopFunction::UpdateColorSeenCounts() {
         //Find the max color for the current robot
         // std::string max_color_name;
         // int max_color_count = 0;
-        std::map<std::string, int> color_counts = robotColorCounts[rob_id];
+        // std::map<std::string, int> color_counts = robotColorCounts[rob_id];
         // for (const auto& colorEntry : color_counts) {
         //     if(max_color_count < colorEntry.second) {
         //         max_color_count = colorEntry.second;
@@ -112,20 +113,21 @@ void CColorfulFloorLoopFunction::UpdateColorSeenCounts() {
 
 
 
-        // Get the Kilobot controller
-        CKilobotMovement& cController = dynamic_cast<CKilobotMovement&>(pcKB->GetControllableEntity().GetController());
-        // // Prepare a message
-        message_t tMessage;
-        tMessage.type = NORMAL;
-        tMessage.data[0] = rob_id;
-        tMessage.data[1] = 1;
-        tMessage.data[2] = 43;  // Set to 1 if red, else 0
-        // tMessage.crc = message_crc(&tMessage);
-
-        // Store the message in the Kilobot for sending
-        // std::cout << "Rob_id: "<< rob_id << " LOOP FUNC: Calling StoreMessage()"<<"\n";
-        cController.StoreMessage(tMessage);
-        cController.StoreColorCounts(color_counts);
+        // // Get the Kilobot controller
+        // CKilobotMovement& cController = dynamic_cast<CKilobotMovement&>(pcKB->GetControllableEntity().GetController());
+        // // // Prepare a message
+        // message_t tMessage;
+        // tMessage.type = NORMAL;
+        // tMessage.data[0] = rob_id;
+        // tMessage.data[1] = 1;
+        // tMessage.data[2] = 43;  // Set to 1 if red, else 0
+        // // tMessage.crc = message_crc(&tMessage);
+        //
+        // // Store the message in the Kilobot for sending
+        // // std::cout << "Rob_id: "<< rob_id << " LOOP FUNC: Calling StoreMessage()"<<"\n";
+        // cController.StoreMessage(tMessage);
+        // cController.StoreColorCounts(color_counts);
+        // cController.StoreFloorMap(m_mapFloorColors);
 
         // argos::LOG << "ID = " << int_id << "Color = " << fl_color << std::endl;
         // Display the results

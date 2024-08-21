@@ -16,6 +16,7 @@
 /* Random number generator */
 #include <argos3/core/utility/math/rng.h>
 #include <argos3/core/utility/logging/argos_log.h>
+#include <argos3/core/simulator/entity/embodied_entity.h>
 
 #include "plugins/robots/kilobot/control_interface/kilolib.h"
 #include "plugins/robots/kilobot/control_interface/message.h"
@@ -26,6 +27,11 @@
 #include "plugins/robots/kilobot/control_interface/ci_kilobot_communication_actuator.h"
 #include "plugins/robots/kilobot/control_interface/ci_kilobot_communication_sensor.h"
 #include "plugins/robots/kilobot/control_interface/ci_kilobot_led_actuator.h"
+
+namespace argos {
+ class CVector2;
+}
+
 /*
  * All the ARGoS stuff in the 'argos' namespace.
  * With this statement, you save typing argos:: every time.
@@ -67,6 +73,8 @@ public:
    virtual void StoreMessage(message_t pt_message);
    virtual void HandleReceivedMessage(const message_t& t_message);
    virtual void StoreColorCounts(std::map<std::string, int> color_counts);
+   virtual void StoreFloorMap(std::map<std::pair<int, int>, CColor> floorColorMap);
+   virtual CColor GetFloorColor(const CVector2& robot_coordinate);
    /*
     * This function resets the controller to its state right after the
     * Init().
@@ -119,6 +127,8 @@ private:
    UInt32 m_timestepCounter;
    UInt32 m_firstMessageTimestep;
    std::map<std::string, int> currColorCounts;
+   std::map<std::pair<int, int>, CColor> m_mapFloorColors;
+   std::map<int, std::map<std::string, int>> robotColorCounts;
 
  // Message structure
    message_t m_tMessage;

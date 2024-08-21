@@ -9,6 +9,15 @@ if(ARGOS_BUILD_FOR_SIMULATOR)
 
   add_executable(move_and_talk move_and_talk.h move_and_talk.c)
   target_link_libraries(move_and_talk argos3plugin_simulator_kilolib)
+#  add_executable(agent_stub agent_stub.h agent_stub.c
+#          ../loop_functions/aust_loop_function/kilogrid_stub.cpp)
+#  add_executable(agent_stub agent_stub.h agent_stub.c)
+#  target_link_libraries(agent_stub  argos3plugin_simulator_kilolib)
+
+#  add_executable(agent_stubmain agent.h agent_main.c
+#          agent_main.c
+#          agent_main.c)
+#  target_link_libraries(agent_stubmain  argos3plugin_simulator_kilolib)
 
   #
   # Lab1.2: Simple Movement
