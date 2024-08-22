@@ -153,7 +153,7 @@ int main()
     kilo_init();
     // srand(time(NULL));
     // rand_num = rand() % 50 + 1;
-    debug_print("Main function. Kilo Ticks = %d \n", kilo_ticks);
+    // debug_print("Main function. Kilo Ticks = %d \n", kilo_ticks);
     // kilo_message_tx = message_tx;
     // kilo_message_tx_success = message_tx_succes;
     // kilo_message_rx = message_rx;

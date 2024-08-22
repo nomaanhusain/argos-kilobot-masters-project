@@ -31,40 +31,62 @@
   </controllers>
 
   <loop_functions library="build/examples/loop_functions/colorful_floor_loop_function/libcolorful_floor_loop_function"
-                  label="colorful_floor_loop_function" />
+                  label="colorful_floor_loop_function">
+
+                      <variables
+                      config_file1="src/examples/loop_functions/colorful_floor_loop_function/ASB_experiment_G40_conf1.kconf"
+                      config_file2="src/examples/loop_functions/colorful_floor_loop_function/ASB_experiment_G40_conf2.kconf"
+                      config_file3="src/examples/loop_functions/colorful_floor_loop_function/ASB_experiment_G40_conf3.kconf"
+                      config_file4=""
+                      datafilename="ROB1_m4_800_k0__alpha0.2_omg0.25nold_comm0.1"
+                      esfilename="ROB1es_m4_800_k0__alpha0.2_omg0.25nold_comm0.1"
+
+                      switch_time="800"
+                      num_switch="3"
+                      />
+
+  </loop_functions>
 
 
   <!-- *********************** -->
   <!-- * Arena configuration * -->
   <!-- *********************** -->
-  <arena size="2, 2, 1" center="0,0,0.5">
-     <floor id="floor"
-       source="loop_functions"
-       pixels_per_meter="50" />
-     <distribute>
-           <position method="uniform" min="-1,-1,0" max="1,1,0" />
-           <orientation method="gaussian" mean="0,0,0" std_dev="360,0,0" />
-           <entity quantity="100" max_trials="100">
-             <kilobot id="">
-               <controller config="kbc" />>
-             </kilobot>
-           </entity>
-         </distribute>
+  <arena size="1, 2, 1" center="0.5,1,0.5">
 
-    <!--
-    <kilobot id="1">
-      <body position="0,0,0" orientation="0,0,0" />
-      <controller config="mkbc" />
-    </kilobot>
-    <kilobot id="2">
-        <body position="0,0.1,0" orientation="0,0,0" />
-        <controller config="mkbc" />
-    </kilobot>
-    <kilobot id="3">
-        <body position="0.1,0,0" orientation="0,0,0" />
-        <controller config="mkbc" />
-    </kilobot>
-    -->
+      <box id="wall_north" size="1,0.01,0.03" movable="false" >
+        <body position="0.5,2,0" orientation="0,0,0" />
+      </box>
+
+      <box id="wall_south" size="1,0.01,0.03" movable="false">
+          <body position="0.5,0,0" orientation="0,0,0" />
+      </box>
+
+      <box id="wall_east" size="0.01,2,0.03"  movable="false">
+          <body position="1,1,0" orientation="0,0,0" />
+      </box>
+
+      <box id="wall_west" size="0.01,2,0.03"  movable="false">
+          <body position="0,1,0" orientation="0,0,0" />
+      </box>
+
+      <distribute>
+          <position method="uniform" min="0.12,0.12,0" max="0.88,1.88,0" />
+          <orientation method="uniform" min="0,0,0" max="360,0,0" />
+          <entity quantity="100" max_trials="10">
+              <kilobot id="kb" communication_range="0.1">
+                  <controller config="kbc"/>
+                  <dynamics2d friction="0.7" />
+              </kilobot>
+          </entity>
+      </distribute>
+
+
+  <floor id="floor"
+      source="loop_functions"
+      pixels_per_meter="1000"
+      />
+
+
   </arena>
 
   <!-- ******************* -->
