@@ -45,7 +45,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/nomaan/argos3-kilobot/src/cmake-build-debug/examples/loop_functions/colorful_floor_loop_function/cmake_install.cmake")
-  include("/home/nomaan/argos3-kilobot/src/cmake-build-debug/examples/loop_functions/zakir_loop_function/cmake_install.cmake")
 
 endif()
 
