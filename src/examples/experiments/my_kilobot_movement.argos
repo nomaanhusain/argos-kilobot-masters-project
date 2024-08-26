@@ -41,7 +41,7 @@
                       datafilename="ROB1_m4_800_k0__alpha0.2_omg0.25nold_comm0.1"
                       esfilename="ROB1es_m4_800_k0__alpha0.2_omg0.25nold_comm0.1"
 
-                      switch_time="800"
+                      switch_time="3000"
                       num_switch="3"
                       />
 
@@ -74,6 +74,7 @@
           <orientation method="uniform" min="0,0,0" max="360,0,0" />
           <entity quantity="100" max_trials="10">
               <kilobot id="kb" communication_range="0.1">
+                  <body color="gray"/>
                   <controller config="kbc"/>
                   <dynamics2d friction="0.7" />
               </kilobot>

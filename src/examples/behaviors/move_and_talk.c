@@ -19,7 +19,7 @@
 #define VIRTUAL_AGENT_MSG 12  // msg forwarded from the kilogrid
 #define TO_KILOGRID_MSG 62
 #define min(a,b) ((a) < (b) ? a : b)
-#define INFOPTION 2
+#define INFOPTION (0)
 #define SWARMSIZE 100
 //#define AGENTS_PER_GROUP 20
 //#define GROUPS 5
@@ -30,7 +30,7 @@
 
 #define OMG 0.25
 #define ALPHA 0.2
-
+#define INFORMED 1
 /*-----------------------------------------------------------------------------------------------*/
 /* Change these when running experiment                                                          */
 /*-----------------------------------------------------------------------------------------------*/
@@ -162,7 +162,8 @@ int op_count_vm[5] = {0, 0, 0, 0, 0};
 
 //Storing color opions of neighbours and their ids
 #define MAX_COLOR_OPINIONS 5
-#define MAX_UNIQUE_ROBOTS 8
+#define NUM_OF_NEIGHBOURS 5
+double decision_arr[MAX_COLOR_OPINIONS];
 typedef struct {
     int color_opinion;  // The color opinion
     int count;          // Count of how many neighbors share this opinion
@@ -174,7 +175,7 @@ typedef struct {
 } ColorHashSet;
 
 typedef struct {
-    int uids[MAX_UNIQUE_ROBOTS];
+    int uids[NUM_OF_NEIGHBOURS];
     int size;  // Current number of unique robot UIDs
 } UIDHashSet;
 
@@ -194,6 +195,14 @@ void add_color_opinion(ColorHashSet* set, int color) {
         set->size++;
     }
 }
+int get_color_opinion_count(ColorHashSet* set, int color) {
+    for(int i=0; i< set->size; i++) {
+        if(set->opinions[i].color_opinion == color) {
+            return  set->opinions[i].count;
+        }
+    }
+    return 0;
+}
 
 // Check if the UID already exists in the set
 int uid_exists(UIDHashSet* set, int uid) {
@@ -206,7 +215,7 @@ int uid_exists(UIDHashSet* set, int uid) {
 }
 // Add a UID to the UID hashset
 int add_uid(UIDHashSet* set, int uid) {
-    if (!uid_exists(set, uid) && set->size < MAX_UNIQUE_ROBOTS) {
+    if (!uid_exists(set, uid) && set->size < NUM_OF_NEIGHBOURS) {
         set->uids[set->size] = uid;
         set->size++;
         return 1;
@@ -227,7 +236,7 @@ void clear_uid_hashset(UIDHashSet* set) {
 // Function to print the current state of the color opinions
 void print_color_opinions(ColorHashSet* set) {
     for (int i = 0; i < set->size; i++) {
-        printf("Color: %d, Count: %d\n", set->opinions[i].color_opinion, set->opinions[i].count);
+        printf("Kiloid = %d Color: %d, Count: %d\n", kilo_uid, set->opinions[i].color_opinion, set->opinions[i].count);
     }
 }
 
@@ -481,7 +490,8 @@ void setup()
     message.type = FROMBOT; // set I am a bot
     // Quality A=1, B=2
     //////////currentopinion = (kilo_uid -1) % GROUPS +1;
-    currentopinion = INFOPTION; //CODE FUNCTIONALITY TO CHOOSE RANDOMLY OF ANY 4 INFERIOR OPTIONS
+    // currentopinion = INFOPTION; //CODE FUNCTIONALITY TO CHOOSE RANDOMLY OF ANY 4 INFERIOR OPTIONS
+    currentopinion = rand() % (5 + 1 - 1) + 1;
     if(kilo_uid <kval){
 
         model = 1; //voter
@@ -745,7 +755,7 @@ void wall_avoidance_function(){
     hit_wall = false;
 
     if (wall_function_state == TURN_TO_AVOID_WALL){
-        set_color(RGB(3, 0, 3));
+        // set_color(RGB(3, 0, 3));
         //printf("comes to turnning \n");
         if( rand()%2 ) {
             // while ((kilo_ticks - last_motion_ticks) < max_wall_avoidance_turning_ticks) {
@@ -768,7 +778,7 @@ void wall_avoidance_function(){
 
         if ((kilo_ticks - last_motion_wall_ticks) > max_wall_avoidance_turning_ticks) {
             /* start moving forward */
-            set_color(RGB(0, 3, 0));
+            // set_color(RGB(0, 3, 0));
             last_motion_wall_ticks = kilo_ticks;
             set_motion(FORWARD);
             wall_function_state = COMPLETE_WALL_AVOIDANCE;
@@ -782,7 +792,7 @@ void wall_avoidance_function(){
             last_motion_wall_ticks = kilo_ticks;
             wall_function_state = TURN_TO_AVOID_WALL;
             wall_avoidance_state = false;
-            set_color(RGB(0, 0, 0));
+            // set_color(RGB(0, 0, 0));
         }
     }
 }
@@ -813,8 +823,9 @@ void message_rx( message_t *msg, distance_measurement_t *d ) {
         received_grid_msg_flag = true; //set the flag that message received from Kilogrid to true
 
         // if(kilo_uid == 1) {
-        //     printf("Current State expolarion = %d, received_optionk_kilogrid=%d, kiloticks=%d \n",
-        //         (current_state==EXPLORATION),received_option_kilogrid, kilo_ticks);
+        //     set_color(RGB(3, 0, 0));
+        //     printf("received_option_kilogrid=%d, wall_flag=%d, kiloticks=%d \n", received_option_kilogrid, wall_flag, kilo_ticks);
+        //     set_color(RGB(3, 3, 0));
         // }
 
 
@@ -907,9 +918,9 @@ void message_tx_success(){ //if transmitted
     broadcast_msg = false; //set transmitted flag to false
     //set the colour
 
-    set_color(RGB(2, 0, 2));
-    delay(10);
-    set_color(RGB(0, 0, 0));
+    // set_color(RGB(2, 0, 2));
+    // delay(10);
+    // set_color(RGB(0, 0, 0));
 
 
 }
@@ -921,7 +932,7 @@ message_t *message_tx()
     return 0;
 }
 
-int get_majority_color_opinion() {
+int get_majority_color_opinion_sensor() {
     int values[5] = {tiles_of_1_option, tiles_of_2_option, tiles_of_3_option, tiles_of_4_option, tiles_of_5_option};
     int max_value = values[0];
     int max_indices[5];
@@ -945,9 +956,13 @@ int get_majority_color_opinion() {
     // Step 3: Randomly select one index if there is a tie
     srand(time(NULL));  // Seed the random number generator
     int random_index = max_indices[rand() % max_count];
-    printf("op1 = %d, op2 = %d, op3 = %d, op4 = %d, op5 = %d. Majority Color = %d \n",
-        tiles_of_1_option,tiles_of_2_option,tiles_of_3_option,tiles_of_4_option,tiles_of_5_option, random_index+1);
+    // printf("op1 = %d, op2 = %d, op3 = %d, op4 = %d, op5 = %d. Majority Color = %d \n",
+    //     tiles_of_1_option,tiles_of_2_option,tiles_of_3_option,tiles_of_4_option,tiles_of_5_option, random_index+1);
     return random_index+1;
+}
+void print_sensor_opinion_count() {
+    printf("Sensor Color Reading- 1:%d, 2:%d, 3:%d, 4:%d, 5:%d",tiles_of_1_option,tiles_of_2_option,
+        tiles_of_3_option,tiles_of_4_option,tiles_of_5_option);
 }
 
 void clear_color_opinion_counts() {
@@ -956,6 +971,38 @@ void clear_color_opinion_counts() {
     tiles_of_3_option=0;
     tiles_of_4_option=0;
     tiles_of_5_option=0;
+}
+
+// Function to find the index of the highest value in the array
+int find_highest_index(double arr[], int size) {
+    // double max_value = -3.0;
+    // int max_index = -1;
+    // for(int i=0; i<size; i++) {
+    //     if(arr[i] > max_value) {
+    //         max_value = arr[i];
+    //         max_index = i;
+    //     }
+    // }
+    // return max_index+1;
+    double max_value = arr[0];
+    int indices[size];
+    int count = 0;
+
+    // Find the maximum value and store all indices with this value
+    for (int i = 0; i < size; i++) {
+        if (arr[i] > max_value) {
+            max_value = arr[i];
+            count = 0;  // Reset the count
+            indices[count++] = i;  // Store the index of the new maximum
+        } else if (arr[i] == max_value) {
+            indices[count++] = i;  // Store the index if it matches the current maximum
+        }
+    }
+
+    // Randomly select one index if there are multiple with the same maximum value
+    srand(time(NULL));  // Seed the random number generator
+    int random_index = rand() % count;
+    return indices[random_index]+1;
 }
 
 void loop()
@@ -986,21 +1033,42 @@ void loop()
     if (current_state == EXPLORATION){ // if state is set to 0
 
         //set led colours
-        if (currentopinion == 1){
+        if (currentopinion == 1){ // RED
             set_color(RGB(3, 0, 0));
-
-        } else if (currentopinion == 2){
+            // delay(300);
+            // set_color(RGB(0, 0, 0));
+            // delay(100);
+            // set_color(RGB(3, 0, 0));
+        } else if (currentopinion == 2){ // BLUE
             set_color(RGB(0, 0, 3));
+            // delay(300);
+            // set_color(RGB(0, 0, 0));
+            // delay(100);
+            // set_color(RGB(0, 0, 3));
 
-        }else if (currentopinion == 3){
+        }else if (currentopinion == 3){ // GREEN
             set_color(RGB(0, 3, 0));
+            // delay(300);
+            // set_color(RGB(0, 0, 0));
+            // delay(100);
+            // set_color(RGB(0, 3, 0));
 
-        }else if (currentopinion == 4){
+        }else if (currentopinion == 4){ // PURPLE
+            set_color(RGB(3, 0, 3));
+            // delay(300);
+            // set_color(RGB(0, 0, 0));
+            // delay(100);
+            // set_color(RGB(3, 0, 3));
+
+        }else if (currentopinion == 5){ // YELLOW
             set_color(RGB(3, 3, 0));
+            // delay(300);
+            // set_color(RGB(0, 0, 0));
+            // delay(100);
+            // set_color(RGB(3, 3, 0));
 
-        }else if (currentopinion == 5){
-            set_color(RGB(3, 3, 3));
-
+        }else {
+            set_color(RGB(0, 0, 0));
         }
 
         // printf("Exploration\n");
@@ -1012,14 +1080,38 @@ void loop()
             if(add_uid(&uidSet,received_uid)) {
                 add_color_opinion(&colorSet,received_option);
             }
-            if(uidSet.size == 8) {
-                if(kilo_uid == 1 || kilo_uid == 5 || kilo_uid == 10 || kilo_uid == 34 || kilo_uid == 15) {
-                    printf("UID: %d 8 unique opinions received in = %d \n",kilo_uid,(kilo_ticks - opinion_receive_start_time));
+            // if(kilo_uid == 15) {
+            //     printf("Received Color = %d \n",received_option);
+            // }
+            if(uidSet.size == NUM_OF_NEIGHBOURS) {
+                int maj_col_op = get_majority_color_opinion_sensor();
+                if(kilo_uid == 15 || kilo_uid == 34 || kilo_uid == 10) {
+                    printf("KiloID: %d 8 unique opinions received in = %d \n",kilo_uid,(kilo_ticks - opinion_receive_start_time));
                     print_color_opinions(&colorSet);
+                    print_sensor_opinion_count();
+                    printf("Majority Color sensor= %d\n",maj_col_op);
                 }
-                int maj_col_op = get_majority_color_opinion();
                 for(int i=1; i<=5; i++) {
                     //TODO: Calculate like in MA for each color in a decionary with social and personal opinion and find highest of this dict to update personal opinion
+                    int mi = get_color_opinion_count(&colorSet, i);
+                    int m = NUM_OF_NEIGHBOURS;
+                    double personal_info_weight = 0.75;
+                    double value_for_dict = mi + (personal_info_weight * m * ( i == maj_col_op ? 1: 0));
+                    if(kilo_uid == 15|| kilo_uid == 34 || kilo_uid == 10) {
+                        printf("i=%d, mi = %d, maj_col_op= %d, value_for_dict=%f \n",i,mi,maj_col_op,value_for_dict);
+                    }
+                    decision_arr[i-1] = value_for_dict;
+                }
+                if(INFORMED) {
+                    currentopinion = find_highest_index(decision_arr, MAX_COLOR_OPINIONS);
+                }
+                if(kilo_uid == 15|| kilo_uid == 34 || kilo_uid == 10) {
+                    printf("KiloID= %d Decision Arr: ", kilo_uid);
+                    for(int i=0;i<5;i++) {
+                        printf("%f, ",decision_arr[i]);
+                    }
+                    printf("curr_opinion = %d \n",currentopinion);
+                    printf("-----------------\n");
                 }
 
                 clear_uid_hashset(&uidSet);

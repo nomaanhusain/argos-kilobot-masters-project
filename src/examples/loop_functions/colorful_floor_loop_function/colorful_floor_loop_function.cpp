@@ -472,13 +472,13 @@ CColor CColorfulFloorLoopFunction::GetFloorColor(const CVector2 &vec_position_on
     }else if(id == 1){
         cColor=CColor::RED;
     }else if(id == 2){
-        cColor=CColor::BLUE; //bad approach for testing is to change to blue.
+        cColor=CColor::BLUE;
     }else if(id == 3){
         cColor=CColor::GREEN;
     }else if(id == 4){
-        cColor=CColor::YELLOW;
+        cColor=CColor::PURPLE;
     }else if(id == 5){
-        cColor=CColor::BLACK;
+        cColor=CColor::YELLOW;
     }
     else if(id == 62){   //for cells near wall that are red- op A
         cColor=CColor::RED;
