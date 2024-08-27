@@ -165,12 +165,15 @@ private:
     // output file name
     std::string m_strOutputFileName;
     std::string m_strOutputFileName_es;
+    std::string* conf_array;
 
     //PUT MORE CONF FILES HERE
     int when_switch;
     int switch_num;
+    int total_switch_num;
     int majop ;
     int record_e;
+    int timestepAfterToSwitch;
 
     // the position is in cells
     std::vector<CVector2> robot_positions;

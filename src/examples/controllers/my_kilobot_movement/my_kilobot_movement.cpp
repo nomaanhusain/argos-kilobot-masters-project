@@ -72,8 +72,8 @@ void CKilobotMovement::Init(TConfigurationNode& t_node) {
    m_pcLEDActuator = GetActuator<CCI_KilobotLEDActuator>("kilobot_led");
 
    // Generate the filename based on this robot's ID
-   std::string filename = "time_output/robot_" + GetId() + "_times.txt";
-   m_cOutputFile.open(filename, std::ios_base::trunc | std::ios_base::out);
+   //std::string filename = "time_output/robot_" + GetId() + "_times.txt";
+   //m_cOutputFile.open(filename, std::ios_base::trunc | std::ios_base::out);
 
    // Parse the configuration file
    GetNodeAttributeOrDefault(t_node, "max_motion_steps", m_unMaxMotionSteps, m_unMaxMotionSteps );
@@ -138,7 +138,7 @@ void CKilobotMovement::HandleReceivedMessage(const message_t& t_message) {
       UInt32 timeTaken = m_timestepCounter-m_firstMessageTimestep;
       // std::cout << "Received messages from 8 unique robots, time req= " << timeTaken << std::endl;
       //Write time to file
-      m_cOutputFile << timeTaken << std::endl;
+      //m_cOutputFile << timeTaken << std::endl;
 
       // Clear the set to start counting again for the next set of unique robots
       uniqueRobotIds.clear();

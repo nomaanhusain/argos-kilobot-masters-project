@@ -32,6 +32,7 @@ void CColorfulFloorLoopFunction::Init(TConfigurationNode& t_tree) {
 
     //Get time to switch
     GetNodeAttribute(tExperimentVariablesNode, "switch_time", when_switch);
+    timestepAfterToSwitch = when_switch;
     // get all Kilobots
     get_kilobots_entities();
 
@@ -51,7 +52,22 @@ void CColorfulFloorLoopFunction::Init(TConfigurationNode& t_tree) {
     }
 
 
-    read_configuration(config_file_name1);
+    total_switch_num = switch_num;
+    conf_array = new std::string[switch_num];  // Allocate array dynamically
+    // Fill the array in a cyclic manner
+    for (int i = 0; i < switch_num; ++i) {
+        if (i % 3 == 0) {
+            conf_array[i] = config_file_name1;
+        } else if (i % 3 == 1) {
+            conf_array[i] = config_file_name2;
+        } else {
+            conf_array[i] = config_file_name3;
+        }
+        printf("i=%d, conf=%s \n",i,conf_array[i].c_str());
+    }
+
+    read_configuration(conf_array[total_switch_num-switch_num]);
+    switch_num-=1;
     majop = 1;
     record_e = 799;
     // run the setup message of the Kilogrid
@@ -394,31 +410,33 @@ void CColorfulFloorLoopFunction::PostStep() {
 
 
 
-   if(GetSpace().GetSimulationClock() >= when_switch and switch_num !=0){
+   if(GetSpace().GetSimulationClock() >= when_switch and switch_num >=0){
        // read configuration - map and parameters
-       switch_num-=1;
 
-       std::cout << config_file_name1 << " \n ";
-       std::cout << config_file_name2 << " \n ";
-       std::cout << config_file_name3 << " \n ";
-       // Clear the values in the matrix
-       if(switch_num ==2){
-           read_configuration(config_file_name2);
-           m_cOutput << "switch 2 B "<< config_file_name2<<"\n";
-           //m_cOutput_es << "switch 2 B "<< config_file_name2<<"\n";
+       // std::cout << config_file_name1 << " \n ";
+       // std::cout << config_file_name2 << " \n ";
+       // std::cout << config_file_name3 << " \n ";
 
-           majop = 2;
-
-
-       }else{
-           read_configuration(config_file_name3);
-           m_cOutput << "switch 3 G "<< config_file_name3<<"\n";
-           //m_cOutput_es << "switch 3 G "<< config_file_name3<<"\n";
-
-           majop = 3;
-
-
+       if(switch_num>0) {
+           read_configuration(conf_array[total_switch_num-switch_num]);
        }
+       switch_num-=1;
+       // Clear the values in the matrix
+       // if(switch_num ==2){
+       //     read_configuration(config_file_name2);
+       //     m_cOutput << "switch 2 B "<< config_file_name2<<"\n";
+       //     //m_cOutput_es << "switch 2 B "<< config_file_name2<<"\n";
+       //
+       //     majop = 2;
+       //
+       //
+       // }else{
+       //     read_configuration(config_file_name3);
+       //     m_cOutput << "switch 3 G "<< config_file_name3<<"\n";
+       //     //m_cOutput_es << "switch 3 G "<< config_file_name3<<"\n";
+       //
+       //     majop = 3;
+       // }
 
        // run the setup message of the Kilogrid
        for(int x_it = 0; x_it < 10; x_it++){
@@ -428,7 +446,7 @@ void CColorfulFloorLoopFunction::PostStep() {
        }
        //m_cOutput << configuration;
 
-       when_switch +=when_switch;
+       when_switch += timestepAfterToSwitch;
    }
 }
 

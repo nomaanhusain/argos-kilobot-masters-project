@@ -42,7 +42,7 @@
                       esfilename="ROB1es_m4_800_k0__alpha0.2_omg0.25nold_comm0.1"
 
                       switch_time="3000"
-                      num_switch="3"
+                      num_switch="6"
                       />
 
   </loop_functions>

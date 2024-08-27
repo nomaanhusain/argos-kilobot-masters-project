@@ -31,6 +31,7 @@
 #define OMG 0.25
 #define ALPHA 0.2
 #define INFORMED 1
+#define COMM_NOISE 0.1
 /*-----------------------------------------------------------------------------------------------*/
 /* Change these when running experiment                                                          */
 /*-----------------------------------------------------------------------------------------------*/
@@ -48,6 +49,9 @@ double avg_exploration_time = 800.0; //***--> time to be in exploration state-->
 int foundmodules[18][38] = {0}; //to keep track of tiles visited in one exploration cycle
 
 
+FILE *messageTimeOutputFile;
+FILE *colorOutputFile;
+
 int estimateR;
 int estimateB;
 int estimateG;
@@ -59,6 +63,10 @@ int avg_neighbours;
 
 
 int tot_e;
+
+//TODO: Temp var for noise check
+int total_message = 0;
+int noisy_message = 0;
 
 /*-----------------------------------------------------------------------------------------------*/
 /* Enum section - here we can define useful enums                                                */
@@ -506,8 +514,17 @@ void setup()
     message.data[1] = currentopinion;
     message.data[2] = kilo_uid;
     message.crc = message_crc(&message);
+    char filename[50]; // Array to hold the formatted filename
+    // Create the formatted filename
+    sprintf(filename, "time_output/robot_%d_times.txt", kilo_uid);
+
+    messageTimeOutputFile = fopen(filename, "w");
+    // Create the formatted filename
+    sprintf(filename, "robot_color_output/robot_%d_colors.txt", kilo_uid);
+    colorOutputFile = fopen(filename,"w");
     //timer =  ran_expo(1.0/avg_exploration_time); //get time to be in exploration state
     timer = avg_exploration_time;
+
 }
 
 int isNumberNotInArray(int number, int arr[], int size) {
@@ -807,6 +824,22 @@ void message_rx( message_t *msg, distance_measurement_t *d ) {
         new_message = 1;        // Set the flag on message reception.
         received_option = msg->data[1]; //get its option
         received_uid = msg->data[2]; //get its uid
+        // if(kilo_uid == 15|| kilo_uid == 34 || kilo_uid == 10) {
+        //     total_message+=1;
+        // }
+
+        //Introduce communication noise
+        if ((float)rand() / RAND_MAX < COMM_NOISE) {
+            int diff_value;
+            // if(kilo_uid == 15|| kilo_uid == 34 || kilo_uid == 10) {
+            //     noisy_message+=1;
+            //     printf("Commm Noise. ratio= %d:%d \n",noisy_message,total_message);
+            // }
+            do {
+                diff_value = (rand() % 5) + 1;
+            }while (diff_value == received_option);
+            received_option = diff_value;
+        }
 
         // printf("message from robot =%d, received_option = %d \n",received_uid, received_option);
     }
@@ -831,10 +864,10 @@ void message_rx( message_t *msg, distance_measurement_t *d ) {
 
         if (current_state == EXPLORATION){ //if the bot is in exploration state
             if(received_option_kilogrid != 0){ //if the the bot is not on the wall-white border
-                if (foundmodules[msg->data[0]][msg->data[1]] == 0){ //if tile not counted previously
+                if (foundmodules[msg->data[0]][msg->data[1]] == 0 || foundmodules[msg->data[0]][msg->data[1]] == 1){ //if tile not counted previously
 
                     foundmodules[msg->data[0]][msg->data[1]] = 1; //set the flag that tile has been counted now
-                    total_tiles_found += 1;
+                    // total_tiles_found += 1;
 
                     if(received_option_kilogrid==1){ //if I am Red and I receive red from kilogrid
                         tiles_of_1_option += MSG_KILOG ;
@@ -1005,8 +1038,7 @@ int find_highest_index(double arr[], int size) {
     return indices[random_index]+1;
 }
 
-void loop()
-{
+void loop(){
     if(init_flag){  // initialization happened and messaged received from Kilogrid
 
         // if (received_grid_msg_flag) {
@@ -1031,6 +1063,9 @@ void loop()
     }
 
     if (current_state == EXPLORATION){ // if state is set to 0
+
+        //Write Color Opinion to file
+        fprintf(colorOutputFile,"%d %d\n",kilo_ticks,currentopinion);
 
         //set led colours
         if (currentopinion == 1){ // RED
@@ -1085,6 +1120,8 @@ void loop()
             // }
             if(uidSet.size == NUM_OF_NEIGHBOURS) {
                 int maj_col_op = get_majority_color_opinion_sensor();
+                //Write time to files
+                fprintf(messageTimeOutputFile,"%d\n",(kilo_ticks - opinion_receive_start_time));
                 if(kilo_uid == 15 || kilo_uid == 34 || kilo_uid == 10) {
                     printf("KiloID: %d 8 unique opinions received in = %d \n",kilo_uid,(kilo_ticks - opinion_receive_start_time));
                     print_color_opinions(&colorSet);
@@ -1117,6 +1154,7 @@ void loop()
                 clear_uid_hashset(&uidSet);
                 clear_color_hashset(&colorSet);
                 clear_color_opinion_counts();
+                // fclose(file);
             }
         }
 
