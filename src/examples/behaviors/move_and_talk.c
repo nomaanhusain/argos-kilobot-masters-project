@@ -30,7 +30,7 @@
 
 #define OMG 0.25
 #define ALPHA 0.2
-#define INFORMED 1
+#define UNINFORMED_PROB 0.2
 #define COMM_NOISE 0.1
 /*-----------------------------------------------------------------------------------------------*/
 /* Change these when running experiment                                                          */
@@ -47,10 +47,12 @@ double avg_exploration_time = 800.0; //***--> time to be in exploration state-->
 ///double dissemparam = 1300.0;
 
 int foundmodules[18][38] = {0}; //to keep track of tiles visited in one exploration cycle
-
+int informed = 1;
 
 FILE *messageTimeOutputFile;
 FILE *colorOutputFile;
+
+FILE *sensorColorOutputFile;
 
 int estimateR;
 int estimateB;
@@ -202,6 +204,33 @@ void add_color_opinion(ColorHashSet* set, int color) {
         set->opinions[set->size].count = 1;
         set->size++;
     }
+}
+// Function to find the color opinion with the highest count
+int find_most_common_color_opinion(ColorHashSet *set) {
+    if (set->size == 0) {
+        // Handle the case where the set is empty
+        return -1; // Or any other appropriate error code or handling
+    }
+
+    int max_count = set->opinions[0].count;
+    int candidates[MAX_COLOR_OPINIONS];
+    int candidate_count = 0;
+
+    // Find the maximum count and collect all opinions with that count
+    for (int i = 0; i < set->size; i++) {
+        if (set->opinions[i].count > max_count) {
+            max_count = set->opinions[i].count;
+            candidates[0] = set->opinions[i].color_opinion;
+            candidate_count = 1;
+        } else if (set->opinions[i].count == max_count) {
+            candidates[candidate_count++] = set->opinions[i].color_opinion;
+        }
+    }
+
+    // Return a random opinion from the candidates with the highest count
+    srand(time(NULL)); // Seed the random number generator
+    int random_index = rand() % candidate_count;
+    return candidates[random_index];
 }
 int get_color_opinion_count(ColorHashSet* set, int color) {
     for(int i=0; i< set->size; i++) {
@@ -514,14 +543,23 @@ void setup()
     message.data[1] = currentopinion;
     message.data[2] = kilo_uid;
     message.crc = message_crc(&message);
+
+    //Make robot uninformed with a certain ratio
+    if ((float)rand() / RAND_MAX < UNINFORMED_PROB) {
+        informed = 0;
+        printf("UN-INFORMED, id = %d\n", kilo_uid);
+    }
     char filename[50]; // Array to hold the formatted filename
     // Create the formatted filename
     sprintf(filename, "time_output/robot_%d_times.txt", kilo_uid);
-
     messageTimeOutputFile = fopen(filename, "w");
+
     // Create the formatted filename
     sprintf(filename, "robot_color_output/robot_%d_colors.txt", kilo_uid);
     colorOutputFile = fopen(filename,"w");
+
+    sprintf(filename, "sensor_color_output/robot_%d_sensor.txt",kilo_uid);
+    sensorColorOutputFile = fopen(filename,"w");
     //timer =  ran_expo(1.0/avg_exploration_time); //get time to be in exploration state
     timer = avg_exploration_time;
 
@@ -1066,6 +1104,7 @@ void loop(){
 
         //Write Color Opinion to file
         fprintf(colorOutputFile,"%d %d\n",kilo_ticks,currentopinion);
+        fprintf(sensorColorOutputFile,"%d %d\n",kilo_ticks, received_option_kilogrid);
 
         //set led colours
         if (currentopinion == 1){ // RED
@@ -1122,7 +1161,7 @@ void loop(){
                 int maj_col_op = get_majority_color_opinion_sensor();
                 //Write time to files
                 fprintf(messageTimeOutputFile,"%d\n",(kilo_ticks - opinion_receive_start_time));
-                if(kilo_uid == 15 || kilo_uid == 34 || kilo_uid == 10) {
+                if(kilo_uid == 15 || kilo_uid == 34 || kilo_uid == 10 || informed == 0) {
                     printf("KiloID: %d 8 unique opinions received in = %d \n",kilo_uid,(kilo_ticks - opinion_receive_start_time));
                     print_color_opinions(&colorSet);
                     print_sensor_opinion_count();
@@ -1139,11 +1178,13 @@ void loop(){
                     }
                     decision_arr[i-1] = value_for_dict;
                 }
-                if(INFORMED) {
+                if(informed) {
                     currentopinion = find_highest_index(decision_arr, MAX_COLOR_OPINIONS);
+                }else {
+                    currentopinion = find_most_common_color_opinion(&colorSet);
                 }
-                if(kilo_uid == 15|| kilo_uid == 34 || kilo_uid == 10) {
-                    printf("KiloID= %d Decision Arr: ", kilo_uid);
+                if(kilo_uid == 15|| kilo_uid == 34 || kilo_uid == 10 || informed == 0) {
+                    printf("Informed = %d KiloID= %d Decision Arr: ", informed, kilo_uid);
                     for(int i=0;i<5;i++) {
                         printf("%f, ",decision_arr[i]);
                     }

@@ -409,8 +409,8 @@ void CColorfulFloorLoopFunction::PostStep() {
    // std::cout << "COMES to poststep \n ";
 
 
-
-   if(GetSpace().GetSimulationClock() >= when_switch and switch_num >=0){
+    //TODO: The false here is stopping the grid from switching color
+   if(GetSpace().GetSimulationClock() >= when_switch and switch_num >=0 and false){
        // read configuration - map and parameters
 
        // std::cout << config_file_name1 << " \n ";

@@ -74,7 +74,6 @@
           <orientation method="uniform" min="0,0,0" max="360,0,0" />
           <entity quantity="100" max_trials="10">
               <kilobot id="kb" communication_range="0.1">
-                  <body color="gray"/>
                   <controller config="kbc"/>
                   <dynamics2d friction="0.7" />
               </kilobot>
