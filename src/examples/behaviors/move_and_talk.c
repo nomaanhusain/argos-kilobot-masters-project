@@ -21,17 +21,13 @@
 #define min(a,b) ((a) < (b) ? a : b)
 #define INFOPTION (0)
 #define SWARMSIZE 100
-//#define AGENTS_PER_GROUP 20
-//#define GROUPS 5
+
 #define MSG_KILOG 1
 #define MSG_NEIGHBOUR 1
 
-#define kval 0 //0 all majority
 
-#define OMG 0.25
-#define ALPHA 0.2
-#define UNINFORMED_PROB 0.2
-#define COMM_NOISE 0.1
+
+#define COMM_NOISE 0.2
 /*-----------------------------------------------------------------------------------------------*/
 /* Change these when running experiment                                                          */
 /*-----------------------------------------------------------------------------------------------*/
@@ -41,8 +37,8 @@
 //opinion = A -->1   //opinion = B --> 2  //uncommited = C --> UNCOMITTED
 int currentopinion; //1
 
-double timer; // to hold time to be in each state
-double avg_exploration_time = 800.0; //***--> time to be in exploration state--> fixed
+// double timer; // to hold time to be in each state
+// double avg_exploration_time = 800.0; //***--> time to be in exploration state--> fixed
 //double avg_uncommitted_time = 200.0; // time to stay in dissemination for uncommitted agents
 ///double dissemparam = 1300.0;
 
@@ -172,7 +168,7 @@ int op_count_vm[5] = {0, 0, 0, 0, 0};
 
 //Storing color opions of neighbours and their ids
 #define MAX_COLOR_OPINIONS 5
-#define NUM_OF_NEIGHBOURS 5
+#define NUM_OF_NEIGHBOURS 10
 double decision_arr[MAX_COLOR_OPINIONS];
 typedef struct {
     int color_opinion;  // The color opinion
@@ -318,165 +314,6 @@ double r2()
 
 
 /*-----------------------------------------------------------------------------------------------*/
-/*                          The Polling Function- Social interaction                             */
-/*                                                                                               */
-/*-----------------------------------------------------------------------------------------------*/
-void poll(){
-
-
-    if (model == 0) {
-
-        int array_size = sizeof(op_count) / sizeof(op_count[0]);
-        int max_sum_index = 0;
-        int all_same_or_zero = 1; // Flag to check if all numbers are same or zero
-        int max_count = 0; // Maximum value found so far
-
-        // Find the maximum value in the array
-        for (int i = 0; i < array_size; i++) {
-            if (op_count[i] > max_count) {
-                max_count = op_count[i];
-            }
-        }
-
-        // Check if all numbers are the same or zero
-        for (int i = 1; i < array_size; i++) {
-            if (op_count[i] != op_count[0]) {
-                all_same_or_zero = 0;
-                break;
-            }
-        }
-
-        // If all numbers are the same or zero, choose one index randomly
-        if (all_same_or_zero) {
-            srand(time(NULL)); // Seed the random number generator
-            max_sum_index = rand() % array_size; // Choose a random index
-        } else {
-            // Find the indexes with the highest value
-            int indexes[array_size];
-            int count = 0;
-            for (int i = 0; i < array_size; i++) {
-                if (op_count[i] == max_count) {
-                    indexes[count++] = i;
-                }
-            }
-            srand(time(NULL)); // Seed the random number generator
-            max_sum_index = indexes[rand() % count]; // Choose one of the indexes randomly
-        }
-
-
-
-        currentopinion= max_sum_index + 1;
-        //printf("THE UPDATED OPINION I  %d \n ", currentopinion);
-
-
-
-
-
-    }else { //for voter rule
-        int array_size = sizeof(op_count_vm) / sizeof(op_count_vm[0]);
-        int max_sum_index = 0;
-        int all_same_or_zero = 1; // Flag to check if all numbers are same or zero
-        int max_count = 0; // Maximum value found so far
-
-        // Find the maximum value in the array
-        for (int i = 0; i < array_size; i++) {
-            if (op_count_vm[i] > max_count) {
-                max_count = op_count_vm[i];
-            }
-        }
-
-        // Check if all numbers are the same or zero
-        for (int i = 1; i < array_size; i++) {
-            if (op_count_vm[i] != op_count_vm[0]) {
-                all_same_or_zero = 0;
-                break;
-            }
-        }
-
-        // If all numbers are the same or zero, choose one index randomly
-        if (all_same_or_zero) {
-            srand(time(NULL)); // Seed the random number generator
-            max_sum_index = rand() % array_size; // Choose a random index
-        } else {
-            // Find the indexes with the highest value
-            int indexes[array_size];
-            int count = 0;
-            for (int i = 0; i < array_size; i++) {
-                if (op_count_vm[i] == max_count) {
-                    indexes[count++] = i;
-                }
-            }
-            srand(time(NULL)); // Seed the random number generator
-            max_sum_index = indexes[rand() % count]; // Choose one of the indexes randomly
-        }
-
-        op_message_env_voter = max_sum_index + 1;
-        // Generate a random number (0 or 1)
-        //int random_choice = rand() % 2;
-        double u = r2();
-
-        // Choose randomly between values of two variables
-        if (u <= ALPHA) {
-            currentopinion = op_message_env_voter;
-
-        } else {
-            currentopinion = op_message_neighbour_voter;
-        }
-    }
-
-
-    // if(kilo_uid ==12){
-
-
-     //   printf("The chosen opinion is %d \n ", currentopinion);
-
-    //}
-
-
-    message.data[1] = currentopinion;
-    message.data[2] = kilo_uid;
-    //message.data[3]= estimateR;
-    //message.data[4] = estimateB;
-    //message.data[5]=estimateG;
-    //
-    // message.data[6]= tot_e;
-    message.crc = message_crc(&message);
-
-
-    //reset count array to empty
-    for (int i = 0; i < 5; i++) {
-        op_count[i] = 0;
-    }
-
-    //reset count array to empty
-    for (int i = 0; i < 5; i++) {
-        op_count_vm[i] = 0;
-    }
-    //go to exploration state
-    current_state = EXPLORATION;
-    //timer =  ran_expo(1.0/avg_exploration_time); // get the time for exploration
-    timer = avg_exploration_time;
-    last_changed = kilo_ticks;
-    set_color(RGB(0, 0, 0));
-    //reset the variable that are used to find the qr for next exploration-dissem cycle
-    memset(foundmodules, 0, sizeof(foundmodules[0][0]) * 18 * 38);
-    tiles_of_1_option = 0;
-    tiles_of_2_option = 0;
-    tiles_of_3_option = 0;
-    tiles_of_4_option = 0;
-    tiles_of_5_option = 0;
-    total_tiles_found = 0;
-    avg_neighbours = 0;
-
-    // Reset the array to empty
-    for (int i = 0; i < SWARMSIZE; i++) {
-        storeid[i] = 0;
-    }
-
-}
-
-
-/*-----------------------------------------------------------------------------------------------*/
 /* Random Walk                                                                                   */
 /*-----------------------------------------------------------------------------------------------*/
 void random_walk(){
@@ -529,13 +366,7 @@ void setup()
     //////////currentopinion = (kilo_uid -1) % GROUPS +1;
     // currentopinion = INFOPTION; //CODE FUNCTIONALITY TO CHOOSE RANDOMLY OF ANY 4 INFERIOR OPTIONS
     currentopinion = rand() % (5 + 1 - 1) + 1;
-    if(kilo_uid <kval){
 
-        model = 1; //voter
-    } else{
-
-        model = 0; //majority
-    }
     // set parameters fro dissemination
     message.data[0] = currentopinion;
     //Opinion A=1 , B=2, U =3
@@ -544,8 +375,12 @@ void setup()
     message.data[2] = kilo_uid;
     message.crc = message_crc(&message);
 
+
     //Make robot uninformed with a certain ratio
-    if ((float)rand() / RAND_MAX < UNINFORMED_PROB) {
+    if(kilo_uid<=59) {
+        informed = 1;
+        printf("INFORMED, id = %d\n", kilo_uid);
+    }else {
         informed = 0;
         printf("UN-INFORMED, id = %d\n", kilo_uid);
     }
@@ -561,7 +396,7 @@ void setup()
     sprintf(filename, "sensor_color_output/robot_%d_sensor.txt",kilo_uid);
     sensorColorOutputFile = fopen(filename,"w");
     //timer =  ran_expo(1.0/avg_exploration_time); //get time to be in exploration state
-    timer = avg_exploration_time;
+    // timer = avg_exploration_time;
 
 }
 
@@ -572,237 +407,6 @@ int isNumberNotInArray(int number, int arr[], int size) {
         }
     }
     return 1; // Number is not found in the array
-}
-/*-----------------------------------------------------------------------------------------------*/
-/*                              The Exploration function                                         */
-/*                                                                                               */
-/*-----------------------------------------------------------------------------------------------*/
-void gotoexploration(){
-
-    //  random_walk(); //start with random walk
-
-    //set led colours
-    if (currentopinion == 1){
-        set_color(RGB(3, 0, 0));
-
-    } else if (currentopinion == 2){
-        set_color(RGB(0, 0, 3));
-
-    }else if (currentopinion == 3){
-        set_color(RGB(0, 3, 0));
-
-    }else if (currentopinion == 4){
-        set_color(RGB(3, 3, 0));
-
-    }else if (currentopinion == 5){
-        set_color(RGB(3, 3, 3));
-
-    }
-
-
-    //if time for exploration not over yet, do nothing else move on to dissemination state
-    if ((kilo_ticks - last_changed) < timer) {//check if still within time for exploration state or not
-        //check_if_against_a_wall(); //check if hitting the wall
-        double u = r2();
-        if(u<0.5){
-            broadcast_msg = true; //then send out message to other bots
-
-        }else{
-            broadcast_msg = false; //then send out message to other bots
-
-        }
-        if (new_message == 1) {
-
-            if (isNumberNotInArray(received_uid, storeid, (sizeof(storeid) / sizeof(storeid[0])))) {
-
-                //not cpunted
-                if(model == 0){
-                    op_count[received_option - 1] += MSG_NEIGHBOUR; //for majority rule
-                    //op_count_message[received_option - 1] += MSG_NEIGHBOUR; //for majority rule
-                    avg_neighbours +=1;
-
-                }else {
-                    op_message_neighbour_voter = received_option; // for voter model
-                }
-                // Calculate size of the array
-                int size;
-                for (size = 0; size < SWARMSIZE; size++) {
-                    if (storeid[size] == 0) {
-                        break;
-                    }
-                }
-                storeid[size++] = received_uid;
-
-
-
-                //check if comes here
-            }
-
-
-            //printf("Updated array: ");
-
-            new_message = 0;
-        }
-
-
-    } else{ //if not in exploration state
-
-        if(kilo_uid ==18){
-        //  printf("%d tile my op 1, %d tile my op 2, ,%d tile my op 3, ,%d tile my op 4 ,%d tile my op 5,  %d total tiles \n", tiles_of_1_option,tiles_of_2_option,tiles_of_3_option,tiles_of_4_option,tiles_of_5_option,total_tiles_found);
-
-            printf("Array before tiles: ");
-            for (int i = 0; i < 5; i++) {
-               printf("%d ", op_count[i]);
-            }
-            printf("\n ");
-            printf("tot %d  and omg %f \n", (op_count[0]+ op_count[1]+ op_count[2]+ op_count[3]+ op_count[4]),OMG*(op_count[0]+ op_count[1]+ op_count[2]+ op_count[3]+ op_count[4]) );
-
-            printf("%d tile my op 1, %d tile my op 2, ,%d tile my op 3, ,%d tile my op 4 ,%d tile my op 5,  %d total tiles \n", tiles_of_1_option,tiles_of_2_option,tiles_of_3_option,tiles_of_4_option,tiles_of_5_option,total_tiles_found);
-           // int array_size = sizeof(storeid) / sizeof(storeid[0]);
-
-
-            // Find the maximum value in the array
-            //for (int i = 0; i < array_size; i++) {
-              //  printf("store id %d ", storeid[i]);
-              //  printf("\n ");
-           // }
-        }
-
-        //
-        //
-
-
-        float x = OMG*(op_count[0]+ op_count[1]+ op_count[2]+ op_count[3]+ op_count[4]);
-        //float x = OMG;
-        //float x = (OMG/4.7)*(op_count[0]+ op_count[1]+ op_count[2]+ op_count[3]+ op_count[4]);
-         x = roundf(x);
-        if(kilo_uid ==18) {
-            printf("x is %f \n", x);
-            //x = roundf(x);
-            //printf("x %f:\n ", x);
-        }
-        // Store the names of the variables in an array of strings
-        //const char *variable_names[] = {"tiles_of_1_option", "tiles_of_2_option", "tiles_of_3_option", "tiles_of_4_option", "tiles_of_5_option"};
-        int values[] = {tiles_of_1_option, tiles_of_2_option, tiles_of_3_option, tiles_of_4_option, tiles_of_5_option};
-        int num_variables = sizeof(values) / sizeof(values[0]);
-
-        // Find the maximum value
-        int max_value = values[0];
-        for (int i = 1; i < num_variables; ++i) {
-            if (values[i] > max_value) {
-                max_value = values[i];
-            }
-        }
-
-        // Count the number of variables with the maximum value
-        int count = 0;
-        int max_indexes[num_variables];
-        for (int i = 0; i < num_variables; ++i) {
-            if (values[i] == max_value) {
-                max_indexes[count++] = i;
-            }
-        }
-
-        // If there are multiple variables with the maximum value, choose one randomly
-        srand(time(NULL));
-        int chosen_index;
-        if (count > 1) {
-            chosen_index = max_indexes[rand() % count];
-        } else {
-            chosen_index = max_indexes[0];
-        }
-
-        if(kilo_uid ==18){
-
-            printf("chosen index %d:\n ", chosen_index);
-
-
-
-        }
-
-        op_count[chosen_index] += x;
-        // Print the variable with the highest value
-        //if (chosen_index+1 == 1) {
-         //   op_count[0]+=tiles_of_1_option + x;
-
-      //  } else if (chosen_index+1 == 2) {
-        //    op_count[1]+=tiles_of_2_option+x;
-
-       // } else if (chosen_index+1 == 3) {
-
-        //    op_count[2]+=tiles_of_3_option+x;
-
-       // } else if (chosen_index+1 == 4) {
-
-         //   op_count[3]+=tiles_of_4_option+x;
-      //  } else {
-
-          //  op_count[4]+=tiles_of_5_option+x;
-        //}
-
-        op_count_vm[0]+=tiles_of_1_option;
-        op_count_vm[1]+=tiles_of_2_option;
-        op_count_vm[2]+=tiles_of_3_option;
-        op_count_vm[3]+=tiles_of_4_option;
-        op_count_vm[4]+=tiles_of_5_option;
-
-        estimateR = tiles_of_1_option;
-        estimateB = tiles_of_2_option;
-        estimateG = tiles_of_3_option;
-        estimateY = tiles_of_4_option;
-        estimateBL = tiles_of_5_option;
-        estimateN = avg_neighbours;
-
-        //estimateR = op_count[0];
-        //estimateB = op_count[1];
-        //estimateG = op_count[2];
-        //estimateY = op_count[3];
-        //estimateBL = op_count[4];
-        //estimateN = avg_neighbours;
-
-        tot_e = estimateR+estimateB+estimateG+estimateY+estimateBL;
-        if(kilo_uid ==18){
-
-            printf("AFTER array TILES Array:\n ");
-            for (int i = 0; i < 5; i++) {
-                printf("%d ", op_count[i]);
-                printf("\n ");
-
-            }
-
-           // printf("STORE ID Array: ");
-           // for (int i = 0; i < SWARMSIZE; i++) {
-          //      printf("%d ", storeid[i]);
-          //  }
-          //  printf("\n ");
-
-        }
-
-
-        current_state = FILTER;//go to Dissemination mode
-            // set_color(RGB(0, 0, 0));
-
-
-        last_changed = kilo_ticks;
-
-        //reset the variable that are used to find the qr for next exploration-dissem cycle
-       memset(foundmodules, 0, sizeof(foundmodules[0][0]) * 18 * 38);
-        tiles_of_1_option = 0;
-        tiles_of_2_option = 0;
-        tiles_of_3_option = 0;
-        tiles_of_4_option = 0;
-        tiles_of_5_option = 0;
-        total_tiles_found = 0;
-         //Reset the array to empty
-        for (int i = 0; i < SWARMSIZE; i++) {
-            storeid[i] = 0;
-        }
-
-        //qratio = 0;
-        // set_color(RGB(0, 0, 0));
-
-    }
-
 }
 
 void wall_avoidance_function(){
@@ -862,10 +466,12 @@ void message_rx( message_t *msg, distance_measurement_t *d ) {
         new_message = 1;        // Set the flag on message reception.
         received_option = msg->data[1]; //get its option
         received_uid = msg->data[2]; //get its uid
+
         // if(kilo_uid == 15|| kilo_uid == 34 || kilo_uid == 10) {
         //     total_message+=1;
         // }
 
+        srand(time(NULL));
         //Introduce communication noise
         if ((float)rand() / RAND_MAX < COMM_NOISE) {
             int diff_value;
@@ -890,6 +496,7 @@ void message_rx( message_t *msg, distance_measurement_t *d ) {
 
         received_option_kilogrid = msg->data[2];// get the opinion of the tile
         wall_flag = msg->data[3];// if wall then 42, if near wall 62 else 0
+        
 
         received_grid_msg_flag = true; //set the flag that message received from Kilogrid to true
 
@@ -1105,45 +712,44 @@ void loop(){
         //Write Color Opinion to file
         fprintf(colorOutputFile,"%d %d\n",kilo_ticks,currentopinion);
         fprintf(sensorColorOutputFile,"%d %d\n",kilo_ticks, received_option_kilogrid);
+            //set led colours
+            if (currentopinion == 1){ // RED
+                set_color(RGB(3, 0, 0));
+                // delay(300);
+                // set_color(RGB(0, 0, 0));
+                // delay(100);
+                // set_color(RGB(3, 0, 0));
+            } else if (currentopinion == 2){ // BLUE
+                set_color(RGB(0, 0, 3));
+                // delay(300);
+                // set_color(RGB(0, 0, 0));
+                // delay(100);
+                // set_color(RGB(0, 0, 3));
 
-        //set led colours
-        if (currentopinion == 1){ // RED
-            set_color(RGB(3, 0, 0));
-            // delay(300);
-            // set_color(RGB(0, 0, 0));
-            // delay(100);
-            // set_color(RGB(3, 0, 0));
-        } else if (currentopinion == 2){ // BLUE
-            set_color(RGB(0, 0, 3));
-            // delay(300);
-            // set_color(RGB(0, 0, 0));
-            // delay(100);
-            // set_color(RGB(0, 0, 3));
+            }else if (currentopinion == 3){ // GREEN
+                set_color(RGB(0, 3, 0));
+                // delay(300);
+                // set_color(RGB(0, 0, 0));
+                // delay(100);
+                // set_color(RGB(0, 3, 0));
 
-        }else if (currentopinion == 3){ // GREEN
-            set_color(RGB(0, 3, 0));
-            // delay(300);
-            // set_color(RGB(0, 0, 0));
-            // delay(100);
-            // set_color(RGB(0, 3, 0));
+            }else if (currentopinion == 4){ // PURPLE
+                set_color(RGB(3, 0, 3));
+                // delay(300);
+                // set_color(RGB(0, 0, 0));
+                // delay(100);
+                // set_color(RGB(3, 0, 3));
 
-        }else if (currentopinion == 4){ // PURPLE
-            set_color(RGB(3, 0, 3));
-            // delay(300);
-            // set_color(RGB(0, 0, 0));
-            // delay(100);
-            // set_color(RGB(3, 0, 3));
+            }else if (currentopinion == 5){ // YELLOW
+                set_color(RGB(3, 3, 0));
+                // delay(300);
+                // set_color(RGB(0, 0, 0));
+                // delay(100);
+                // set_color(RGB(3, 3, 0));
 
-        }else if (currentopinion == 5){ // YELLOW
-            set_color(RGB(3, 3, 0));
-            // delay(300);
-            // set_color(RGB(0, 0, 0));
-            // delay(100);
-            // set_color(RGB(3, 3, 0));
-
-        }else {
-            set_color(RGB(0, 0, 0));
-        }
+            }else {
+                set_color(RGB(0, 0, 0));
+            }
 
         // printf("Exploration\n");
         // gotoexploration(); //go to exploration
@@ -1167,11 +773,11 @@ void loop(){
                     print_sensor_opinion_count();
                     printf("Majority Color sensor= %d\n",maj_col_op);
                 }
-                for(int i=1; i<=5; i++) {
+                for(int i=1; i<=MAX_COLOR_OPINIONS; i++) {
                     //TODO: Calculate like in MA for each color in a decionary with social and personal opinion and find highest of this dict to update personal opinion
                     int mi = get_color_opinion_count(&colorSet, i);
                     int m = NUM_OF_NEIGHBOURS;
-                    double personal_info_weight = 0.75;
+                    double personal_info_weight = 0.6;
                     double value_for_dict = mi + (personal_info_weight * m * ( i == maj_col_op ? 1: 0));
                     if(kilo_uid == 15|| kilo_uid == 34 || kilo_uid == 10) {
                         printf("i=%d, mi = %d, maj_col_op= %d, value_for_dict=%f \n",i,mi,maj_col_op,value_for_dict);

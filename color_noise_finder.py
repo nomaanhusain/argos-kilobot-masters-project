@@ -42,10 +42,10 @@ def analyze_robot_data(folder_path, correct_color):
 
 
 # Function to save the noise data to a JSON file
-def save_noise_data(filename, noise_data, system_noise):
+def save_noise_data(filename, n_data, s_noise):
     data_to_save = {
-        'noise_data': noise_data,
-        'system_noise': system_noise
+        'system_noise': s_noise,
+        'noise_data': n_data
     }
     with open(filename, 'w') as f:
         json.dump(data_to_save, f, indent=4)
@@ -55,14 +55,17 @@ def load_noise_data(filename):
     with open(filename, 'r') as f:
         data_loaded = json.load(f)
     
-    noise_data = data_loaded['noise_data']
-    system_noise = data_loaded['system_noise']
+    n_data = data_loaded['noise_data']
+    s_noise = data_loaded['system_noise']
     
-    return noise_data, system_noise
+    return n_data, s_noise
 
 # Example usage
 folder_path = 'sensor_color_output/'  # Change this to your folder path
 noise_data, system_noise = analyze_robot_data(folder_path, 1)
+
+filename_json_save="system_noise_run5.json"
+save_noise_data(filename_json_save,noise_data,system_noise)
 
 # Print the noise data for each robot
 print("Noise data for each robot:")

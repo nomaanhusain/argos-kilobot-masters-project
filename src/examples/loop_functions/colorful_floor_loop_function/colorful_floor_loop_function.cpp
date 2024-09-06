@@ -48,6 +48,7 @@ void CColorfulFloorLoopFunction::Init(TConfigurationNode& t_tree) {
         GetNodeAttribute(tExperimentVariablesNode, "config_file2", config_file_name2);
         GetNodeAttribute(tExperimentVariablesNode, "config_file3", config_file_name3);
         GetNodeAttribute(tExperimentVariablesNode, "config_file4", config_file_name4);
+        GetNodeAttribute(tExperimentVariablesNode, "config_file5", config_file_name5);
 
     }
 
@@ -56,12 +57,17 @@ void CColorfulFloorLoopFunction::Init(TConfigurationNode& t_tree) {
     conf_array = new std::string[switch_num];  // Allocate array dynamically
     // Fill the array in a cyclic manner
     for (int i = 0; i < switch_num; ++i) {
-        if (i % 3 == 0) {
+        if (i % 5 == 0) {
+            // conf_array[i] = config_file_name1;
             conf_array[i] = config_file_name1;
-        } else if (i % 3 == 1) {
+        } else if (i % 5 == 1) {
             conf_array[i] = config_file_name2;
-        } else {
+        } else if (i % 5 == 2) {
             conf_array[i] = config_file_name3;
+        } else if ( i % 5 == 3) {
+            conf_array[i] = config_file_name4;
+        } else {
+            conf_array[i] = config_file_name5;
         }
         printf("i=%d, conf=%s \n",i,conf_array[i].c_str());
     }
@@ -410,7 +416,7 @@ void CColorfulFloorLoopFunction::PostStep() {
 
 
     //TODO: The false here is stopping the grid from switching color
-   if(GetSpace().GetSimulationClock() >= when_switch and switch_num >=0 and false){
+   if(GetSpace().GetSimulationClock() >= when_switch and switch_num >=0){
        // read configuration - map and parameters
 
        // std::cout << config_file_name1 << " \n ";

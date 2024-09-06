@@ -15,7 +15,7 @@
   <!-- * Controllers * -->
   <!-- *************** -->
   <controllers>
-
+<!-- Controller for informed robot -->
     <kilobot_controller id="kbc">
       <actuators>
         <differential_steering implementation="default" />
@@ -27,9 +27,7 @@
       </sensors>
       <params behavior="build/examples/behaviors/move_and_talk" />
     </kilobot_controller>
-
-  </controllers>
-
+   </controllers>
   <loop_functions library="build/examples/loop_functions/colorful_floor_loop_function/libcolorful_floor_loop_function"
                   label="colorful_floor_loop_function">
 
@@ -37,11 +35,12 @@
                       config_file1="src/examples/loop_functions/colorful_floor_loop_function/ASB_experiment_G40_conf1.kconf"
                       config_file2="src/examples/loop_functions/colorful_floor_loop_function/ASB_experiment_G40_conf2.kconf"
                       config_file3="src/examples/loop_functions/colorful_floor_loop_function/ASB_experiment_G40_conf3.kconf"
-                      config_file4=""
+                      config_file4="src/examples/loop_functions/colorful_floor_loop_function/ASB_experiment_G40_conf4.kconf"
+                      config_file5="src/examples/loop_functions/colorful_floor_loop_function/ASB_experiment_G40_conf5.kconf"
                       datafilename="ROB1_m4_800_k0__alpha0.2_omg0.25nold_comm0.1"
                       esfilename="ROB1es_m4_800_k0__alpha0.2_omg0.25nold_comm0.1"
 
-                      switch_time="3000"
+                      switch_time="5000"
                       num_switch="6"
                       />
 
@@ -79,7 +78,6 @@
               </kilobot>
           </entity>
       </distribute>
-
 
   <floor id="floor"
       source="loop_functions"
