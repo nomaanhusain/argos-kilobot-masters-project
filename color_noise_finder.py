@@ -8,7 +8,9 @@ def calculate_robot_noise(file_path, correct_color=1):
     
     correct_count = 0
     total_count = 0
-    
+    if(len(lines)==0 or lines == None):
+        # print(file_path)
+        return -1
     for line in lines:
         timestep, color = map(int, line.strip().split())
         if color != 0:  # Ignoring outliers (color 0)
@@ -17,11 +19,13 @@ def calculate_robot_noise(file_path, correct_color=1):
                 correct_count += 1
     
     if total_count == 0:
-        return 0  # Avoid division by zero
+        return -1  # later filter out -1 cases
     
-    if "22" in file_path:
-        print(f"Correct Count:{correct_count}, total_count: {total_count}")
+
     noise_ratio = 1 - (correct_count / total_count)
+    if "20" in file_path:
+        print(file_path)
+        print(f"total_count:{total_count}, correct_count:{correct_count}, noise_ratio: {noise_ratio}")
     return noise_ratio
 
 # Function to analyze all robot files in a directory
@@ -34,7 +38,7 @@ def analyze_robot_data(folder_path, correct_color):
         file_path = os.path.join(folder_path, file_name)
         noise_ratio = calculate_robot_noise(file_path, correct_color)
         noise_data[robot_id] = noise_ratio
-    
+    noise_data = {x:y for x,y in noise_data.items() if y!=-1}
     # Calculate overall system noise
     system_noise = sum(noise_data.values()) / len(noise_data)
     
@@ -64,7 +68,7 @@ def load_noise_data(filename):
 folder_path = 'sensor_color_output/'  # Change this to your folder path
 noise_data, system_noise = analyze_robot_data(folder_path, 1)
 
-filename_json_save="system_noise_run5.json"
+filename_json_save="system_noise_run13.json"
 save_noise_data(filename_json_save,noise_data,system_noise)
 
 # Print the noise data for each robot

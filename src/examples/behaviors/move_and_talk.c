@@ -27,7 +27,8 @@
 
 
 
-#define COMM_NOISE 0.2
+#define COMM_NOISE 0.4
+#define PERSONAL_INFO_WEIGHT (0.4)
 /*-----------------------------------------------------------------------------------------------*/
 /* Change these when running experiment                                                          */
 /*-----------------------------------------------------------------------------------------------*/
@@ -377,7 +378,7 @@ void setup()
 
 
     //Make robot uninformed with a certain ratio
-    if(kilo_uid<=59) {
+    if(kilo_uid<=99) {
         informed = 1;
         printf("INFORMED, id = %d\n", kilo_uid);
     }else {
@@ -711,41 +712,20 @@ void loop(){
 
         //Write Color Opinion to file
         fprintf(colorOutputFile,"%d %d\n",kilo_ticks,currentopinion);
-        fprintf(sensorColorOutputFile,"%d %d\n",kilo_ticks, received_option_kilogrid);
             //set led colours
             if (currentopinion == 1){ // RED
                 set_color(RGB(3, 0, 0));
-                // delay(300);
-                // set_color(RGB(0, 0, 0));
-                // delay(100);
-                // set_color(RGB(3, 0, 0));
             } else if (currentopinion == 2){ // BLUE
                 set_color(RGB(0, 0, 3));
-                // delay(300);
-                // set_color(RGB(0, 0, 0));
-                // delay(100);
-                // set_color(RGB(0, 0, 3));
 
             }else if (currentopinion == 3){ // GREEN
                 set_color(RGB(0, 3, 0));
-                // delay(300);
-                // set_color(RGB(0, 0, 0));
-                // delay(100);
-                // set_color(RGB(0, 3, 0));
 
             }else if (currentopinion == 4){ // PURPLE
                 set_color(RGB(3, 0, 3));
-                // delay(300);
-                // set_color(RGB(0, 0, 0));
-                // delay(100);
-                // set_color(RGB(3, 0, 3));
 
             }else if (currentopinion == 5){ // YELLOW
                 set_color(RGB(3, 3, 0));
-                // delay(300);
-                // set_color(RGB(0, 0, 0));
-                // delay(100);
-                // set_color(RGB(3, 3, 0));
 
             }else {
                 set_color(RGB(0, 0, 0));
@@ -765,23 +745,21 @@ void loop(){
             // }
             if(uidSet.size == NUM_OF_NEIGHBOURS) {
                 int maj_col_op = get_majority_color_opinion_sensor();
+                fprintf(sensorColorOutputFile,"%d %d\n",kilo_ticks, maj_col_op);
                 //Write time to files
                 fprintf(messageTimeOutputFile,"%d\n",(kilo_ticks - opinion_receive_start_time));
-                if(kilo_uid == 15 || kilo_uid == 34 || kilo_uid == 10 || informed == 0) {
-                    printf("KiloID: %d 8 unique opinions received in = %d \n",kilo_uid,(kilo_ticks - opinion_receive_start_time));
-                    print_color_opinions(&colorSet);
-                    print_sensor_opinion_count();
-                    printf("Majority Color sensor= %d\n",maj_col_op);
-                }
+                printf("KiloID: %d, 10 unique opinions received in = %d \n",kilo_uid,(kilo_ticks - opinion_receive_start_time));
+                print_color_opinions(&colorSet);
+                print_sensor_opinion_count();
+                printf(" Majority Color sensor= %d\n",maj_col_op);
                 for(int i=1; i<=MAX_COLOR_OPINIONS; i++) {
                     //TODO: Calculate like in MA for each color in a decionary with social and personal opinion and find highest of this dict to update personal opinion
                     int mi = get_color_opinion_count(&colorSet, i);
                     int m = NUM_OF_NEIGHBOURS;
-                    double personal_info_weight = 0.6;
-                    double value_for_dict = mi + (personal_info_weight * m * ( i == maj_col_op ? 1: 0));
-                    if(kilo_uid == 15|| kilo_uid == 34 || kilo_uid == 10) {
-                        printf("i=%d, mi = %d, maj_col_op= %d, value_for_dict=%f \n",i,mi,maj_col_op,value_for_dict);
-                    }
+
+                    double value_for_dict = mi + (PERSONAL_INFO_WEIGHT * m * ( i == maj_col_op ? 1: 0));
+                    printf("i=%d, mi = %d, maj_col_op= %d, value_for_dict=%f \n",i,mi,maj_col_op,value_for_dict);
+
                     decision_arr[i-1] = value_for_dict;
                 }
                 if(informed) {
@@ -789,29 +767,27 @@ void loop(){
                 }else {
                     currentopinion = find_most_common_color_opinion(&colorSet);
                 }
-                if(kilo_uid == 15|| kilo_uid == 34 || kilo_uid == 10 || informed == 0) {
-                    printf("Informed = %d KiloID= %d Decision Arr: ", informed, kilo_uid);
-                    for(int i=0;i<5;i++) {
-                        printf("%f, ",decision_arr[i]);
-                    }
-                    printf("curr_opinion = %d \n",currentopinion);
-                    printf("-----------------\n");
+                printf("Informed = %d KiloID= %d Decision Arr: ", informed, kilo_uid);
+                for(int i=0;i<5;i++) {
+                    printf("%f, ",decision_arr[i]);
                 }
+                printf("\ncurr_opinion = %d \n",currentopinion);
+                printf("-----------------\n");
 
                 clear_uid_hashset(&uidSet);
                 clear_color_hashset(&colorSet);
                 clear_color_opinion_counts();
+                }
                 // fclose(file);
             }
         }
 
-        if(kilo_ticks % 100 == 0) {
+        if(kilo_ticks % 50 == 0) {
             message.data[1] = currentopinion;
             message.data[2] = kilo_uid;
             message.crc = message_crc(&message);
             broadcast_msg = true;
         }
-    }
 
 
 

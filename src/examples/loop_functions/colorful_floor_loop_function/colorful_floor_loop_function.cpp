@@ -7,7 +7,6 @@
 #include <argos3/plugins/robots/kilobot/simulator/kilobot_entity.h>
 
 
-#include "examples/controllers/my_kilobot_movement/my_kilobot_movement.h"
 #include "plugins/robots/kilobot/control_interface/message.h"
 #include "plugins/robots/kilobot/control_interface/message_crc.h"
 
@@ -454,6 +453,11 @@ void CColorfulFloorLoopFunction::PostStep() {
 
        when_switch += timestepAfterToSwitch;
    }
+
+    //Stop simulation after certain timesteps
+    if(GetSpace().GetSimulationClock() > 75005) {
+        argos::CSimulator::GetInstance().Terminate();
+    }
 }
 
 void CColorfulFloorLoopFunction::get_kilobots_entities() {

@@ -44,14 +44,6 @@
 /home/nomaan/argos3-kilobot/src/cmake-build-debug/examples/CMakeFiles/install.dir
 /home/nomaan/argos3-kilobot/src/cmake-build-debug/examples/CMakeFiles/install/local.dir
 /home/nomaan/argos3-kilobot/src/cmake-build-debug/examples/CMakeFiles/install/strip.dir
-/home/nomaan/argos3-kilobot/src/cmake-build-debug/examples/controllers/CMakeFiles/package.dir
-/home/nomaan/argos3-kilobot/src/cmake-build-debug/examples/controllers/CMakeFiles/package_source.dir
-/home/nomaan/argos3-kilobot/src/cmake-build-debug/examples/controllers/CMakeFiles/edit_cache.dir
-/home/nomaan/argos3-kilobot/src/cmake-build-debug/examples/controllers/CMakeFiles/rebuild_cache.dir
-/home/nomaan/argos3-kilobot/src/cmake-build-debug/examples/controllers/CMakeFiles/list_install_components.dir
-/home/nomaan/argos3-kilobot/src/cmake-build-debug/examples/controllers/CMakeFiles/install.dir
-/home/nomaan/argos3-kilobot/src/cmake-build-debug/examples/controllers/CMakeFiles/install/local.dir
-/home/nomaan/argos3-kilobot/src/cmake-build-debug/examples/controllers/CMakeFiles/install/strip.dir
 /home/nomaan/argos3-kilobot/src/cmake-build-debug/examples/behaviors/CMakeFiles/move_and_talk.dir
 /home/nomaan/argos3-kilobot/src/cmake-build-debug/examples/behaviors/CMakeFiles/package.dir
 /home/nomaan/argos3-kilobot/src/cmake-build-debug/examples/behaviors/CMakeFiles/package_source.dir

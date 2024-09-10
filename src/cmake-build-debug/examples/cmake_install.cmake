@@ -44,7 +44,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/nomaan/argos3-kilobot/src/cmake-build-debug/examples/controllers/cmake_install.cmake")
   include("/home/nomaan/argos3-kilobot/src/cmake-build-debug/examples/behaviors/cmake_install.cmake")
   include("/home/nomaan/argos3-kilobot/src/cmake-build-debug/examples/loop_functions/cmake_install.cmake")
 

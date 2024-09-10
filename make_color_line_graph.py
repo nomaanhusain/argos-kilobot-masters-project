@@ -6,7 +6,7 @@ from collections import defaultdict
 # Set the path to the folder containing the txt files
 folder_path = 'robot_color_output/'
 
-
+# folder_path = 'multiple_run_data/ir0.6_w0.4_cn0.4/run_2/'
 
 
 # List all files in the folder
