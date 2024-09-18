@@ -23,6 +23,7 @@ color_counts = defaultdict(lambda: [0] * max_timesteps)
 file_count = 0
 # Process each file
 for file in files:
+    print(file)
     file_path = os.path.join(folder_path, file)
     data = pd.read_csv(file_path, sep=" ", header=None)
     data.columns = ["timestep", "colorId"]
@@ -48,4 +49,5 @@ plt.ylabel('Number of Robots Committed')
 plt.title('Number of Robots Committed to Each Color Over Time')
 plt.legend()
 plt.grid(True)
+plt.savefig("color.png")
 plt.show()

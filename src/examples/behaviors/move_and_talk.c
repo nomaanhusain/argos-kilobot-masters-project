@@ -27,8 +27,8 @@
 
 
 
-#define COMM_NOISE 0.4
-#define PERSONAL_INFO_WEIGHT (0.4)
+#define COMM_NOISE 0.2
+#define PERSONAL_INFO_WEIGHT (0.6)
 /*-----------------------------------------------------------------------------------------------*/
 /* Change these when running experiment                                                          */
 /*-----------------------------------------------------------------------------------------------*/

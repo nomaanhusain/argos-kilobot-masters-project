@@ -3,9 +3,10 @@ import pandas as pd
 from collections import defaultdict
 
 # Set the base path to the folders containing the runs
-base_path = 'multiple_run_data/ir1.0_w0.4_cn0.4/'
-# runs = ['run_1/', 'run_2/', 'run_3/']
-runs = ['run_4/']
+base_path = 'multiple_run_data/ir0.8_w0.4_cn0.4/'
+runs = ['run_1/', 'run_2/', 'run_3/', 'run_4/', 'run_5/', 'run_6/', 'run_7/', 'run_8/', 'run_9/', 'run_10/', 
+        'run_11/', 'run_12/', 'run_13/', 'run_14/', 'run_15/']
+# runs = ['run_4/']
 colors = [1, 2, 3, 4, 5]  # Assuming there are 5 colors (1 to 5)
 
 # Process each run
