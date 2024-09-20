@@ -455,7 +455,7 @@ void CColorfulFloorLoopFunction::PostStep() {
    }
 
     //Stop simulation after certain timesteps
-    if(GetSpace().GetSimulationClock() > 75005) {
+    if(GetSpace().GetSimulationClock() > 160010) {
         argos::CSimulator::GetInstance().Terminate();
     }
 }

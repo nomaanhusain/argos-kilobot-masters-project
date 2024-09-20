@@ -40,7 +40,7 @@
                       datafilename="ROB1_m4_800_k0__alpha0.2_omg0.25nold_comm0.1"
                       esfilename="ROB1es_m4_800_k0__alpha0.2_omg0.25nold_comm0.1"
 
-                      switch_time="15000"
+                      switch_time="40000"
                       num_switch="6"
                       />
 

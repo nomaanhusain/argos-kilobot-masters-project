@@ -378,7 +378,7 @@ void setup()
 
 
     //Make robot uninformed with a certain ratio
-    if(kilo_uid<=99) {
+    if(kilo_uid<=79) {
         informed = 1;
         printf("INFORMED, id = %d\n", kilo_uid);
     }else {
