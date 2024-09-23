@@ -1,2 +1,3 @@
 build
 src/cmake-build-debug
+*.txt

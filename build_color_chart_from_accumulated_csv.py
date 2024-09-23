@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 # Set the base path to the folders containing the accumulated data
 ir=0.8
-base_path = f'multiple_run_data/ir{ir}_w0.6_cn0.2_10message/'
+base_path = f'multiple_run_data/ir{ir}_w0.6_sn0.5_cn0.2/'
 # runs = ['run_1/','run_2/', 'run_3/']
 # runs = ['run_1/', 'run_2/', 'run_3/', 'run_4/', 'run_5/', 'run_6/', 'run_7/', 'run_8/', 'run_9/', 'run_10/', 
 #         'run_11/', 'run_12/', 'run_13/', 'run_14/', 'run_15/']
