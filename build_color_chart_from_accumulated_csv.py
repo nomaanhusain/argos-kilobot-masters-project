@@ -3,8 +3,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Set the base path to the folders containing the accumulated data
-ir=0.8
-base_path = f'multiple_run_data/ir{ir}_w0.6_sn0.5_cn0.2/'
+ir=0.6
+base_path = f'multiple_run_data/ir{ir}_w0.6_cn0.1_sn0.35/'
 # runs = ['run_1/','run_2/', 'run_3/']
 # runs = ['run_1/', 'run_2/', 'run_3/', 'run_4/', 'run_5/', 'run_6/', 'run_7/', 'run_8/', 'run_9/', 'run_10/', 
 #         'run_11/', 'run_12/', 'run_13/', 'run_14/', 'run_15/']
@@ -38,10 +38,12 @@ for color in average_df.columns[1:]:  # Skip 'timestep' which is in the first co
     color_id = int(color[6:])
     plt.plot(average_df['timestep'], average_df[color], label=color,color = color_map[color_id])
 
-plt.xlabel('Timestep')
-plt.ylabel('Average Number of Robots Committed')
+plt.xlabel('Timestep',fontsize=14)
+plt.ylabel('Average Number of Robots Committed',fontsize=14)
+plt.xticks(fontsize=14)
+plt.yticks(fontsize=14)
 plt.ylim(0,100)
-plt.title(f'Number of Robots Committed to Each Color Over Time. IR:{ir}')
+plt.title(f'Number of Robots Committed to Each Color Over Time. IR:{ir}',fontsize=14)
 plt.legend()
 plt.grid(True)
 plt.show()

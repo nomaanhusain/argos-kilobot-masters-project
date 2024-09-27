@@ -68,7 +68,7 @@ def load_noise_data(filename):
 folder_path = 'sensor_color_output/'  # Change this to your folder path
 noise_data, system_noise = analyze_robot_data(folder_path, 1)
 
-filename_json_save="m_system_noise_run3.json"
+filename_json_save="m_system_noise_run5.json"
 save_noise_data(filename_json_save,noise_data,system_noise)
 
 # Print the noise data for each robot

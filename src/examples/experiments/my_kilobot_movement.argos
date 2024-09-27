@@ -32,11 +32,11 @@
                   label="colorful_floor_loop_function">
 
                       <variables
-                      config_file1="src/examples/loop_functions/colorful_floor_loop_function/ASB_experiment_G40_conf1.kconf"
-                      config_file2="src/examples/loop_functions/colorful_floor_loop_function/ASB_experiment_G40_conf2.kconf"
-                      config_file3="src/examples/loop_functions/colorful_floor_loop_function/ASB_experiment_G40_conf3.kconf"
-                      config_file4="src/examples/loop_functions/colorful_floor_loop_function/ASB_experiment_G40_conf4.kconf"
-                      config_file5="src/examples/loop_functions/colorful_floor_loop_function/ASB_experiment_G40_conf5.kconf"
+                      config_file1="src/examples/loop_functions/colorful_floor_loop_function/sn035_configs/ASB_experiment_G40_conf1.kconf"
+                      config_file2="src/examples/loop_functions/colorful_floor_loop_function/sn035_configs/ASB_experiment_G40_conf2.kconf"
+                      config_file3="src/examples/loop_functions/colorful_floor_loop_function/sn035_configs/ASB_experiment_G40_conf3.kconf"
+                      config_file4="src/examples/loop_functions/colorful_floor_loop_function/sn035_configs/ASB_experiment_G40_conf4.kconf"
+                      config_file5="src/examples/loop_functions/colorful_floor_loop_function/sn035_configs/ASB_experiment_G40_conf5.kconf"
                       datafilename="ROB1_m4_800_k0__alpha0.2_omg0.25nold_comm0.1"
                       esfilename="ROB1es_m4_800_k0__alpha0.2_omg0.25nold_comm0.1"
 
