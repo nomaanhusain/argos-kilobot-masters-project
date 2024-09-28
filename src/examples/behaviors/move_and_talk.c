@@ -29,6 +29,7 @@
 
 #define COMM_NOISE 0.2
 #define PERSONAL_INFO_WEIGHT (0.6)
+#define NUMBER_OF_INFORMED 95
 /*-----------------------------------------------------------------------------------------------*/
 /* Change these when running experiment                                                          */
 /*-----------------------------------------------------------------------------------------------*/
@@ -378,7 +379,7 @@ void setup()
 
 
     //Make robot uninformed with a certain ratio
-    if(kilo_uid<=99) {
+    if(kilo_uid<=NUMBER_OF_INFORMED) {
         informed = 1;
         printf("INFORMED, id = %d\n", kilo_uid);
     }else {
