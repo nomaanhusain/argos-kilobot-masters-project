@@ -1,3 +1,6 @@
 build
 src/cmake-build-debug
 *.txt
+robot_color_output
+sensor_color_output
+time_output

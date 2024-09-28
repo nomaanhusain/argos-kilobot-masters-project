@@ -6,7 +6,9 @@ import numpy as np
 
 # File paths to all runs
 # files = ['m_system_noise_run1.json', 'm_system_noise_run2.json', 'm_system_noise_run3.json', 'm_system_noise_run4.json', 'm_system_noise_run5.json']
-files = ['system_noise_run5.json', 'system_noise_run9.json', 'system_noise_run10.json', 'system_noise_run11.json', 'system_noise_run12.json']
+files = ['m_low_system_noise_run1.json', 'm_low_system_noise_run2.json', 'm_low_system_noise_run3.json', 'm_low_system_noise_run4.json', 
+         'm_low_system_noise_run5.json']
+# files = ['system_noise_run5.json', 'system_noise_run9.json', 'system_noise_run10.json', 'system_noise_run11.json', 'system_noise_run12.json']
 # Initialize a list to store all noise data
 combined_noise_data = []
 
