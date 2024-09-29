@@ -25,6 +25,7 @@ sudo make install
 argos3 -c src/examples/experiments/my_kilobot_movement.argos
 ```
 
+Each robots outputs its color opinion at every timestep in a txt file.
 # Multi-Agent Simulation
 The code for the MA Simulation can be found in the ```MA-Simulation``` folder.
 A small readme is added there on how to execute it.
