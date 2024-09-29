@@ -3,9 +3,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # List of file paths for different parameter runs
-ir1='multiple_run_data/ir1.0_w0.6_cn0.2_sn0.35/accuracy_data.csv'
-ir2='multiple_run_data/ir0.8_w0.6_cn0.2_sn0.35/accuracy_data.csv'
-ir3='multiple_run_data/ir0.6_w0.6_cn0.2_sn0.35/accuracy_data.csv'
+ir1='multiple_run_data/ir1.0_w0.6_cn0.2_sn0.5/accuracy_data.csv'
+ir2='multiple_run_data/ir0.8_w0.6_cn0.2_sn0.5/accuracy_data.csv'
+ir3='multiple_run_data/ir0.6_w0.6_cn0.2_sn0.5/accuracy_data.csv'
 accuracy_files = [ir1,ir2,ir3]
 
 def plot_combined_accuracy(accuracy_files):
@@ -38,8 +38,8 @@ def plot_combined_accuracy(accuracy_files):
     plt.ylabel(r'Swarm Performance $\phi$',fontsize=15)
     plt.ylim(0.0,1.0)
     plt.xticks(fontsize=15)
-    plt.yticks(fontsize=15)
-    plt.title(r'$\omega=0.6$ $\eta=0.2$ $\zeta=0.35$',fontsize=15)
+    plt.yticks(fontsize=20)
+    plt.title(r'$\omega=0.6$ $\eta=0.2$ $\zeta=0.5$',fontsize=20)
 
     # Add a legend to show parameter labels
     plt.legend()
