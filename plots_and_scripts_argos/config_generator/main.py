@@ -1,6 +1,9 @@
 from datetime import datetime
 import numpy as np
 
+
+# This code was provided by Raina Zakir (https://rainazakir.me/). This generates the config files for the floor of the Kilogrid.
+
 conf_file_name = 'ASB_experiment_G40_conf5'
 #0.4 sn setting
 # option_1_quality = 256
