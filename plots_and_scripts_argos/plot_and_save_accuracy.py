@@ -16,10 +16,10 @@ def save_accuracy_data(timesteps, acc_over_time, file_name):
     acc_data.to_csv(file_name, index=False)
     print(f"Accuracy data saved to {file_name}")
 # Set the base path to the folders containing the accumulated data
-ir=0.6
-base_path = f'multiple_run_data/ir{ir}_w0.6_cn0.2_sn0.35/'
-runs = ['run_1/', 'run_2/', 'run_3/', 'run_4/', 'run_5/', 'run_6/', 'run_7/', 'run_8/', 'run_9/', 'run_10/']
-# runs = ['run_1/', 'run_2/', 'run_3/', 'run_4/', 'run_5/', 'run_6/', 'run_7/']
+ir=1.0
+base_path = f'multiple_run_data/ir{ir}_w0.8_cn0.2_sn0.5/'
+# runs = ['run_1/', 'run_2/', 'run_3/', 'run_4/', 'run_5/', 'run_6/', 'run_7/', 'run_8/', 'run_9/', 'run_10/']
+runs = ['run_1/', 'run_2/', 'run_3/', 'run_4/', 'run_5/', 'run_6/']
 accumulated_files = [os.path.join(base_path, run, f'{run[0:5]}_accumulated_data.csv') for run in runs]
 
 # Read the accumulated data from each run into a list of DataFrames

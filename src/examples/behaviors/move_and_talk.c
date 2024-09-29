@@ -29,7 +29,7 @@
 
 #define COMM_NOISE 0.2
 #define PERSONAL_INFO_WEIGHT (0.6)
-#define NUMBER_OF_INFORMED 95
+#define NUMBER_OF_INFORMED 99
 /*-----------------------------------------------------------------------------------------------*/
 /* Change these when running experiment                                                          */
 /*-----------------------------------------------------------------------------------------------*/
@@ -414,7 +414,6 @@ int isNumberNotInArray(int number, int arr[], int size) {
 void wall_avoidance_function(){
     wall_avoidance_state = true;
     hit_wall = false;
-
     if (wall_function_state == TURN_TO_AVOID_WALL){
         // set_color(RGB(3, 0, 3));
         //printf("comes to turnning \n");
@@ -436,7 +435,6 @@ void wall_avoidance_function(){
     }
     if (wall_function_state == STRAIGHT_TO_AVOID_WALL) {
         //printf("comes to straight \n");
-
         if ((kilo_ticks - last_motion_wall_ticks) > max_wall_avoidance_turning_ticks) {
             /* start moving forward */
             // set_color(RGB(0, 3, 0));

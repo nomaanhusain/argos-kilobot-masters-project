@@ -455,9 +455,9 @@ void CColorfulFloorLoopFunction::PostStep() {
    }
 
     //Stop simulation after certain timesteps
-    if(GetSpace().GetSimulationClock() > 160010) {
-        argos::CSimulator::GetInstance().Terminate();
-    }
+    // if(GetSpace().GetSimulationClock() > 160010) {
+    //     argos::CSimulator::GetInstance().Terminate();
+    // }
 }
 
 void CColorfulFloorLoopFunction::get_kilobots_entities() {

@@ -19,13 +19,19 @@ cmake -DCMAKE_BUILD_TYPE=Release ../src
 make
 sudo make install
 ```
-
+## Before Running the Simulation
+These folders need to be created for the robots to output their data
+```shell
+mkdir robot_color_output
+mkdir sensor_color_output
+mkdir time_output
+```
 ## Run the ARGoS Simulation
 ```shell
 argos3 -c src/examples/experiments/my_kilobot_movement.argos
 ```
 
-Each robots outputs its color opinion at every timestep in a txt file.
+Each robots outputs its color opinion at every timestep in a txt file in the ``robot_color_output`` folder.
 # Multi-Agent Simulation
 The code for the MA Simulation can be found in the ```MA-Simulation``` folder.
 A small readme is added there on how to execute it.
