@@ -97,12 +97,12 @@ class PlotGraph:
         merged_data = merged_data.iloc[1000:]
         # Plot averaged swarm_quality over timesteps
         plt.figure(figsize=(10, 5))
-        plt.plot(merged_data.index, merged_data['swarm_quality'], label='Swarm Quality')
+        plt.plot(merged_data.index, merged_data['swarm_quality'], label='Swarm Performance')
         plt.ylim(0.0, 1.0)
         plt.xlabel('Timestep')
-        plt.ylabel('Swarm Quality')
+        plt.ylabel(r'Swarm Performance $\phi$')
         plt.title(
-            f"Averaged Swarm Quality ir:{self.informed_ratio} w:{self.personal_info_weight} sn:{self.sensor_noise}"
+            f"Averaged Swarm Performance ir:{self.informed_ratio} w:{self.personal_info_weight} sn:{self.sensor_noise}"
             f" cn:{self.communication_noise}")
         plt.legend()
         plt.grid(True)

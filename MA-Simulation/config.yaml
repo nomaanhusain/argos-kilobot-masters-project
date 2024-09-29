@@ -9,3 +9,4 @@ sensor_noise: 0.0
 communication_noise: 0.0
 color_change_timestep: 1000
 total_simulation_runs: 40
+all_parameters_run: 4

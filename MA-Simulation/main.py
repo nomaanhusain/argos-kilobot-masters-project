@@ -318,34 +318,36 @@ def run_simulations(run_counter):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    # for i in range(config['total_simulation_runs']):
-    #     run_simulations(i)
+    if (config['all_parameters_run']==0):
+        for i in range(config['total_simulation_runs']):
+            run_simulations(i)
 
-    # values from 0.0 to 1.0 in steps of 0.2
-    # piw_steps = [0.2,0.4,0.6,0.8]
-    sn_steps = [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
-    cn_steps = [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
-    piw_steps = [0.4]
-    # sn_steps = [0.4,0.6]
-    # cn_steps = [0.4,0.6]
-    total_runs = (len(cn_steps) * len(piw_steps) * len(sn_steps))
-    # Nested loops to iterate over all combinations
-    for cn_main in cn_steps:
-        for sn_main in sn_steps:
-            for piw_main in piw_steps:
-                total_runs -= 1
-                print(f"Running piw: {piw_main}, sn: {sn_main} cn:{cn_main}")
-                for i in range(config['total_simulation_runs']):
-                    run_simulations_all(i, piw_main, sn_main, cn_main)
+    if(config['all_parameters_run']!=0):
+        # values from 0.0 to 1.0 in steps of 0.2
+        #Personal Info Weight
+        piw_steps = [0.0,0.2,0.4,0.6,0.8,1.0,1.2]
+        #Sensor Noise
+        sn_steps = [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
+        #Communication Noise
+        cn_steps = [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
+        total_runs = (len(cn_steps) * len(piw_steps) * len(sn_steps))
+        # Nested loops to iterate over all combinations
+        for cn_main in cn_steps:
+            for sn_main in sn_steps:
+                for piw_main in piw_steps:
+                    total_runs -= 1
+                    print(f"Running piw: {piw_main}, sn: {sn_main} cn:{cn_main}")
+                    for i in range(config['total_simulation_runs']):
+                        run_simulations_all(i, piw_main, sn_main, cn_main)
 
-                print("Saving Plots")
-                plot_the_graph = PlotGraph(config['max_timestep'], config['agent_count'],
-                                           config['majority_color_ratio'],
-                                           config['informed_ratio'], piw_main, sn_main, cn_main,
-                                           config['color_change_timestep'])
-                plot_the_graph.execute_and_plot()
-                print(f"Now {total_runs} runs left")
-                print("----")
+                    print("Saving Plots")
+                    plot_the_graph = PlotGraph(config['max_timestep'], config['agent_count'],
+                                               config['majority_color_ratio'],
+                                               config['informed_ratio'], piw_main, sn_main, cn_main,
+                                               config['color_change_timestep'])
+                    plot_the_graph.execute_and_plot()
+                    print(f"Now {total_runs} runs left")
+                    print("----")
 
-    ht = HeatmapMaker("output_data/")
-    ht.execute_heatmaps_creation()
+        # ht = HeatmapMaker("output_data/")
+        # ht.execute_heatmaps_creation()
