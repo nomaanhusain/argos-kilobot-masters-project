@@ -9,7 +9,7 @@ def custom_annotation(val):
     # return "rho="
 
 
-sn = 0.6
+sn = 0.8
 # Load the CSV file saved earlier
 results_df = pd.read_csv(f'best_ir_data/swarm_quality_sn{sn}_results.csv')
 results_df = results_df.sort_index().sort_index(axis=1)
@@ -48,15 +48,14 @@ formatted_annotations = np.vectorize(custom_annotation)(pivot_table_ir)
 # formatted_annotations = [[f'rho={val:.2f}' for val in row] for row in pivot_table_ir.values]
 
 print(formatted_annotations)
-ax = sns.heatmap(pivot_swarm_quality, annot=formatted_annotations, fmt='', cmap='coolwarm', cbar_kws={'label': r'$\phi_{avg}$',
-                                                                                             'ticks':[]},
+ax = sns.heatmap(pivot_swarm_quality, annot=formatted_annotations, fmt='', cmap='coolwarm', cbar_kws={'label': r'$\phi_{avg}$'},
             annot_kws={'size': 27},
             vmin=0, vmax=1)
-ax.figure.axes[-1].yaxis.label.set_size(20)
+ax.figure.axes[-1].yaxis.label.set_size(25)
 # plt.title('Best Informed Ratio: Personal Info Weight vs. Communication Noise')
 
-plt_text = r"$\zeta$: "+f"{sn}\nHeterogeneous swarm better: {(1-(one_count / total_cells)) * 100:.2f}%"
-plt.title(plt_text,fontsize=28)
+plt_text = r"$\zeta$: "+f"{sn}\nHeterogeneous swarm better: {(1-(one_count / total_cells)) * 100:.2f}% cases"
+plt.title(plt_text,fontsize=25)
 # plt.text(5.80, -0.50, plt_text, fontsize=10,
 #          verticalalignment='bottom', bbox=dict(facecolor='white', alpha=0.5))
 plt.text(-0.3, -0.9, "Label in the cells represent the\ninformed ratio with best swarm quality", fontsize=11,
