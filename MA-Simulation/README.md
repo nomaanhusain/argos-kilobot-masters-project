@@ -7,5 +7,5 @@ It is also possible to run the simulation for all combinations of sensor noise, 
 and personal information weight at once. For this change the ```all_parameters_run``` 
 to 1 (or anything else except for 0) in the [```config.yaml```](config.yaml) file.<br/>
 
-The output from the simulation will be stored in the ```output_data``` folder as txt files.
+The output from the simulation will be stored in the ```output_data``` folder as ``output_run*.txt`` files.
 There will be one file for each independent run. It stores the number of robots commited to each color at a every timestep.
