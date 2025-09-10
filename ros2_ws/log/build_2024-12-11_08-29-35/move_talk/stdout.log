@@ -1,0 +1,35 @@
+running egg_info
+creating ../../build/move_talk/move_talk.egg-info
+writing ../../build/move_talk/move_talk.egg-info/PKG-INFO
+writing dependency_links to ../../build/move_talk/move_talk.egg-info/dependency_links.txt
+writing entry points to ../../build/move_talk/move_talk.egg-info/entry_points.txt
+writing requirements to ../../build/move_talk/move_talk.egg-info/requires.txt
+writing top-level names to ../../build/move_talk/move_talk.egg-info/top_level.txt
+writing manifest file '../../build/move_talk/move_talk.egg-info/SOURCES.txt'
+reading manifest file '../../build/move_talk/move_talk.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../build/move_talk/move_talk.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/nomaan/ros2_ws/build/move_talk/build
+creating /home/nomaan/ros2_ws/build/move_talk/build/lib
+creating /home/nomaan/ros2_ws/build/move_talk/build/lib/move_talk
+copying move_talk/move_sense_pub.py -> /home/nomaan/ros2_ws/build/move_talk/build/lib/move_talk
+copying move_talk/__init__.py -> /home/nomaan/ros2_ws/build/move_talk/build/lib/move_talk
+running install
+running install_lib
+creating /home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk
+copying /home/nomaan/ros2_ws/build/move_talk/build/lib/move_talk/move_sense_pub.py -> /home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk
+copying /home/nomaan/ros2_ws/build/move_talk/build/lib/move_talk/__init__.py -> /home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk
+byte-compiling /home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk/move_sense_pub.py to move_sense_pub.cpython-310.pyc
+byte-compiling /home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /home/nomaan/ros2_ws/install/move_talk/share/ament_index
+creating /home/nomaan/ros2_ws/install/move_talk/share/ament_index/resource_index
+creating /home/nomaan/ros2_ws/install/move_talk/share/ament_index/resource_index/packages
+copying resource/move_talk -> /home/nomaan/ros2_ws/install/move_talk/share/ament_index/resource_index/packages
+copying package.xml -> /home/nomaan/ros2_ws/install/move_talk/share/move_talk
+running install_egg_info
+Copying ../../build/move_talk/move_talk.egg-info to /home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk-0.0.0-py3.10.egg-info
+running install_scripts
+writing list of installed files to '/home/nomaan/ros2_ws/build/move_talk/install.log'

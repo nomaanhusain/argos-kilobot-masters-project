@@ -1,0 +1,8 @@
+# srv/GetOpinionData.srv
+
+# --- request ---
+string[] neighbours_by_id
+
+---
+# --- response ---
+string[] neighbours_opinions

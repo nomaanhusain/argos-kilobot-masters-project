@@ -1,0 +1,3 @@
+export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+export ROS_DISCOVERY_SERVER=192.168.3.2:11811
+export ROS_SUPER_CLIENT=True

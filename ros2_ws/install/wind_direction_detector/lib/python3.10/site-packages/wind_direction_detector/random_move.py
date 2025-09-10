@@ -1,0 +1,201 @@
+import rclpy
+from rclpy.node import Node
+from thymiodirect import Connection
+from thymiodirect import Thymio
+import time
+import random
+
+class RandomRobotMove(Node):
+    def __init__(self):
+        super().__init__('random_move')
+        print("Initializing Thymio Robot")
+        print('works')
+        port = Connection.serial_default_port()
+        th = Thymio(serial_port=port,
+                    on_connect=lambda node_id: print(f'Thymio {node_id} is connected'))
+        # Connect to Robot
+        th.connect()
+        self.robot = th[th.first_node()]
+
+        # Delay to allow robot initialization of all variables
+        time.sleep(1)
+        # b) print all variables
+        print(th.variables(th.first_node()))
+        print("Robot connected")
+        self.stop_bool = False
+        self.timer = self.create_timer(0.1, self.random_move)
+        self.get_logger().info("Robot Control Node started.")
+
+    def random_move(self):
+        if self.stop_bool:
+            print("Stoping Robot")
+            self.stop()
+        self.move_forward()
+        if self.stop_bool:
+                print("Stopping Robot")
+                self.stop()
+        if bool(random.getrandbits(1)):
+            self.rotate_right()
+        else:
+            self.rotate_left()
+    
+    def on_arena_edge(self):
+        if self.robot is not None:
+            # print(f"Prox 0: {self.robot['prox.ground.delta'][0]}, Prox 1: {self.robot['prox.ground.delta'][1]}")
+            if self.robot['prox.ground.delta'][0] > 900  or self.robot['prox.ground.delta'][1] > 900:
+                return True
+        return False
+    
+    def move_forward(self):
+        if self.robot is not None:
+            counter = 20000
+            while counter > 0:
+                if self.check_stop_all_motion():
+                    print("stop all motion: move forward")
+                    self.stop_bool = True
+                    break
+                self.robot['motor.left.target'] = 200
+                self.robot['motor.right.target'] = 200
+                if self.on_arena_edge():
+                    print('on arena edge')
+                    self.collision_avoidance()
+                    continue
+                if self.obstacle_ahead():
+                    print('collision avoidance')
+                    self.collision_avoidance()
+                    continue
+                counter -= 1
+
+            else:
+                self.robot['motor.left.target'] = 0
+                self.robot['motor.right.target'] = 0
+    
+    def rotate_right(self):
+        if self.robot is not None:
+            counter = 5000
+            while counter > 0:
+                if self.check_stop_all_motion():
+                    print("stop all motion: rotate right")
+                    self.stop_bool = True
+                    break
+                self.robot['motor.left.target'] = 200
+                self.robot['motor.right.target'] = -200
+                if self.on_arena_edge():
+                    print('on arena edge')
+                    self.collision_avoidance()
+                    continue
+                if self.obstacle_ahead():
+                    print('collision avoidance')
+                    self.collision_avoidance()
+                    continue
+                counter -= 1
+            else:
+                self.robot['motor.left.target'] = 0
+                self.robot['motor.right.target'] = 0
+    
+    def rotate_left(self):
+        if self.robot is not None:
+            counter = 5000
+            while counter > 0:
+                if self.check_stop_all_motion():
+                    print("stop all motion: rotate left")
+                    self.stop_bool = True
+                    break
+                self.robot['motor.left.target'] = -200
+                self.robot['motor.right.target'] = 200
+                if self.on_arena_edge():
+                    print('on arena edge')
+                    self.collision_avoidance()
+                    continue
+                if self.obstacle_ahead():
+                    print('collision avoidance')
+                    self.collision_avoidance()
+                    continue
+                counter -= 1
+            else:
+                # print("robot stop")
+                self.robot['motor.left.target'] = 0
+                self.robot['motor.right.target'] = 0
+    
+    def move_back(self):
+        if self.robot is not None:
+            counter = 20000
+            while counter > 0:
+                if self.check_stop_all_motion():
+                    print("stop all motion: move back")
+                    self.stop_bool = True
+                    break
+                if self.robot['prox.horizontal'][5] > 600 or self.robot['prox.horizontal'][6] > 600:
+                    self.stop()
+                    continue
+                self.robot['motor.left.target'] = -200
+                self.robot['motor.right.target'] = -200
+                counter -= 1
+            else:
+                # print("robot stop")
+                self.robot['motor.left.target'] = 0
+                self.robot['motor.right.target'] = 0
+
+    def check_stop_all_motion(self):
+        if self.robot is not None:
+            # print(f"Prox 0: {self.robot['prox.ground.delta'][0]}, Prox 1: {self.robot['prox.ground.delta'][1]}")
+            if self.robot['prox.ground.delta'][0] < 10 or self.robot['prox.ground.delta'][1] < 10:
+                print("Robot lifted")
+                return True
+        return False
+
+    def stop(self):
+        if self.robot is not None:
+            self.robot['motor.left.target'] = 0
+            self.robot['motor.right.target'] = 0
+    
+    def collision_avoidance(self):
+        if self.robot is not None:
+            print("Starting Collision avoidance")
+            self.robot['leds.top'] = [32, 0, 0]
+            counter = 3000
+            print("Move back")
+            while counter > 0:
+                if self.robot['prox.horizontal'][5] > 600 or self.robot['prox.horizontal'][6] > 600:
+                    self.stop()
+                    continue
+                self.robot['motor.left.target'] = -200
+                self.robot['motor.right.target'] = -200
+                counter -= 1
+            counter = 3000
+            print("Turn")
+            while counter > 0:
+                self.robot['motor.left.target'] = -300
+                self.robot['motor.right.target'] = 300
+                counter -= 1
+            self.robot['leds.top'] = [0, 32, 0]
+
+    def obstacle_ahead(self):
+        if self.robot is not None:
+            if (self.robot['prox.horizontal'][0] > 3000 or self.robot['prox.horizontal'][1] > 3000 or
+                    self.robot['prox.horizontal'][2] > 3000 or self.robot['prox.horizontal'][3] > 3000 or self.robot['prox.horizontal'][4] > 3000):
+                print(f"Prox 0: {self.robot['prox.horizontal'][0]}, Prox 1: {self.robot['prox.horizontal'][1]},  Prox 2: {self.robot['prox.horizontal'][2]}, Prox 3: {self.robot['prox.horizontal'][3]}")
+                return True
+        return False
+    
+def main(args=None):
+    rclpy.init(args=args)
+
+    random_robot_move = RandomRobotMove()
+
+    try:
+        rclpy.spin(random_robot_move)
+    except KeyboardInterrupt:
+        random_robot_move.get_logger().info("Shutting down node...")
+        random_robot_move.stop()
+    finally:
+        random_robot_move.stop()
+        random_robot_move.destroy_node()
+        rclpy.shutdown()
+
+
+if __name__ == '__main__':
+    main()
+
+
+        

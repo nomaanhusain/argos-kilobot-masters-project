@@ -1,0 +1,6 @@
+Invoking command in '/home/nomaan/ros2_ws/build/vicon_receiver': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/nomaan/ros2_ws/src/vicon_interfaces -DCMAKE_INSTALL_PREFIX=/home/nomaan/ros2_ws/install/vicon_receiver
+Invoked command in '/home/nomaan/ros2_ws/build/vicon_receiver' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/nomaan/ros2_ws/src/vicon_interfaces -DCMAKE_INSTALL_PREFIX=/home/nomaan/ros2_ws/install/vicon_receiver
+Invoking command in '/home/nomaan/ros2_ws/build/vicon_receiver': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/nomaan/ros2_ws/build/vicon_receiver -- -j12 -l12
+Invoked command in '/home/nomaan/ros2_ws/build/vicon_receiver' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/nomaan/ros2_ws/build/vicon_receiver -- -j12 -l12
+Invoking command in '/home/nomaan/ros2_ws/build/vicon_receiver': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/nomaan/ros2_ws/build/vicon_receiver
+Invoked command in '/home/nomaan/ros2_ws/build/vicon_receiver' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/nomaan/ros2_ws/build/vicon_receiver

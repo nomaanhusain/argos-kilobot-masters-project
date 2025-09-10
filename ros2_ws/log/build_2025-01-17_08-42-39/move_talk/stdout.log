@@ -1,0 +1,45 @@
+running egg_info
+writing ../../build/move_talk/move_talk.egg-info/PKG-INFO
+writing dependency_links to ../../build/move_talk/move_talk.egg-info/dependency_links.txt
+writing entry points to ../../build/move_talk/move_talk.egg-info/entry_points.txt
+writing requirements to ../../build/move_talk/move_talk.egg-info/requires.txt
+writing top-level names to ../../build/move_talk/move_talk.egg-info/top_level.txt
+reading manifest file '../../build/move_talk/move_talk.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../build/move_talk/move_talk.egg-info/SOURCES.txt'
+running build
+running build_py
+copying move_talk/temp_decision.py -> /home/nomaan/ros2_ws/build/move_talk/build/lib/move_talk
+copying move_talk/publish_temperature.py -> /home/nomaan/ros2_ws/build/move_talk/build/lib/move_talk
+copying move_talk/subscribe_quadrant.py -> /home/nomaan/ros2_ws/build/move_talk/build/lib/move_talk
+copying move_talk/random_move.py -> /home/nomaan/ros2_ws/build/move_talk/build/lib/move_talk
+copying move_talk/subscribe_temperature.py -> /home/nomaan/ros2_ws/build/move_talk/build/lib/move_talk
+copying move_talk/__init__.py -> /home/nomaan/ros2_ws/build/move_talk/build/lib/move_talk
+running install
+running install_lib
+copying /home/nomaan/ros2_ws/build/move_talk/build/lib/move_talk/temp_decision.py -> /home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk
+copying /home/nomaan/ros2_ws/build/move_talk/build/lib/move_talk/publish_temperature.py -> /home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk
+copying /home/nomaan/ros2_ws/build/move_talk/build/lib/move_talk/subscribe_quadrant.py -> /home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk
+copying /home/nomaan/ros2_ws/build/move_talk/build/lib/move_talk/random_move.py -> /home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk
+copying /home/nomaan/ros2_ws/build/move_talk/build/lib/move_talk/subscribe_temperature.py -> /home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk
+copying /home/nomaan/ros2_ws/build/move_talk/build/lib/move_talk/__init__.py -> /home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk
+byte-compiling /home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk/temp_decision.py to temp_decision.cpython-310.pyc
+byte-compiling /home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk/publish_temperature.py to publish_temperature.cpython-310.pyc
+byte-compiling /home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk/subscribe_quadrant.py to subscribe_quadrant.cpython-310.pyc
+byte-compiling /home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk/random_move.py to random_move.cpython-310.pyc
+byte-compiling /home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk/subscribe_temperature.py to subscribe_temperature.cpython-310.pyc
+byte-compiling /home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk/__init__.py to __init__.cpython-310.pyc
+running install_data
+copying resource/move_talk -> /home/nomaan/ros2_ws/install/move_talk/share/ament_index/resource_index/packages
+copying package.xml -> /home/nomaan/ros2_ws/install/move_talk/share/move_talk
+creating /home/nomaan/ros2_ws/install/move_talk/share/move_talk/launch
+copying launch/move_talk_launch.py -> /home/nomaan/ros2_ws/install/move_talk/share/move_talk/launch
+running install_egg_info
+removing '/home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/move_talk/move_talk.egg-info to /home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk-0.0.0-py3.10.egg-info
+running install_scripts
+Installing publish_temperature script to /home/nomaan/ros2_ws/install/move_talk/lib/move_talk
+Installing robot_move script to /home/nomaan/ros2_ws/install/move_talk/lib/move_talk
+Installing subscribe_quad script to /home/nomaan/ros2_ws/install/move_talk/lib/move_talk
+Installing subscribe_temperature script to /home/nomaan/ros2_ws/install/move_talk/lib/move_talk
+writing list of installed files to '/home/nomaan/ros2_ws/build/move_talk/install.log'

@@ -1,0 +1,42 @@
+[0.382s] Invoking command in '/home/nomaan/ros2_ws/src/simple_hello': PYTHONPATH=/home/nomaan/ros2_ws/build/simple_hello/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nomaan/ros2_ws/install/simple_hello/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/simple_hello build --build-base /home/nomaan/ros2_ws/build/simple_hello/build install --record /home/nomaan/ros2_ws/build/simple_hello/install.log --single-version-externally-managed install_data
+[0.520s] running egg_info
+[0.520s] creating ../../build/simple_hello/simple_hello.egg-info
+[0.520s] writing ../../build/simple_hello/simple_hello.egg-info/PKG-INFO
+[0.520s] writing dependency_links to ../../build/simple_hello/simple_hello.egg-info/dependency_links.txt
+[0.520s] writing entry points to ../../build/simple_hello/simple_hello.egg-info/entry_points.txt
+[0.520s] writing requirements to ../../build/simple_hello/simple_hello.egg-info/requires.txt
+[0.520s] writing top-level names to ../../build/simple_hello/simple_hello.egg-info/top_level.txt
+[0.521s] writing manifest file '../../build/simple_hello/simple_hello.egg-info/SOURCES.txt'
+[0.522s] reading manifest file '../../build/simple_hello/simple_hello.egg-info/SOURCES.txt'
+[0.522s] adding license file 'LICENSE'
+[0.522s] writing manifest file '../../build/simple_hello/simple_hello.egg-info/SOURCES.txt'
+[0.522s] running build
+[0.522s] running build_py
+[0.522s] creating /home/nomaan/ros2_ws/build/simple_hello/build
+[0.522s] creating /home/nomaan/ros2_ws/build/simple_hello/build/lib
+[0.522s] creating /home/nomaan/ros2_ws/build/simple_hello/build/lib/simple_hello
+[0.522s] copying simple_hello/simple_hello_subscriber.py -> /home/nomaan/ros2_ws/build/simple_hello/build/lib/simple_hello
+[0.522s] copying simple_hello/__init__.py -> /home/nomaan/ros2_ws/build/simple_hello/build/lib/simple_hello
+[0.522s] copying simple_hello/simple_hello_publisher.py -> /home/nomaan/ros2_ws/build/simple_hello/build/lib/simple_hello
+[0.523s] running install
+[0.523s] running install_lib
+[0.524s] creating /home/nomaan/ros2_ws/install/simple_hello/lib/python3.10/site-packages/simple_hello
+[0.524s] copying /home/nomaan/ros2_ws/build/simple_hello/build/lib/simple_hello/simple_hello_subscriber.py -> /home/nomaan/ros2_ws/install/simple_hello/lib/python3.10/site-packages/simple_hello
+[0.524s] copying /home/nomaan/ros2_ws/build/simple_hello/build/lib/simple_hello/__init__.py -> /home/nomaan/ros2_ws/install/simple_hello/lib/python3.10/site-packages/simple_hello
+[0.524s] copying /home/nomaan/ros2_ws/build/simple_hello/build/lib/simple_hello/simple_hello_publisher.py -> /home/nomaan/ros2_ws/install/simple_hello/lib/python3.10/site-packages/simple_hello
+[0.524s] byte-compiling /home/nomaan/ros2_ws/install/simple_hello/lib/python3.10/site-packages/simple_hello/simple_hello_subscriber.py to simple_hello_subscriber.cpython-310.pyc
+[0.524s] byte-compiling /home/nomaan/ros2_ws/install/simple_hello/lib/python3.10/site-packages/simple_hello/__init__.py to __init__.cpython-310.pyc
+[0.524s] byte-compiling /home/nomaan/ros2_ws/install/simple_hello/lib/python3.10/site-packages/simple_hello/simple_hello_publisher.py to simple_hello_publisher.cpython-310.pyc
+[0.525s] running install_data
+[0.525s] creating /home/nomaan/ros2_ws/install/simple_hello/share/ament_index
+[0.525s] creating /home/nomaan/ros2_ws/install/simple_hello/share/ament_index/resource_index
+[0.525s] creating /home/nomaan/ros2_ws/install/simple_hello/share/ament_index/resource_index/packages
+[0.525s] copying resource/simple_hello -> /home/nomaan/ros2_ws/install/simple_hello/share/ament_index/resource_index/packages
+[0.525s] copying package.xml -> /home/nomaan/ros2_ws/install/simple_hello/share/simple_hello
+[0.525s] running install_egg_info
+[0.526s] Copying ../../build/simple_hello/simple_hello.egg-info to /home/nomaan/ros2_ws/install/simple_hello/lib/python3.10/site-packages/simple_hello-0.0.0-py3.10.egg-info
+[0.526s] running install_scripts
+[0.541s] Installing listener script to /home/nomaan/ros2_ws/install/simple_hello/lib/simple_hello
+[0.541s] Installing talker script to /home/nomaan/ros2_ws/install/simple_hello/lib/simple_hello
+[0.541s] writing list of installed files to '/home/nomaan/ros2_ws/build/simple_hello/install.log'
+[0.557s] Invoked command in '/home/nomaan/ros2_ws/src/simple_hello' returned '0': PYTHONPATH=/home/nomaan/ros2_ws/build/simple_hello/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nomaan/ros2_ws/install/simple_hello/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/simple_hello build --build-base /home/nomaan/ros2_ws/build/simple_hello/build install --record /home/nomaan/ros2_ws/build/simple_hello/install.log --single-version-externally-managed install_data

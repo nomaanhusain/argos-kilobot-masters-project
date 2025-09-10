@@ -1,0 +1,23 @@
+[5.168s] Invoking command in '/home/thymio/ros2_ws/src/py_pubsub': PYTHONPATH=/home/thymio/ros2_ws/build/py_pubsub/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/thymio/ros2_ws/install/py_pubsub/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/py_pubsub build --build-base /home/thymio/ros2_ws/build/py_pubsub/build install --record /home/thymio/ros2_ws/build/py_pubsub/install.log --single-version-externally-managed install_data
+[6.463s] running egg_info
+[6.466s] writing ../../build/py_pubsub/py_pubsub.egg-info/PKG-INFO
+[6.468s] writing dependency_links to ../../build/py_pubsub/py_pubsub.egg-info/dependency_links.txt
+[6.469s] writing entry points to ../../build/py_pubsub/py_pubsub.egg-info/entry_points.txt
+[6.470s] writing requirements to ../../build/py_pubsub/py_pubsub.egg-info/requires.txt
+[6.470s] writing top-level names to ../../build/py_pubsub/py_pubsub.egg-info/top_level.txt
+[6.479s] reading manifest file '../../build/py_pubsub/py_pubsub.egg-info/SOURCES.txt'
+[6.480s] adding license file 'LICENSE'
+[6.483s] writing manifest file '../../build/py_pubsub/py_pubsub.egg-info/SOURCES.txt'
+[6.484s] running build
+[6.484s] running build_py
+[6.486s] running install
+[6.487s] running install_lib
+[6.495s] running install_data
+[6.495s] running install_egg_info
+[6.504s] removing '/home/thymio/ros2_ws/install/py_pubsub/lib/python3.10/site-packages/py_pubsub-0.0.0-py3.10.egg-info' (and everything under it)
+[6.507s] Copying ../../build/py_pubsub/py_pubsub.egg-info to /home/thymio/ros2_ws/install/py_pubsub/lib/python3.10/site-packages/py_pubsub-0.0.0-py3.10.egg-info
+[6.515s] running install_scripts
+[6.610s] Installing listener script to /home/thymio/ros2_ws/install/py_pubsub/lib/py_pubsub
+[6.611s] Installing talker script to /home/thymio/ros2_ws/install/py_pubsub/lib/py_pubsub
+[6.613s] writing list of installed files to '/home/thymio/ros2_ws/build/py_pubsub/install.log'
+[6.753s] Invoked command in '/home/thymio/ros2_ws/src/py_pubsub' returned '0': PYTHONPATH=/home/thymio/ros2_ws/build/py_pubsub/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/thymio/ros2_ws/install/py_pubsub/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/py_pubsub build --build-base /home/thymio/ros2_ws/build/py_pubsub/build install --record /home/thymio/ros2_ws/build/py_pubsub/install.log --single-version-externally-managed install_data

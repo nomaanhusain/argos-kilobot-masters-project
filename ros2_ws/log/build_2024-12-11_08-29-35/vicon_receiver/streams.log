@@ -1,0 +1,254 @@
+[0.007s] Invoking command in '/home/nomaan/ros2_ws/build/vicon_receiver': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/nomaan/ros2_ws/src/vicon_interfaces -DCMAKE_INSTALL_PREFIX=/home/nomaan/ros2_ws/install/vicon_receiver
+[0.082s] -- The C compiler identification is GNU 11.4.0
+[0.141s] -- The CXX compiler identification is GNU 11.4.0
+[0.148s] -- Detecting C compiler ABI info
+[0.194s] -- Detecting C compiler ABI info - done
+[0.199s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.199s] -- Detecting C compile features
+[0.199s] -- Detecting C compile features - done
+[0.202s] -- Detecting CXX compiler ABI info
+[0.253s] -- Detecting CXX compiler ABI info - done
+[0.258s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.258s] -- Detecting CXX compile features
+[0.259s] -- Detecting CXX compile features - done
+[0.262s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.357s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.419s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.421s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.427s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.458s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.483s] -- Found std_msgs: 4.2.4 (/opt/ros/humble/share/std_msgs/cmake)
+[0.675s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[0.819s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.997s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.013s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[1.014s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[1.032s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[1.032s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[1.032s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[1.032s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[1.048s] -- Found PythonExtra: .so  
+[1.085s] -- Configuring done
+[1.103s] -- Generating done
+[1.109s] -- Build files have been written to: /home/nomaan/ros2_ws/build/vicon_receiver
+[1.114s] Invoked command in '/home/nomaan/ros2_ws/build/vicon_receiver' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/nomaan/ros2_ws/src/vicon_interfaces -DCMAKE_INSTALL_PREFIX=/home/nomaan/ros2_ws/install/vicon_receiver
+[1.115s] Invoking command in '/home/nomaan/ros2_ws/build/vicon_receiver': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/nomaan/ros2_ws/build/vicon_receiver -- -j12 -l12
+[1.140s] [  2%] [34m[1mGenerating C code for ROS interfaces[0m
+[1.146s] [  5%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[1.151s] [  5%] Built target ament_cmake_python_copy_vicon_receiver
+[1.294s] running egg_info
+[1.294s] creating vicon_receiver.egg-info
+[1.294s] writing vicon_receiver.egg-info/PKG-INFO
+[1.294s] writing dependency_links to vicon_receiver.egg-info/dependency_links.txt
+[1.294s] writing top-level names to vicon_receiver.egg-info/top_level.txt
+[1.295s] writing manifest file 'vicon_receiver.egg-info/SOURCES.txt'
+[1.296s] reading manifest file 'vicon_receiver.egg-info/SOURCES.txt'
+[1.296s] writing manifest file 'vicon_receiver.egg-info/SOURCES.txt'
+[1.314s] [  5%] Built target ament_cmake_python_build_vicon_receiver_egg
+[1.401s] [ 10%] [32mBuilding C object CMakeFiles/vicon_receiver__rosidl_generator_c.dir/rosidl_generator_c/vicon_receiver/msg/detail/position__functions.c.o[0m
+[1.401s] [ 10%] [32mBuilding C object CMakeFiles/vicon_receiver__rosidl_generator_c.dir/rosidl_generator_c/vicon_receiver/msg/detail/position_list__functions.c.o[0m
+[1.403s] [ 10%] Built target vicon_receiver__cpp
+[1.409s] [ 17%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[1.409s] [ 17%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[1.409s] [ 17%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[1.446s] [ 20%] [32m[1mLinking C shared library libvicon_receiver__rosidl_generator_c.so[0m
+[1.472s] [ 20%] Built target vicon_receiver__rosidl_generator_c
+[1.479s] [ 28%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[1.479s] [ 28%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[1.479s] [ 28%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[1.634s] [ 30%] [32mBuilding CXX object CMakeFiles/vicon_receiver__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/vicon_receiver/msg/position__type_support.cpp.o[0m
+[1.636s] [ 33%] [32mBuilding CXX object CMakeFiles/vicon_receiver__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/vicon_receiver/msg/position_list__type_support.cpp.o[0m
+[1.650s] [ 35%] [32mBuilding CXX object CMakeFiles/vicon_receiver__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/vicon_receiver/msg/detail/position__type_support.cpp.o[0m
+[1.652s] [ 38%] [32mBuilding CXX object CMakeFiles/vicon_receiver__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/vicon_receiver/msg/detail/position_list__type_support.cpp.o[0m
+[1.670s] [ 43%] [32mBuilding CXX object CMakeFiles/vicon_receiver__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/vicon_receiver/msg/detail/dds_fastrtps/position__type_support.cpp.o[0m
+[1.670s] [ 43%] [32mBuilding CXX object CMakeFiles/vicon_receiver__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/vicon_receiver/msg/detail/dds_fastrtps/position_list__type_support.cpp.o[0m
+[1.730s] [ 48%] [32mBuilding C object CMakeFiles/vicon_receiver__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vicon_receiver/msg/detail/position__type_support.c.o[0m
+[1.730s] [ 48%] [32mBuilding C object CMakeFiles/vicon_receiver__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vicon_receiver/msg/detail/position_list__type_support.c.o[0m
+[1.730s] [ 51%] [32mBuilding CXX object CMakeFiles/vicon_receiver__rosidl_typesupport_c.dir/rosidl_typesupport_c/vicon_receiver/msg/position__type_support.cpp.o[0m
+[1.730s] [ 53%] [32mBuilding CXX object CMakeFiles/vicon_receiver__rosidl_typesupport_c.dir/rosidl_typesupport_c/vicon_receiver/msg/position_list__type_support.cpp.o[0m
+[1.757s] [ 56%] [32m[1mLinking CXX shared library libvicon_receiver__rosidl_typesupport_c.so[0m
+[1.767s] [ 58%] [32m[1mLinking C shared library libvicon_receiver__rosidl_typesupport_introspection_c.so[0m
+[1.791s] [ 58%] Built target vicon_receiver__rosidl_typesupport_c
+[1.793s] [ 58%] Built target vicon_receiver__rosidl_typesupport_introspection_c
+[1.797s] [ 61%] [32mBuilding CXX object CMakeFiles/vicon_receiver__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/vicon_receiver/msg/detail/position__type_support_c.cpp.o[0m
+[1.797s] [ 64%] [32mBuilding CXX object CMakeFiles/vicon_receiver__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/vicon_receiver/msg/detail/position_list__type_support_c.cpp.o[0m
+[1.924s] [ 66%] [32m[1mLinking CXX shared library libvicon_receiver__rosidl_typesupport_cpp.so[0m
+[1.963s] [ 66%] Built target vicon_receiver__rosidl_typesupport_cpp
+[2.026s] [ 69%] [32m[1mLinking CXX shared library libvicon_receiver__rosidl_typesupport_fastrtps_c.so[0m
+[2.037s] [ 71%] [32m[1mLinking CXX shared library libvicon_receiver__rosidl_typesupport_introspection_cpp.so[0m
+[2.059s] [ 74%] [32m[1mLinking CXX shared library libvicon_receiver__rosidl_typesupport_fastrtps_cpp.so[0m
+[2.083s] [ 74%] Built target vicon_receiver__rosidl_typesupport_fastrtps_c
+[2.095s] [ 74%] Built target vicon_receiver__rosidl_typesupport_introspection_cpp
+[2.112s] [ 74%] Built target vicon_receiver__rosidl_typesupport_fastrtps_cpp
+[2.123s] [ 74%] Built target vicon_receiver
+[2.136s] [ 76%] [34m[1mGenerating Python code for ROS interfaces[0m
+[2.488s] [ 76%] Built target vicon_receiver__py
+[2.500s] [ 82%] [32mBuilding C object CMakeFiles/vicon_receiver__rosidl_generator_py.dir/rosidl_generator_py/vicon_receiver/msg/_position_s.c.o[0m
+[2.500s] [ 82%] [32mBuilding C object CMakeFiles/vicon_receiver__rosidl_generator_py.dir/rosidl_generator_py/vicon_receiver/msg/_position_list_s.c.o[0m
+[2.588s] [ 84%] [32m[1mLinking C shared library rosidl_generator_py/vicon_receiver/libvicon_receiver__rosidl_generator_py.so[0m
+[2.619s] [ 84%] Built target vicon_receiver__rosidl_generator_py
+[2.632s] [ 92%] [32mBuilding C object CMakeFiles/vicon_receiver__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/vicon_receiver/_vicon_receiver_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[2.632s] [ 92%] [32mBuilding C object CMakeFiles/vicon_receiver__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/vicon_receiver/_vicon_receiver_s.ep.rosidl_typesupport_c.c.o[0m
+[2.632s] [ 92%] [32mBuilding C object CMakeFiles/vicon_receiver__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/vicon_receiver/_vicon_receiver_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[2.695s] [100%] [32m[1mLinking C shared library rosidl_generator_py/vicon_receiver/vicon_receiver_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[2.695s] [100%] [32m[1mLinking C shared library rosidl_generator_py/vicon_receiver/vicon_receiver_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[2.695s] [100%] [32m[1mLinking C shared library rosidl_generator_py/vicon_receiver/vicon_receiver_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[2.719s] [100%] Built target vicon_receiver__rosidl_typesupport_c__pyext
+[2.720s] [100%] Built target vicon_receiver__rosidl_typesupport_fastrtps_c__pyext
+[2.720s] [100%] Built target vicon_receiver__rosidl_typesupport_introspection_c__pyext
+[2.727s] Invoked command in '/home/nomaan/ros2_ws/build/vicon_receiver' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/nomaan/ros2_ws/build/vicon_receiver -- -j12 -l12
+[2.734s] Invoking command in '/home/nomaan/ros2_ws/build/vicon_receiver': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/nomaan/ros2_ws/build/vicon_receiver
+[2.739s] -- Install configuration: ""
+[2.739s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/ament_index/resource_index/rosidl_interfaces/vicon_receiver
+[2.739s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver
+[2.739s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg
+[2.739s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/position_list.h
+[2.739s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail
+[2.739s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position_list__struct.h
+[2.739s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position__functions.c
+[2.739s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position_list__functions.c
+[2.739s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position__functions.h
+[2.739s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position__type_support.h
+[2.739s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position_list__type_support.h
+[2.739s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position_list__functions.h
+[2.740s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position__struct.h
+[2.740s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/rosidl_generator_c__visibility_control.h
+[2.740s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/position.h
+[2.740s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/environment/library_path.sh
+[2.740s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/environment/library_path.dsv
+[2.740s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/lib/libvicon_receiver__rosidl_generator_c.so
+[2.740s] -- Set runtime path of "/home/nomaan/ros2_ws/install/vicon_receiver/lib/libvicon_receiver__rosidl_generator_c.so" to ""
+[2.740s] -- Up-to-date: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver
+[2.740s] -- Up-to-date: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg
+[2.740s] -- Up-to-date: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail
+[2.740s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position_list__rosidl_typesupport_fastrtps_c.h
+[2.740s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position__rosidl_typesupport_fastrtps_c.h
+[2.740s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[2.740s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/lib/libvicon_receiver__rosidl_typesupport_fastrtps_c.so
+[2.740s] -- Set runtime path of "/home/nomaan/ros2_ws/install/vicon_receiver/lib/libvicon_receiver__rosidl_typesupport_fastrtps_c.so" to ""
+[2.740s] -- Up-to-date: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver
+[2.740s] -- Up-to-date: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg
+[2.740s] -- Up-to-date: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail
+[2.741s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position_list__type_support.c
+[2.741s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position_list__rosidl_typesupport_introspection_c.h
+[2.741s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position__rosidl_typesupport_introspection_c.h
+[2.741s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position__type_support.c
+[2.741s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[2.741s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/lib/libvicon_receiver__rosidl_typesupport_introspection_c.so
+[2.741s] -- Set runtime path of "/home/nomaan/ros2_ws/install/vicon_receiver/lib/libvicon_receiver__rosidl_typesupport_introspection_c.so" to ""
+[2.741s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/lib/libvicon_receiver__rosidl_typesupport_c.so
+[2.741s] -- Set runtime path of "/home/nomaan/ros2_ws/install/vicon_receiver/lib/libvicon_receiver__rosidl_typesupport_c.so" to ""
+[2.741s] -- Up-to-date: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver
+[2.741s] -- Up-to-date: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg
+[2.741s] -- Up-to-date: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail
+[2.741s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position_list__traits.hpp
+[2.741s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position_list__struct.hpp
+[2.741s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position_list__type_support.hpp
+[2.741s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position_list__builder.hpp
+[2.741s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position__struct.hpp
+[2.741s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position__builder.hpp
+[2.741s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position__traits.hpp
+[2.741s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position__type_support.hpp
+[2.742s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/rosidl_generator_cpp__visibility_control.hpp
+[2.742s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/position.hpp
+[2.742s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/position_list.hpp
+[2.742s] -- Up-to-date: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver
+[2.742s] -- Up-to-date: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg
+[2.742s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[2.742s] -- Up-to-date: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail
+[2.742s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position__rosidl_typesupport_fastrtps_cpp.hpp
+[2.742s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position_list__rosidl_typesupport_fastrtps_cpp.hpp
+[2.742s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/dds_fastrtps
+[2.742s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/lib/libvicon_receiver__rosidl_typesupport_fastrtps_cpp.so
+[2.742s] -- Set runtime path of "/home/nomaan/ros2_ws/install/vicon_receiver/lib/libvicon_receiver__rosidl_typesupport_fastrtps_cpp.so" to ""
+[2.742s] -- Up-to-date: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver
+[2.742s] -- Up-to-date: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg
+[2.742s] -- Up-to-date: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail
+[2.742s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position_list__type_support.cpp
+[2.742s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position_list__rosidl_typesupport_introspection_cpp.hpp
+[2.742s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position__type_support.cpp
+[2.742s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position__rosidl_typesupport_introspection_cpp.hpp
+[2.742s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/lib/libvicon_receiver__rosidl_typesupport_introspection_cpp.so
+[2.742s] -- Set runtime path of "/home/nomaan/ros2_ws/install/vicon_receiver/lib/libvicon_receiver__rosidl_typesupport_introspection_cpp.so" to ""
+[2.742s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/lib/libvicon_receiver__rosidl_typesupport_cpp.so
+[2.743s] -- Set runtime path of "/home/nomaan/ros2_ws/install/vicon_receiver/lib/libvicon_receiver__rosidl_typesupport_cpp.so" to ""
+[2.743s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/environment/pythonpath.sh
+[2.743s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/environment/pythonpath.dsv
+[2.743s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver-0.0.0-py3.10.egg-info
+[2.743s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver-0.0.0-py3.10.egg-info/dependency_links.txt
+[2.743s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver-0.0.0-py3.10.egg-info/top_level.txt
+[2.743s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver-0.0.0-py3.10.egg-info/SOURCES.txt
+[2.743s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver-0.0.0-py3.10.egg-info/PKG-INFO
+[2.743s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver
+[2.743s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/_vicon_receiver_s.ep.rosidl_typesupport_introspection_c.c
+[2.743s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/libvicon_receiver__rosidl_generator_py.so
+[2.743s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/vicon_receiver_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[2.743s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/vicon_receiver_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[2.743s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/_vicon_receiver_s.ep.rosidl_typesupport_fastrtps_c.c
+[2.743s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/vicon_receiver_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[2.743s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/msg
+[2.743s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/msg/_position_list.py
+[2.743s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/msg/_position_s.c
+[2.743s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/msg/_position_list_s.c
+[2.744s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/msg/__init__.py
+[2.744s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/msg/_position.py
+[2.744s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/_vicon_receiver_s.ep.rosidl_typesupport_c.c
+[2.744s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/__init__.py
+[2.766s] Listing '/home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver'...
+[2.766s] Compiling '/home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/__init__.py'...
+[2.766s] Listing '/home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/msg'...
+[2.766s] Compiling '/home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/msg/__init__.py'...
+[2.767s] Compiling '/home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/msg/_position.py'...
+[2.767s] Compiling '/home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/msg/_position_list.py'...
+[2.770s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/vicon_receiver_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[2.770s] -- Set runtime path of "/home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/vicon_receiver_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""
+[2.770s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/vicon_receiver_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[2.770s] -- Set runtime path of "/home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/vicon_receiver_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""
+[2.770s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/vicon_receiver_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[2.770s] -- Set runtime path of "/home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/vicon_receiver_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""
+[2.770s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/lib/libvicon_receiver__rosidl_generator_py.so
+[2.770s] -- Set runtime path of "/home/nomaan/ros2_ws/install/vicon_receiver/lib/libvicon_receiver__rosidl_generator_py.so" to ""
+[2.770s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/msg/Position.idl
+[2.770s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/msg/PositionList.idl
+[2.771s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/msg/Position.msg
+[2.771s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/msg/PositionList.msg
+[2.771s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/ament_index/resource_index/package_run_dependencies/vicon_receiver
+[2.771s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/ament_index/resource_index/parent_prefix_path/vicon_receiver
+[2.771s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/environment/ament_prefix_path.sh
+[2.771s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/environment/ament_prefix_path.dsv
+[2.771s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/environment/path.sh
+[2.771s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/environment/path.dsv
+[2.771s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/local_setup.bash
+[2.771s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/local_setup.sh
+[2.771s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/local_setup.zsh
+[2.771s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/local_setup.dsv
+[2.771s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/package.dsv
+[2.771s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/ament_index/resource_index/packages/vicon_receiver
+[2.771s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/export_vicon_receiver__rosidl_generator_cExport.cmake
+[2.771s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/export_vicon_receiver__rosidl_generator_cExport-noconfig.cmake
+[2.771s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/export_vicon_receiver__rosidl_typesupport_fastrtps_cExport.cmake
+[2.772s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/export_vicon_receiver__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[2.772s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/vicon_receiver__rosidl_typesupport_introspection_cExport.cmake
+[2.772s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/vicon_receiver__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[2.772s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/vicon_receiver__rosidl_typesupport_cExport.cmake
+[2.772s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/vicon_receiver__rosidl_typesupport_cExport-noconfig.cmake
+[2.772s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/export_vicon_receiver__rosidl_generator_cppExport.cmake
+[2.772s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/export_vicon_receiver__rosidl_typesupport_fastrtps_cppExport.cmake
+[2.772s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/export_vicon_receiver__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[2.772s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/vicon_receiver__rosidl_typesupport_introspection_cppExport.cmake
+[2.772s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/vicon_receiver__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[2.772s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/vicon_receiver__rosidl_typesupport_cppExport.cmake
+[2.772s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/vicon_receiver__rosidl_typesupport_cppExport-noconfig.cmake
+[2.772s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/export_vicon_receiver__rosidl_generator_pyExport.cmake
+[2.772s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/export_vicon_receiver__rosidl_generator_pyExport-noconfig.cmake
+[2.772s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/rosidl_cmake-extras.cmake
+[2.772s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/ament_cmake_export_dependencies-extras.cmake
+[2.773s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/ament_cmake_export_include_directories-extras.cmake
+[2.773s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/ament_cmake_export_libraries-extras.cmake
+[2.773s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/ament_cmake_export_targets-extras.cmake
+[2.773s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[2.773s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[2.773s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/vicon_receiverConfig.cmake
+[2.773s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/vicon_receiverConfig-version.cmake
+[2.773s] -- Installing: /home/nomaan/ros2_ws/install/vicon_receiver/share/vicon_receiver/package.xml
+[2.775s] Invoked command in '/home/nomaan/ros2_ws/build/vicon_receiver' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/nomaan/ros2_ws/build/vicon_receiver

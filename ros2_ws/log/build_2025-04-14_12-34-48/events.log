@@ -1,0 +1,307 @@
+[0.000000] (-) TimerEvent: {}
+[0.001622] (py_pubsub) JobQueued: {'identifier': 'py_pubsub', 'dependencies': OrderedDict()}
+[0.002239] (vicon_receiver) JobQueued: {'identifier': 'vicon_receiver', 'dependencies': OrderedDict()}
+[0.002763] (wind_direction_detector) JobQueued: {'identifier': 'wind_direction_detector', 'dependencies': OrderedDict()}
+[0.002962] (py_pubsub) JobStarted: {'identifier': 'py_pubsub'}
+[0.041576] (vicon_receiver) JobStarted: {'identifier': 'vicon_receiver'}
+[0.063925] (wind_direction_detector) JobStarted: {'identifier': 'wind_direction_detector'}
+[0.101388] (-) TimerEvent: {}
+[0.202416] (-) TimerEvent: {}
+[0.303148] (-) TimerEvent: {}
+[0.404005] (-) TimerEvent: {}
+[0.504757] (-) TimerEvent: {}
+[0.605493] (-) TimerEvent: {}
+[0.706184] (-) TimerEvent: {}
+[0.806874] (-) TimerEvent: {}
+[0.907535] (-) TimerEvent: {}
+[1.008247] (-) TimerEvent: {}
+[1.108947] (-) TimerEvent: {}
+[1.209658] (-) TimerEvent: {}
+[1.310556] (-) TimerEvent: {}
+[1.341233] (vicon_receiver) JobProgress: {'identifier': 'vicon_receiver', 'progress': 'cmake'}
+[1.344174] (vicon_receiver) JobProgress: {'identifier': 'vicon_receiver', 'progress': 'build'}
+[1.347171] (vicon_receiver) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/thymio/ros2_ws/build/vicon_receiver', '--', '-j4', '-l4'], 'cwd': '/home/thymio/ros2_ws/build/vicon_receiver', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'thymio'), ('SSH_CLIENT', '134.34.231.43 43392 22'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/thymio/ros2_ws/install/vicon_receiver/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/thymio'), ('OLDPWD', '/home/thymio'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLCON_PREFIX_PATH', '/home/thymio/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'thymio'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '2'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/thymio/.local/bin:/opt/ros/humble/bin:/home/thymio/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '67'), ('AMENT_PREFIX_PATH', '/home/thymio/ros2_ws/install/vicon_receiver:/home/thymio/ros2_ws/install/wind_direction_detector:/home/thymio/ros2_ws/install/simple_hello:/home/thymio/ros2_ws/install/py_pubsub:/home/thymio/ros2_ws/install/move_talk:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('PWD', '/home/thymio/ros2_ws/build/vicon_receiver'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '134.34.231.43 43392 134.34.231.198 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/thymio/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages:/home/thymio/ros2_ws/install/wind_direction_detector/lib/python3.10/site-packages:/home/thymio/ros2_ws/install/simple_hello/lib/python3.10/site-packages:/home/thymio/ros2_ws/install/py_pubsub/lib/python3.10/site-packages:/home/thymio/ros2_ws/install/move_talk/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/thymio/ros2_ws/install/vicon_receiver:/home/thymio/ros2_ws/install/wind_direction_detector:/home/thymio/ros2_ws/install/simple_hello:/home/thymio/ros2_ws/install/py_pubsub:/home/thymio/ros2_ws/install/move_talk:/opt/ros/humble')]), 'shell': False}
+[1.410762] (-) TimerEvent: {}
+[1.512852] (-) TimerEvent: {}
+[1.530906] (vicon_receiver) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target vicon_receiver__rosidl_generator_c\x1b[0m\n'}
+[1.577840] (vicon_receiver) StdoutLine: {'line': b'[  2%] Built target vicon_receiver__cpp\n'}
+[1.613013] (-) TimerEvent: {}
+[1.614921] (vicon_receiver) StdoutLine: {'line': b'[ 12%] Built target vicon_receiver__rosidl_generator_c\n'}
+[1.635519] (vicon_receiver) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target vicon_receiver__rosidl_typesupport_cpp\x1b[0m\n'}
+[1.641349] (vicon_receiver) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target vicon_receiver__rosidl_typesupport_fastrtps_cpp\x1b[0m\n'}
+[1.695079] (vicon_receiver) StdoutLine: {'line': b'[ 12%] Built target ament_cmake_python_copy_vicon_receiver\n'}
+[1.700249] (vicon_receiver) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target vicon_receiver__rosidl_typesupport_introspection_cpp\x1b[0m\n'}
+[1.713183] (-) TimerEvent: {}
+[1.738857] (vicon_receiver) StdoutLine: {'line': b'[ 23%] Built target vicon_receiver__rosidl_typesupport_cpp\n'}
+[1.758334] (vicon_receiver) StdoutLine: {'line': b'[ 33%] Built target vicon_receiver__rosidl_typesupport_fastrtps_cpp\n'}
+[1.813379] (-) TimerEvent: {}
+[1.814831] (vicon_receiver) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target vicon_receiver__rosidl_typesupport_fastrtps_c\x1b[0m\n'}
+[1.828731] (vicon_receiver) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target vicon_receiver__rosidl_typesupport_introspection_c\x1b[0m\n'}
+[1.843532] (vicon_receiver) StdoutLine: {'line': b'[ 43%] Built target vicon_receiver__rosidl_typesupport_introspection_cpp\n'}
+[1.868007] (vicon_receiver) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target vicon_receiver__rosidl_typesupport_c\x1b[0m\n'}
+[1.913650] (-) TimerEvent: {}
+[1.951866] (vicon_receiver) StdoutLine: {'line': b'[ 53%] Built target vicon_receiver__rosidl_typesupport_fastrtps_c\n'}
+[1.966937] (vicon_receiver) StdoutLine: {'line': b'[ 64%] Built target vicon_receiver__rosidl_typesupport_c\n'}
+[1.975677] (vicon_receiver) StdoutLine: {'line': b'[ 74%] Built target vicon_receiver__rosidl_typesupport_introspection_c\n'}
+[2.013854] (-) TimerEvent: {}
+[2.073458] (vicon_receiver) StdoutLine: {'line': b'[ 74%] Built target vicon_receiver\n'}
+[2.114065] (-) TimerEvent: {}
+[2.171449] (vicon_receiver) StdoutLine: {'line': b'[ 76%] Built target vicon_receiver__py\n'}
+[2.214357] (-) TimerEvent: {}
+[2.221760] (vicon_receiver) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target vicon_receiver__rosidl_generator_py\x1b[0m\n'}
+[2.296501] (vicon_receiver) StdoutLine: {'line': b'[ 84%] Built target vicon_receiver__rosidl_generator_py\n'}
+[2.314597] (-) TimerEvent: {}
+[2.353887] (vicon_receiver) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target vicon_receiver__rosidl_typesupport_introspection_c__pyext\x1b[0m\n'}
+[2.357014] (vicon_receiver) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target vicon_receiver__rosidl_typesupport_c__pyext\x1b[0m\n'}
+[2.387177] (vicon_receiver) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target vicon_receiver__rosidl_typesupport_fastrtps_c__pyext\x1b[0m\n'}
+[2.414849] (-) TimerEvent: {}
+[2.469450] (vicon_receiver) StdoutLine: {'line': b'[ 89%] Built target vicon_receiver__rosidl_typesupport_introspection_c__pyext\n'}
+[2.473464] (vicon_receiver) StdoutLine: {'line': b'[ 94%] Built target vicon_receiver__rosidl_typesupport_c__pyext\n'}
+[2.498690] (vicon_receiver) StdoutLine: {'line': b'[100%] Built target vicon_receiver__rosidl_typesupport_fastrtps_c__pyext\n'}
+[2.515054] (-) TimerEvent: {}
+[2.615871] (-) TimerEvent: {}
+[2.716773] (-) TimerEvent: {}
+[2.817682] (-) TimerEvent: {}
+[2.918476] (-) TimerEvent: {}
+[3.019568] (-) TimerEvent: {}
+[3.121015] (-) TimerEvent: {}
+[3.224038] (-) TimerEvent: {}
+[3.326138] (-) TimerEvent: {}
+[3.428026] (-) TimerEvent: {}
+[3.445099] (vicon_receiver) StdoutLine: {'line': b'running egg_info\n'}
+[3.459795] (vicon_receiver) StdoutLine: {'line': b'writing vicon_receiver.egg-info/PKG-INFO\n'}
+[3.462425] (vicon_receiver) StdoutLine: {'line': b'writing dependency_links to vicon_receiver.egg-info/dependency_links.txt\n'}
+[3.465128] (vicon_receiver) StdoutLine: {'line': b'writing top-level names to vicon_receiver.egg-info/top_level.txt\n'}
+[3.473211] (vicon_receiver) StdoutLine: {'line': b"reading manifest file 'vicon_receiver.egg-info/SOURCES.txt'\n"}
+[3.476842] (vicon_receiver) StdoutLine: {'line': b"writing manifest file 'vicon_receiver.egg-info/SOURCES.txt'\n"}
+[3.528387] (-) TimerEvent: {}
+[3.631648] (-) TimerEvent: {}
+[3.645508] (vicon_receiver) StdoutLine: {'line': b'[100%] Built target ament_cmake_python_build_vicon_receiver_egg\n'}
+[3.699896] (vicon_receiver) CommandEnded: {'returncode': 0}
+[3.701390] (vicon_receiver) JobProgress: {'identifier': 'vicon_receiver', 'progress': 'install'}
+[3.732350] (-) TimerEvent: {}
+[3.734565] (vicon_receiver) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/thymio/ros2_ws/build/vicon_receiver'], 'cwd': '/home/thymio/ros2_ws/build/vicon_receiver', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'thymio'), ('SSH_CLIENT', '134.34.231.43 43392 22'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/thymio/ros2_ws/install/vicon_receiver/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/thymio'), ('OLDPWD', '/home/thymio'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLCON_PREFIX_PATH', '/home/thymio/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'thymio'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '2'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/thymio/.local/bin:/opt/ros/humble/bin:/home/thymio/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '67'), ('AMENT_PREFIX_PATH', '/home/thymio/ros2_ws/install/vicon_receiver:/home/thymio/ros2_ws/install/wind_direction_detector:/home/thymio/ros2_ws/install/simple_hello:/home/thymio/ros2_ws/install/py_pubsub:/home/thymio/ros2_ws/install/move_talk:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('PWD', '/home/thymio/ros2_ws/build/vicon_receiver'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '134.34.231.43 43392 134.34.231.198 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/thymio/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages:/home/thymio/ros2_ws/install/wind_direction_detector/lib/python3.10/site-packages:/home/thymio/ros2_ws/install/simple_hello/lib/python3.10/site-packages:/home/thymio/ros2_ws/install/py_pubsub/lib/python3.10/site-packages:/home/thymio/ros2_ws/install/move_talk/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/thymio/ros2_ws/install/vicon_receiver:/home/thymio/ros2_ws/install/wind_direction_detector:/home/thymio/ros2_ws/install/simple_hello:/home/thymio/ros2_ws/install/py_pubsub:/home/thymio/ros2_ws/install/move_talk:/opt/ros/humble')]), 'shell': False}
+[3.772445] (vicon_receiver) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[3.774465] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/ament_index/resource_index/rosidl_interfaces/vicon_receiver\n'}
+[3.777080] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver\n'}
+[3.779156] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg\n'}
+[3.781135] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/position_list.h\n'}
+[3.782022] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/position.h\n'}
+[3.783816] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/rosidl_generator_c__visibility_control.h\n'}
+[3.784415] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail\n'}
+[3.784906] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position__functions.h\n'}
+[3.788957] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position__struct.h\n'}
+[3.789859] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position__functions.c\n'}
+[3.790462] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position__type_support.h\n'}
+[3.793578] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position_list__struct.h\n'}
+[3.794123] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position_list__functions.c\n'}
+[3.796719] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position_list__type_support.h\n'}
+[3.799556] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position_list__functions.h\n'}
+[3.802833] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/environment/library_path.sh\n'}
+[3.803611] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/environment/library_path.dsv\n'}
+[3.804104] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/lib/libvicon_receiver__rosidl_generator_c.so\n'}
+[3.805918] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver\n'}
+[3.808597] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg\n'}
+[3.809069] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[3.809516] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail\n'}
+[3.809918] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position_list__rosidl_typesupport_fastrtps_c.h\n'}
+[3.813624] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position__rosidl_typesupport_fastrtps_c.h\n'}
+[3.814643] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/lib/libvicon_receiver__rosidl_typesupport_fastrtps_c.so\n'}
+[3.817551] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver\n'}
+[3.818012] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg\n'}
+[3.821048] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail\n'}
+[3.823455] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position__type_support.c\n'}
+[3.825143] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position_list__rosidl_typesupport_introspection_c.h\n'}
+[3.825759] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position__rosidl_typesupport_introspection_c.h\n'}
+[3.826237] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position_list__type_support.c\n'}
+[3.826644] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[3.826996] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/lib/libvicon_receiver__rosidl_typesupport_introspection_c.so\n'}
+[3.827309] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/lib/libvicon_receiver__rosidl_typesupport_c.so\n'}
+[3.827793] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver\n'}
+[3.828366] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg\n'}
+[3.828820] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/position_list.hpp\n'}
+[3.829353] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/position.hpp\n'}
+[3.829817] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail\n'}
+[3.830216] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position_list__type_support.hpp\n'}
+[3.830683] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position_list__traits.hpp\n'}
+[3.831262] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position__struct.hpp\n'}
+[3.832241] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position__traits.hpp\n'}
+[3.844774] (-) TimerEvent: {}
+[3.846618] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position_list__struct.hpp\n'}
+[3.847681] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position__builder.hpp\n'}
+[3.848601] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position__type_support.hpp\n'}
+[3.849110] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position_list__builder.hpp\n'}
+[3.849539] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[3.849959] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver\n'}
+[3.850386] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg\n'}
+[3.850924] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[3.851420] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail\n'}
+[3.851910] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[3.852446] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/dds_fastrtps\n'}
+[3.853004] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position_list__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[3.853490] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/lib/libvicon_receiver__rosidl_typesupport_fastrtps_cpp.so\n'}
+[3.853902] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver\n'}
+[3.854304] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg\n'}
+[3.854727] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail\n'}
+[3.855243] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position__rosidl_typesupport_introspection_cpp.hpp\n'}
+[3.867929] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position_list__type_support.cpp\n'}
+[3.868631] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position_list__rosidl_typesupport_introspection_cpp.hpp\n'}
+[3.869449] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/include/vicon_receiver/vicon_receiver/msg/detail/position__type_support.cpp\n'}
+[3.870048] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/lib/libvicon_receiver__rosidl_typesupport_introspection_cpp.so\n'}
+[3.870809] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/lib/libvicon_receiver__rosidl_typesupport_cpp.so\n'}
+[3.871568] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/environment/pythonpath.sh\n'}
+[3.877093] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/environment/pythonpath.dsv\n'}
+[3.877751] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver-0.0.0-py3.10.egg-info\n'}
+[3.878488] (vicon_receiver) StdoutLine: {'line': b'-- Installing: /home/thymio/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[3.879041] (vicon_receiver) StdoutLine: {'line': b'-- Installing: /home/thymio/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[3.879652] (vicon_receiver) StdoutLine: {'line': b'-- Installing: /home/thymio/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[3.880340] (vicon_receiver) StdoutLine: {'line': b'-- Installing: /home/thymio/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[3.880930] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver\n'}
+[3.881546] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/__init__.py\n'}
+[3.882244] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/vicon_receiver_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[3.882843] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/vicon_receiver_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[3.883796] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/_vicon_receiver_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[3.884454] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/libvicon_receiver__rosidl_generator_py.so\n'}
+[3.885024] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/vicon_receiver_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[3.885572] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/_vicon_receiver_s.ep.rosidl_typesupport_c.c\n'}
+[3.886073] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/msg\n'}
+[3.886540] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/msg/__init__.py\n'}
+[3.887056] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/msg/_position_list_s.c\n'}
+[3.887527] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/msg/_position_s.c\n'}
+[3.899862] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/msg/_position.py\n'}
+[3.900518] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/msg/_position_list.py\n'}
+[3.901085] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/_vicon_receiver_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[3.944975] (-) TimerEvent: {}
+[4.018681] (vicon_receiver) StdoutLine: {'line': b"Listing '/home/thymio/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver'...\n"}
+[4.020487] (vicon_receiver) StdoutLine: {'line': b"Listing '/home/thymio/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/msg'...\n"}
+[4.045224] (-) TimerEvent: {}
+[4.049777] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/vicon_receiver_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[4.052276] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/vicon_receiver_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[4.054767] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages/vicon_receiver/vicon_receiver_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[4.057173] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/lib/libvicon_receiver__rosidl_generator_py.so\n'}
+[4.059023] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/msg/Position.idl\n'}
+[4.059888] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/msg/PositionList.idl\n'}
+[4.061851] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/msg/Position.msg\n'}
+[4.063549] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/msg/PositionList.msg\n'}
+[4.064254] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/ament_index/resource_index/package_run_dependencies/vicon_receiver\n'}
+[4.064930] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/ament_index/resource_index/parent_prefix_path/vicon_receiver\n'}
+[4.067896] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/environment/ament_prefix_path.sh\n'}
+[4.069397] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/environment/ament_prefix_path.dsv\n'}
+[4.069913] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/environment/path.sh\n'}
+[4.071942] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/environment/path.dsv\n'}
+[4.074419] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/local_setup.bash\n'}
+[4.076757] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/local_setup.sh\n'}
+[4.079129] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/local_setup.zsh\n'}
+[4.079678] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/local_setup.dsv\n'}
+[4.082053] (vicon_receiver) StdoutLine: {'line': b'-- Installing: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/package.dsv\n'}
+[4.084112] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/ament_index/resource_index/packages/vicon_receiver\n'}
+[4.084975] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/export_vicon_receiver__rosidl_generator_cExport.cmake\n'}
+[4.086972] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/export_vicon_receiver__rosidl_generator_cExport-noconfig.cmake\n'}
+[4.090770] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/export_vicon_receiver__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[4.091453] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/export_vicon_receiver__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[4.093629] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/vicon_receiver__rosidl_typesupport_introspection_cExport.cmake\n'}
+[4.094704] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/vicon_receiver__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[4.096581] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/vicon_receiver__rosidl_typesupport_cExport.cmake\n'}
+[4.097169] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/vicon_receiver__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[4.097875] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/export_vicon_receiver__rosidl_generator_cppExport.cmake\n'}
+[4.098504] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/export_vicon_receiver__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[4.099137] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/export_vicon_receiver__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[4.100057] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/vicon_receiver__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[4.100895] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/vicon_receiver__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[4.101932] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/vicon_receiver__rosidl_typesupport_cppExport.cmake\n'}
+[4.120476] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/vicon_receiver__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[4.120958] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/export_vicon_receiver__rosidl_generator_pyExport.cmake\n'}
+[4.121392] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/export_vicon_receiver__rosidl_generator_pyExport-noconfig.cmake\n'}
+[4.121825] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/rosidl_cmake-extras.cmake\n'}
+[4.122235] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[4.122725] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[4.123159] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[4.123581] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[4.124316] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[4.124761] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[4.125178] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/vicon_receiverConfig.cmake\n'}
+[4.125574] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/cmake/vicon_receiverConfig-version.cmake\n'}
+[4.125988] (vicon_receiver) StdoutLine: {'line': b'-- Up-to-date: /home/thymio/ros2_ws/install/vicon_receiver/share/vicon_receiver/package.xml\n'}
+[4.126390] (vicon_receiver) CommandEnded: {'returncode': 0}
+[4.145880] (-) TimerEvent: {}
+[4.228724] (vicon_receiver) JobEnded: {'identifier': 'vicon_receiver', 'rc': 0}
+[4.246042] (-) TimerEvent: {}
+[4.346857] (-) TimerEvent: {}
+[4.447812] (-) TimerEvent: {}
+[4.548703] (-) TimerEvent: {}
+[4.649643] (-) TimerEvent: {}
+[4.750645] (-) TimerEvent: {}
+[4.851619] (-) TimerEvent: {}
+[4.952733] (-) TimerEvent: {}
+[5.054166] (-) TimerEvent: {}
+[5.156251] (-) TimerEvent: {}
+[5.165213] (py_pubsub) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/py_pubsub', 'build', '--build-base', '/home/thymio/ros2_ws/build/py_pubsub/build', 'install', '--record', '/home/thymio/ros2_ws/build/py_pubsub/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/thymio/ros2_ws/src/py_pubsub', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'thymio', 'SSH_CLIENT': '134.34.231.43 43392 22', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/thymio/ros2_ws/install/vicon_receiver/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/thymio', 'OLDPWD': '/home/thymio', 'SSH_TTY': '/dev/pts/0', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/thymio/ros2_ws/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'thymio', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '2', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/thymio/.local/bin:/opt/ros/humble/bin:/home/thymio/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'ROS_DOMAIN_ID': '67', 'AMENT_PREFIX_PATH': '/home/thymio/ros2_ws/install/vicon_receiver:/home/thymio/ros2_ws/install/wind_direction_detector:/home/thymio/ros2_ws/install/simple_hello:/home/thymio/ros2_ws/install/py_pubsub:/home/thymio/ros2_ws/install/move_talk:/opt/ros/humble', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'PWD': '/home/thymio/ros2_ws/build/py_pubsub', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': '134.34.231.43 43392 134.34.231.198 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/thymio/ros2_ws/build/py_pubsub/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/thymio/ros2_ws/install/py_pubsub/lib/python3.10/site-packages:/home/thymio/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages:/home/thymio/ros2_ws/install/wind_direction_detector/lib/python3.10/site-packages:/home/thymio/ros2_ws/install/simple_hello/lib/python3.10/site-packages:/home/thymio/ros2_ws/install/py_pubsub/lib/python3.10/site-packages:/home/thymio/ros2_ws/install/move_talk/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/thymio/ros2_ws/install/vicon_receiver'}, 'shell': False}
+[5.236465] (wind_direction_detector) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/wind_direction_detector', 'build', '--build-base', '/home/thymio/ros2_ws/build/wind_direction_detector/build', 'install', '--record', '/home/thymio/ros2_ws/build/wind_direction_detector/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/thymio/ros2_ws/src/wind_direction_detector', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'thymio', 'SSH_CLIENT': '134.34.231.43 43392 22', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/thymio/ros2_ws/install/vicon_receiver/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/thymio', 'OLDPWD': '/home/thymio', 'SSH_TTY': '/dev/pts/0', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/thymio/ros2_ws/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'thymio', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '2', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/thymio/.local/bin:/opt/ros/humble/bin:/home/thymio/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'ROS_DOMAIN_ID': '67', 'AMENT_PREFIX_PATH': '/home/thymio/ros2_ws/install/vicon_receiver:/home/thymio/ros2_ws/install/wind_direction_detector:/home/thymio/ros2_ws/install/simple_hello:/home/thymio/ros2_ws/install/py_pubsub:/home/thymio/ros2_ws/install/move_talk:/opt/ros/humble', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'PWD': '/home/thymio/ros2_ws/build/wind_direction_detector', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': '134.34.231.43 43392 134.34.231.198 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/thymio/ros2_ws/build/wind_direction_detector/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/thymio/ros2_ws/install/wind_direction_detector/lib/python3.10/site-packages:/home/thymio/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages:/home/thymio/ros2_ws/install/wind_direction_detector/lib/python3.10/site-packages:/home/thymio/ros2_ws/install/simple_hello/lib/python3.10/site-packages:/home/thymio/ros2_ws/install/py_pubsub/lib/python3.10/site-packages:/home/thymio/ros2_ws/install/move_talk/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/thymio/ros2_ws/install/vicon_receiver'}, 'shell': False}
+[5.256460] (-) TimerEvent: {}
+[5.357528] (-) TimerEvent: {}
+[5.458531] (-) TimerEvent: {}
+[5.559538] (-) TimerEvent: {}
+[5.660518] (-) TimerEvent: {}
+[5.761424] (-) TimerEvent: {}
+[5.862305] (-) TimerEvent: {}
+[5.963193] (-) TimerEvent: {}
+[6.064070] (-) TimerEvent: {}
+[6.164841] (-) TimerEvent: {}
+[6.265680] (-) TimerEvent: {}
+[6.366530] (-) TimerEvent: {}
+[6.464903] (py_pubsub) StdoutLine: {'line': b'running egg_info\n'}
+[6.466722] (-) TimerEvent: {}
+[6.468963] (py_pubsub) StdoutLine: {'line': b'writing ../../build/py_pubsub/py_pubsub.egg-info/PKG-INFO\n'}
+[6.470229] (py_pubsub) StdoutLine: {'line': b'writing dependency_links to ../../build/py_pubsub/py_pubsub.egg-info/dependency_links.txt\n'}
+[6.471442] (py_pubsub) StdoutLine: {'line': b'writing entry points to ../../build/py_pubsub/py_pubsub.egg-info/entry_points.txt\n'}
+[6.472441] (py_pubsub) StdoutLine: {'line': b'writing requirements to ../../build/py_pubsub/py_pubsub.egg-info/requires.txt\n'}
+[6.473181] (py_pubsub) StdoutLine: {'line': b'writing top-level names to ../../build/py_pubsub/py_pubsub.egg-info/top_level.txt\n'}
+[6.481412] (py_pubsub) StdoutLine: {'line': b"reading manifest file '../../build/py_pubsub/py_pubsub.egg-info/SOURCES.txt'\n"}
+[6.482786] (py_pubsub) StdoutLine: {'line': b"adding license file 'LICENSE'\n"}
+[6.485483] (py_pubsub) StdoutLine: {'line': b"writing manifest file '../../build/py_pubsub/py_pubsub.egg-info/SOURCES.txt'\n"}
+[6.486257] (py_pubsub) StdoutLine: {'line': b'running build\n'}
+[6.486890] (py_pubsub) StdoutLine: {'line': b'running build_py\n'}
+[6.488439] (py_pubsub) StdoutLine: {'line': b'running install\n'}
+[6.489795] (py_pubsub) StdoutLine: {'line': b'running install_lib\n'}
+[6.496718] (py_pubsub) StdoutLine: {'line': b'running install_data\n'}
+[6.497939] (py_pubsub) StdoutLine: {'line': b'running install_egg_info\n'}
+[6.507045] (py_pubsub) StdoutLine: {'line': b"removing '/home/thymio/ros2_ws/install/py_pubsub/lib/python3.10/site-packages/py_pubsub-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[6.509182] (py_pubsub) StdoutLine: {'line': b'Copying ../../build/py_pubsub/py_pubsub.egg-info to /home/thymio/ros2_ws/install/py_pubsub/lib/python3.10/site-packages/py_pubsub-0.0.0-py3.10.egg-info\n'}
+[6.517634] (py_pubsub) StdoutLine: {'line': b'running install_scripts\n'}
+[6.554679] (wind_direction_detector) StdoutLine: {'line': b'running egg_info\n'}
+[6.559437] (wind_direction_detector) StdoutLine: {'line': b'writing ../../build/wind_direction_detector/wind_direction_detector.egg-info/PKG-INFO\n'}
+[6.560817] (wind_direction_detector) StdoutLine: {'line': b'writing dependency_links to ../../build/wind_direction_detector/wind_direction_detector.egg-info/dependency_links.txt\n'}
+[6.561950] (wind_direction_detector) StdoutLine: {'line': b'writing entry points to ../../build/wind_direction_detector/wind_direction_detector.egg-info/entry_points.txt\n'}
+[6.562945] (wind_direction_detector) StdoutLine: {'line': b'writing requirements to ../../build/wind_direction_detector/wind_direction_detector.egg-info/requires.txt\n'}
+[6.563962] (wind_direction_detector) StdoutLine: {'line': b'writing top-level names to ../../build/wind_direction_detector/wind_direction_detector.egg-info/top_level.txt\n'}
+[6.566907] (-) TimerEvent: {}
+[6.572984] (wind_direction_detector) StdoutLine: {'line': b"reading manifest file '../../build/wind_direction_detector/wind_direction_detector.egg-info/SOURCES.txt'\n"}
+[6.574622] (wind_direction_detector) StdoutLine: {'line': b"adding license file 'LICENSE'\n"}
+[6.577859] (wind_direction_detector) StdoutLine: {'line': b"writing manifest file '../../build/wind_direction_detector/wind_direction_detector.egg-info/SOURCES.txt'\n"}
+[6.578794] (wind_direction_detector) StdoutLine: {'line': b'running build\n'}
+[6.579442] (wind_direction_detector) StdoutLine: {'line': b'running build_py\n'}
+[6.580558] (wind_direction_detector) StdoutLine: {'line': b'copying wind_direction_detector/publish_direction.py -> /home/thymio/ros2_ws/build/wind_direction_detector/build/lib/wind_direction_detector\n'}
+[6.582542] (wind_direction_detector) StdoutLine: {'line': b'running install\n'}
+[6.583938] (wind_direction_detector) StdoutLine: {'line': b'running install_lib\n'}
+[6.587938] (wind_direction_detector) StdoutLine: {'line': b'copying /home/thymio/ros2_ws/build/wind_direction_detector/build/lib/wind_direction_detector/publish_direction.py -> /home/thymio/ros2_ws/install/wind_direction_detector/lib/python3.10/site-packages/wind_direction_detector\n'}
+[6.592076] (wind_direction_detector) StdoutLine: {'line': b'byte-compiling /home/thymio/ros2_ws/install/wind_direction_detector/lib/python3.10/site-packages/wind_direction_detector/publish_direction.py to publish_direction.cpython-310.pyc\n'}
+[6.602587] (wind_direction_detector) StdoutLine: {'line': b'running install_data\n'}
+[6.603515] (wind_direction_detector) StdoutLine: {'line': b'running install_egg_info\n'}
+[6.611204] (wind_direction_detector) StdoutLine: {'line': b"removing '/home/thymio/ros2_ws/install/wind_direction_detector/lib/python3.10/site-packages/wind_direction_detector-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[6.612473] (py_pubsub) StdoutLine: {'line': b'Installing listener script to /home/thymio/ros2_ws/install/py_pubsub/lib/py_pubsub\n'}
+[6.613442] (wind_direction_detector) StdoutLine: {'line': b'Copying ../../build/wind_direction_detector/wind_direction_detector.egg-info to /home/thymio/ros2_ws/install/wind_direction_detector/lib/python3.10/site-packages/wind_direction_detector-0.0.0-py3.10.egg-info\n'}
+[6.613992] (py_pubsub) StdoutLine: {'line': b'Installing talker script to /home/thymio/ros2_ws/install/py_pubsub/lib/py_pubsub\n'}
+[6.615409] (py_pubsub) StdoutLine: {'line': b"writing list of installed files to '/home/thymio/ros2_ws/build/py_pubsub/install.log'\n"}
+[6.627413] (wind_direction_detector) StdoutLine: {'line': b'running install_scripts\n'}
+[6.667249] (-) TimerEvent: {}
+[6.754909] (py_pubsub) CommandEnded: {'returncode': 0}
+[6.758740] (wind_direction_detector) StdoutLine: {'line': b'Installing publish_wind_direction script to /home/thymio/ros2_ws/install/wind_direction_detector/lib/wind_direction_detector\n'}
+[6.759487] (wind_direction_detector) StdoutLine: {'line': b'Installing random_robot_move script to /home/thymio/ros2_ws/install/wind_direction_detector/lib/wind_direction_detector\n'}
+[6.760004] (wind_direction_detector) StdoutLine: {'line': b'Installing receive_wind_direction script to /home/thymio/ros2_ws/install/wind_direction_detector/lib/wind_direction_detector\n'}
+[6.771919] (wind_direction_detector) StdoutLine: {'line': b"writing list of installed files to '/home/thymio/ros2_ws/build/wind_direction_detector/install.log'\n"}
+[6.773423] (-) TimerEvent: {}
+[6.819530] (py_pubsub) JobEnded: {'identifier': 'py_pubsub', 'rc': 0}
+[6.873687] (-) TimerEvent: {}
+[6.890342] (wind_direction_detector) CommandEnded: {'returncode': 0}
+[6.921786] (wind_direction_detector) JobEnded: {'identifier': 'wind_direction_detector', 'rc': 0}
+[6.925075] (-) EventReactorShutdown: {}

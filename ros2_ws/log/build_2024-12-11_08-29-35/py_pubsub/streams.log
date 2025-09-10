@@ -1,0 +1,42 @@
+[0.342s] Invoking command in '/home/nomaan/ros2_ws/src/py_pubsub': AMENT_PREFIX_PATH=/home/nomaan/ros2_ws/install/vicon_receiver:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/nomaan/ros2_ws/install/vicon_receiver LD_LIBRARY_PATH=/home/nomaan/ros2_ws/install/vicon_receiver/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/nomaan/ros2_ws/build/py_pubsub/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nomaan/ros2_ws/install/py_pubsub/lib/python3.10/site-packages:/home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/py_pubsub build --build-base /home/nomaan/ros2_ws/build/py_pubsub/build install --record /home/nomaan/ros2_ws/build/py_pubsub/install.log --single-version-externally-managed install_data
+[0.474s] running egg_info
+[0.474s] creating ../../build/py_pubsub/py_pubsub.egg-info
+[0.474s] writing ../../build/py_pubsub/py_pubsub.egg-info/PKG-INFO
+[0.474s] writing dependency_links to ../../build/py_pubsub/py_pubsub.egg-info/dependency_links.txt
+[0.474s] writing entry points to ../../build/py_pubsub/py_pubsub.egg-info/entry_points.txt
+[0.474s] writing requirements to ../../build/py_pubsub/py_pubsub.egg-info/requires.txt
+[0.474s] writing top-level names to ../../build/py_pubsub/py_pubsub.egg-info/top_level.txt
+[0.474s] writing manifest file '../../build/py_pubsub/py_pubsub.egg-info/SOURCES.txt'
+[0.475s] reading manifest file '../../build/py_pubsub/py_pubsub.egg-info/SOURCES.txt'
+[0.475s] adding license file 'LICENSE'
+[0.476s] writing manifest file '../../build/py_pubsub/py_pubsub.egg-info/SOURCES.txt'
+[0.476s] running build
+[0.476s] running build_py
+[0.476s] creating /home/nomaan/ros2_ws/build/py_pubsub/build
+[0.476s] creating /home/nomaan/ros2_ws/build/py_pubsub/build/lib
+[0.476s] creating /home/nomaan/ros2_ws/build/py_pubsub/build/lib/py_pubsub
+[0.476s] copying py_pubsub/subscriber_member_function.py -> /home/nomaan/ros2_ws/build/py_pubsub/build/lib/py_pubsub
+[0.476s] copying py_pubsub/publisher_member_function.py -> /home/nomaan/ros2_ws/build/py_pubsub/build/lib/py_pubsub
+[0.476s] copying py_pubsub/__init__.py -> /home/nomaan/ros2_ws/build/py_pubsub/build/lib/py_pubsub
+[0.476s] running install
+[0.476s] running install_lib
+[0.477s] creating /home/nomaan/ros2_ws/install/py_pubsub/lib/python3.10/site-packages/py_pubsub
+[0.477s] copying /home/nomaan/ros2_ws/build/py_pubsub/build/lib/py_pubsub/subscriber_member_function.py -> /home/nomaan/ros2_ws/install/py_pubsub/lib/python3.10/site-packages/py_pubsub
+[0.477s] copying /home/nomaan/ros2_ws/build/py_pubsub/build/lib/py_pubsub/publisher_member_function.py -> /home/nomaan/ros2_ws/install/py_pubsub/lib/python3.10/site-packages/py_pubsub
+[0.477s] copying /home/nomaan/ros2_ws/build/py_pubsub/build/lib/py_pubsub/__init__.py -> /home/nomaan/ros2_ws/install/py_pubsub/lib/python3.10/site-packages/py_pubsub
+[0.477s] byte-compiling /home/nomaan/ros2_ws/install/py_pubsub/lib/python3.10/site-packages/py_pubsub/subscriber_member_function.py to subscriber_member_function.cpython-310.pyc
+[0.477s] byte-compiling /home/nomaan/ros2_ws/install/py_pubsub/lib/python3.10/site-packages/py_pubsub/publisher_member_function.py to publisher_member_function.cpython-310.pyc
+[0.478s] byte-compiling /home/nomaan/ros2_ws/install/py_pubsub/lib/python3.10/site-packages/py_pubsub/__init__.py to __init__.cpython-310.pyc
+[0.478s] running install_data
+[0.478s] creating /home/nomaan/ros2_ws/install/py_pubsub/share/ament_index
+[0.478s] creating /home/nomaan/ros2_ws/install/py_pubsub/share/ament_index/resource_index
+[0.478s] creating /home/nomaan/ros2_ws/install/py_pubsub/share/ament_index/resource_index/packages
+[0.478s] copying resource/py_pubsub -> /home/nomaan/ros2_ws/install/py_pubsub/share/ament_index/resource_index/packages
+[0.478s] copying package.xml -> /home/nomaan/ros2_ws/install/py_pubsub/share/py_pubsub
+[0.478s] running install_egg_info
+[0.479s] Copying ../../build/py_pubsub/py_pubsub.egg-info to /home/nomaan/ros2_ws/install/py_pubsub/lib/python3.10/site-packages/py_pubsub-0.0.0-py3.10.egg-info
+[0.480s] running install_scripts
+[0.492s] Installing listener script to /home/nomaan/ros2_ws/install/py_pubsub/lib/py_pubsub
+[0.492s] Installing talker script to /home/nomaan/ros2_ws/install/py_pubsub/lib/py_pubsub
+[0.492s] writing list of installed files to '/home/nomaan/ros2_ws/build/py_pubsub/install.log'
+[0.507s] Invoked command in '/home/nomaan/ros2_ws/src/py_pubsub' returned '0': AMENT_PREFIX_PATH=/home/nomaan/ros2_ws/install/vicon_receiver:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/nomaan/ros2_ws/install/vicon_receiver LD_LIBRARY_PATH=/home/nomaan/ros2_ws/install/vicon_receiver/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/nomaan/ros2_ws/build/py_pubsub/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nomaan/ros2_ws/install/py_pubsub/lib/python3.10/site-packages:/home/nomaan/ros2_ws/install/vicon_receiver/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/py_pubsub build --build-base /home/nomaan/ros2_ws/build/py_pubsub/build install --record /home/nomaan/ros2_ws/build/py_pubsub/install.log --single-version-externally-managed install_data

@@ -1,0 +1,10 @@
+# srv/GetPoseData.srv
+
+# --- request (empty) ---
+# no request fields
+
+---
+# --- response ---
+float32[] my_position_xy
+float32 my_vicon_yaw
+string[] neighbours_by_id

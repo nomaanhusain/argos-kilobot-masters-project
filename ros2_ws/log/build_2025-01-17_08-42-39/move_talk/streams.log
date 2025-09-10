@@ -1,0 +1,47 @@
+[0.511s] Invoking command in '/home/nomaan/ros2_ws/src/move_talk': PYTHONPATH=/home/nomaan/ros2_ws/build/move_talk/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/move_talk build --build-base /home/nomaan/ros2_ws/build/move_talk/build install --record /home/nomaan/ros2_ws/build/move_talk/install.log --single-version-externally-managed install_data
+[0.649s] running egg_info
+[0.650s] writing ../../build/move_talk/move_talk.egg-info/PKG-INFO
+[0.656s] writing dependency_links to ../../build/move_talk/move_talk.egg-info/dependency_links.txt
+[0.656s] writing entry points to ../../build/move_talk/move_talk.egg-info/entry_points.txt
+[0.656s] writing requirements to ../../build/move_talk/move_talk.egg-info/requires.txt
+[0.656s] writing top-level names to ../../build/move_talk/move_talk.egg-info/top_level.txt
+[0.658s] reading manifest file '../../build/move_talk/move_talk.egg-info/SOURCES.txt'
+[0.658s] adding license file 'LICENSE'
+[0.658s] writing manifest file '../../build/move_talk/move_talk.egg-info/SOURCES.txt'
+[0.658s] running build
+[0.658s] running build_py
+[0.659s] copying move_talk/temp_decision.py -> /home/nomaan/ros2_ws/build/move_talk/build/lib/move_talk
+[0.659s] copying move_talk/publish_temperature.py -> /home/nomaan/ros2_ws/build/move_talk/build/lib/move_talk
+[0.659s] copying move_talk/subscribe_quadrant.py -> /home/nomaan/ros2_ws/build/move_talk/build/lib/move_talk
+[0.659s] copying move_talk/random_move.py -> /home/nomaan/ros2_ws/build/move_talk/build/lib/move_talk
+[0.659s] copying move_talk/subscribe_temperature.py -> /home/nomaan/ros2_ws/build/move_talk/build/lib/move_talk
+[0.659s] copying move_talk/__init__.py -> /home/nomaan/ros2_ws/build/move_talk/build/lib/move_talk
+[0.659s] running install
+[0.659s] running install_lib
+[0.662s] copying /home/nomaan/ros2_ws/build/move_talk/build/lib/move_talk/temp_decision.py -> /home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk
+[0.662s] copying /home/nomaan/ros2_ws/build/move_talk/build/lib/move_talk/publish_temperature.py -> /home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk
+[0.662s] copying /home/nomaan/ros2_ws/build/move_talk/build/lib/move_talk/subscribe_quadrant.py -> /home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk
+[0.662s] copying /home/nomaan/ros2_ws/build/move_talk/build/lib/move_talk/random_move.py -> /home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk
+[0.662s] copying /home/nomaan/ros2_ws/build/move_talk/build/lib/move_talk/subscribe_temperature.py -> /home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk
+[0.662s] copying /home/nomaan/ros2_ws/build/move_talk/build/lib/move_talk/__init__.py -> /home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk
+[0.663s] byte-compiling /home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk/temp_decision.py to temp_decision.cpython-310.pyc
+[0.664s] byte-compiling /home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk/publish_temperature.py to publish_temperature.cpython-310.pyc
+[0.664s] byte-compiling /home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk/subscribe_quadrant.py to subscribe_quadrant.cpython-310.pyc
+[0.665s] byte-compiling /home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk/random_move.py to random_move.cpython-310.pyc
+[0.666s] byte-compiling /home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk/subscribe_temperature.py to subscribe_temperature.cpython-310.pyc
+[0.666s] byte-compiling /home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk/__init__.py to __init__.cpython-310.pyc
+[0.666s] running install_data
+[0.666s] copying resource/move_talk -> /home/nomaan/ros2_ws/install/move_talk/share/ament_index/resource_index/packages
+[0.666s] copying package.xml -> /home/nomaan/ros2_ws/install/move_talk/share/move_talk
+[0.666s] creating /home/nomaan/ros2_ws/install/move_talk/share/move_talk/launch
+[0.666s] copying launch/move_talk_launch.py -> /home/nomaan/ros2_ws/install/move_talk/share/move_talk/launch
+[0.667s] running install_egg_info
+[0.668s] removing '/home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk-0.0.0-py3.10.egg-info' (and everything under it)
+[0.668s] Copying ../../build/move_talk/move_talk.egg-info to /home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages/move_talk-0.0.0-py3.10.egg-info
+[0.668s] running install_scripts
+[0.683s] Installing publish_temperature script to /home/nomaan/ros2_ws/install/move_talk/lib/move_talk
+[0.683s] Installing robot_move script to /home/nomaan/ros2_ws/install/move_talk/lib/move_talk
+[0.683s] Installing subscribe_quad script to /home/nomaan/ros2_ws/install/move_talk/lib/move_talk
+[0.683s] Installing subscribe_temperature script to /home/nomaan/ros2_ws/install/move_talk/lib/move_talk
+[0.683s] writing list of installed files to '/home/nomaan/ros2_ws/build/move_talk/install.log'
+[0.703s] Invoked command in '/home/nomaan/ros2_ws/src/move_talk' returned '0': PYTHONPATH=/home/nomaan/ros2_ws/build/move_talk/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nomaan/ros2_ws/install/move_talk/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/move_talk build --build-base /home/nomaan/ros2_ws/build/move_talk/build install --record /home/nomaan/ros2_ws/build/move_talk/install.log --single-version-externally-managed install_data
